@@ -1,74 +1,556 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <title>Associação Cultural Sertão na Arte</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/estilo.css">
+    <title>Rock Sertão - Associação Cultural Sertão na Arte</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+
 </head>
+
 <body>
+    <!-- NAVEGAÇÃO -->
+    <nav>
+    <div class="nav-container">
+        <div class="logo-section">
+            <div class="logo-placeholder">
+                    
+            </div>
+            <div class="logo-text">
+                    <h1>ROCK SERTÃO</h1>
+                    <p>Associação Cultural</p>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link">Início</a>
+            <a href="#quem-somos"class="nav-link">Quem Somos</a>
+            <a href="../paginas/documentos.html" class="nav-link">Documentos</a>
+            <a href="#projetos" class="nav-link">Projetos</a>
+            <a href="#atividades" class="nav-link">Atividades</a>
+            <a href="#galeria" class="nav-link">Galeria</a> <a href="#parcerias" class="nav-link">Parcerias</a>
+            <a href="#transparencia" class="nav-link">Transparência</a>
+            <a href="#contato" class="btn-contact">Contato</a>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg></button>
+    </div>
+    </nav>
 
-    <!-- CABEÇALHO -->
-    <header id="cabecalho">
-        <h1 id="titulo-site">Associação Cultural Sertão na Arte</h1>
+    <!-- MENU MOBILE -->
 
-        <nav id="menu-principal">
-                <a href="index.html">Home</a>
-                <a href="/paginas/projetos.html">Projetos</a>
-                <a href="/paginas/transparencia.html" class="link-inativo">Transparência</a>
-                <a href="/paginas/contato.html">Contato</a>
-        </ul>
-        </nav>
-    </header>
+    <div class="mobile-menu" id="mobile-menu"><button class="mobile-menu-close" id="close-menu-btn">
+            <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg></button> <a href="#home" class="mobile-nav-link">Início</a> <a href="#quem-somos"
+            class="mobile-nav-link">Quem Somos</a> <a href="#documentos" class="mobile-nav-link">Documentos</a> <a
+            href="#projetos" class="mobile-nav-link">Projetos</a> <a href="#atividades"
+            class="mobile-nav-link">Atividades</a> <a href="#galeria" class="mobile-nav-link">Galeria</a> <a
+            href="#parcerias" class="mobile-nav-link">Parcerias</a> <a href="#transparencia"
+            class="mobile-nav-link">Transparência</a> <a href="#contato" class="btn-contact">Contato</a>
+    </div>
+    
+    <!-- CONTEÚDO PRINCIPAL -->
 
-    <!-- BANNER -->
-    <section id="banner-principal">
-        <h2>Próxima edição: Festival Rock Sertão – 25 anos</h2>
-        <p>Ações formativas, cultura e arte no sertão sergipano.</p>
+<main>
+    
+    <!-- HOME -->
+     
+    <section id="home">  
+        <div class="container">
+            <div class="banner-placeholder"> 
+                <div class="banner-content">
+                    <div class="banner-logo">
+                            LOGO
+                        </div>
+                        <h1>ROCK SERTÃO</h1>
+                        <p>Associação Cultural Sertão na Arte</p>
+                        
+                    </div>
+                </div>
+            <div class="main-buttons"><a href="#projetos" class="main-button accent">
+
+                        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+
+                        </svg> PROJETOS </a> <a href="#galeria" class="main-button secondary">
+
+                        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+
+                        </svg> GALERIA </a> <a href="#contato" class="main-button secondary">
+
+                        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                
+                        </svg> CONTATO </a>
+            </div>
+            <div>
+
+                <h2 class="section-title"><span class="text-gradient">DESTAQUES</span></h2>
+      <div class="highlights-grid">
+       <div class="highlight-card">
+        <div class="emoji">
+         🎸
+        </div>
+        <h3>Festival Rock Sertão 25 anos</h3>
+        <p>Próxima edição em breve!</p><span class="highlight-badge">Em destaque</span>
+       </div>
+       <div class="highlight-card">
+        <div class="emoji">
+         📚
+        </div>
+        <h3>Ações Formativas</h3>
+        <p>Oficinas, cursos e capacitações culturais</p>
+       </div>
+       <div class="highlight-card">
+        <div class="emoji">
+         📖
+        </div>
+        <h3>Parcerias Estratégicas</h3>
+        <p>Rede de instituições apoiadoras</p>
+       </div>
+       <div class="highlight-card">
+        <div class="emoji">
+         🎬
+        </div>
+        <h3>Cine Sertão na Arte</h3>
+        <p>Audiovisual no sertão sergipano</p>
+       </div>
+      </div>
+     </div>
+    </div>
+
     </section>
-
+    
     <!-- QUEM SOMOS -->
-    <section id="secao-quem-somos">
-        <h2>Quem Somos</h2>
+    </section><!-- QUEM SOMOS -->
+   <section id="quem-somos" class="secondary">
+    <div class="container">
+     <h2 class="section-title">QUEM <span class="text-gradient">SOMOS</span></h2>
+     <div class="mb-16">
+      <div class="section-label">
+       <div class="icon-box">
+        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+       </div>
+       <h3>HISTÓRIA</h3>
+      </div>
+      <div class="card accent-gradient">
+       <p class="text-gray-300 mb-4">A <strong>Associação Cultural Sertão na Arte</strong>, fundada em 01 de fevereiro de 2011 e atuante desde 2010 no município de Nossa Senhora da Glória/SE, consolidou-se como um dos principais agentes de fomento e difusão cultural no sertão sergipano.</p>
+       <p class="text-gray-300">Sua atuação contínua abrange <strong>música, teatro, audiovisual, literatura, formação cultural e articulação em rede</strong>, contribuindo para a democratização do acesso à cultura e para o fortalecimento da economia criativa no interior de Sergipe.</p>
+      </div>
+     </div>
+     <div class="mb-16">
+      <div class="section-label">
+       <div class="icon-box">
+        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+       </div>
+       <h3>MISSÃO, VISÃO E VALORES</h3>
+      </div>
+      <div class="grid-3">
+       <div class="card">
+        <div style="background: linear-gradient(to right, rgba(233, 69, 96, 0.3), transparent); padding: 24px; border-radius: 24px; margin: -32px -32px 0 -32px; padding-bottom: 32px;">
+         <h4 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 12px; color: #e94560;">MISSÃO</h4>
+        </div>
+        <p class="text-gray-300 text-sm">Promover, fortalecer e difundir a cultura no sertão sergipano.</p>
+       </div>
+       <div class="card">
+        <h4 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 12px;">VISÃO</h4>
+        <p class="text-gray-300 text-sm">Ser referência em produção cultural no Nordeste.</p>
+       </div>
+       <div class="card">
+        <h4 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 12px;">VALORES</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="text-xs" style="background: rgba(255, 255, 255, 0.1); padding: 6px 12px; border-radius: 20px;">Democracia</span> <span class="text-xs" style="background: rgba(255, 255, 255, 0.1); padding: 6px 12px; border-radius: 20px;">Inclusão</span> <span class="text-xs" style="background: rgba(255, 255, 255, 0.1); padding: 6px 12px; border-radius: 20px;">Diversidade</span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div>
+      <div class="section-label">
+       <div class="icon-box">
+        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+       </div>
 
-        <article class="bloco-historia">
-            <h3>Nossa História</h3>
-            <p>
-                A Associação Cultural Sertão na Arte atua desde 2010 no município
-                de Nossa Senhora da Glória/SE, promovendo música, teatro, audiovisual,
-                literatura e formação cultural.
-            </p>
-        </article>
-
-        <article class="bloco-missao-visao">
-            <h3>Missão</h3>
-            <p>Promover, fortalecer e difundir a cultura no sertão sergipano.</p>
-
-            <h3>Visão</h3>
-            <p>Ser referência em produção cultural no Nordeste brasileiro.</p>
-
-            <h3>Valores</h3>
-            <ul>
-                <li>Democracia cultural</li>
-                <li>Inclusão</li>
-                <li>Diversidade</li>
-                <li>Transparência</li>
-            </ul>
-        </article>
-
-    </section>
-
-
-
+        <h3>DIRETORIA</h3>
+      </div>
+      <div class="grid-3">
+       <div class="card">
+        <div class="flex-center-gap mb-24">
+         <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', cursive; font-size: 18px; flex-shrink: 0;">
+          AG
+         </div>
+         <div>
+          <p style="font-weight: 600; font-size: 14px; margin: 0;">Arthur Gabriel Lima Santos</p>
+          <p style="font-size: 12px; color: #e94560; margin: 0;">Presidente</p>
+         </div>
+        </div>
+       </div>
+       <div class="card">
+        <div class="flex-center-gap mb-24">
+         <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', cursive; font-size: 18px; flex-shrink: 0;">
+          PL
+         </div>
+         <div>
+          <p style="font-weight: 600; font-size: 14px; margin: 0;">Pedro Lucas Santos de Souza</p>
+          <p style="font-size: 12px; color: #9ca3af; margin: 0;">Vice-Presidente</p>
+         </div>
+        </div>
+       </div>
+       <div class="card">
+        <div class="flex-center-gap mb-24">
+         <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', cursive; font-size: 18px; flex-shrink: 0;">
+          RS
+         </div>
+         <div>
+          <p style="font-weight: 600; font-size: 14px; margin: 0;">Romário da Silva Andrade</p>
+          <p style="font-size: 12px; color: #9ca3af; margin: 0;">Primeiro-Secretário</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   
+   </section><!-- PROJETOS -->
+   <section id="projetos" class="secondary">
+    <div class="container">
+     <h2 class="section-title">NOSSOS <span class="text-gradient">PROJETOS</span></h2>
+     <div class="card accent-gradient mb-16" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+      <div class="banner-placeholder" style="margin: 0; height: auto; aspect-ratio: 16/9;">
+       <div style="position: relative; z-index: 10; text-align: center;"><span style="font-size: 96px;">🎸</span>
+       </div>
+      </div>
+      <div><span style="display: inline-block; font-size: 12px; background: #e94560; color: #ffffff; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;">Projeto Principal</span>
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 30px; margin-bottom: 16px;">FESTIVAL ROCK SERTÃO</h3>
+       <p class="text-gray-300 mb-24">Realizado desde 2001, é um dos maiores encontros de música independente do Nordeste.</p>
+       <div style="display: flex; flex-wrap: wrap; gap: 12px;"><span style="font-size: 14px; background: rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 20px;">🎵 Música</span> <span style="font-size: 14px; background: rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 20px;">🎓 Oficinas</span> <span style="font-size: 14px; background: rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 20px;">🆓 Gratuito</span>
+       </div>
+      </div>
+     </div>
+     <div class="grid-2">
+      <div class="card">
+       <div style="font-size: 60px; margin-bottom: 16px;">
+        🎬
+       </div>
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 24px; margin-bottom: 12px;">CINE SERTÃO NA ARTE</h3>
+       <p class="text-gray-400 text-sm">Difusão de audiovisual com sessões, debates e oficinas.</p>
+      </div>
+      <div class="card">
+       <div style="font-size: 60px; margin-bottom: 16px;">
+        🎓
+       </div>
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 24px; margin-bottom: 12px;">CIRCUITO FORMATIVO</h3>
+       <p class="text-gray-400 text-sm">Capacitação em música, audiovisual e gestão cultural.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- ATIVIDADES -->
+   <section id="atividades">
+    <div class="container">
+     <h2 class="section-title">NOSSAS <span class="text-gradient">ATIVIDADES</span></h2>
+     <div class="grid-6">
+      <div class="card" style="min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: linear-gradient(to right, rgba(233, 69, 96, 0.2), transparent); border-color: rgba(233, 69, 96, 0.3);"><span style="font-size: 48px; display: block; margin-bottom: 12px;">🎸</span>
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 14px; margin: 0;">Festival Rock Sertão</h3>
+      </div>
+      <div class="card" style="min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">🎬</span>
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 14px; margin: 0;">Mostras de Cinema</h3>
+      </div>
+      <div class="card" style="min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">🎨</span>
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 14px; margin: 0;">Oficinas e Cursos</h3>
+      </div>
+      <div class="card" style="min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">📖</span>
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 14px; margin: 0;">Rodas de Leitura</h3>
+      </div>
+      <div class="card" style="min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">🎤</span>
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 14px; margin: 0;">Encontros Formativos</h3>
+      </div>
+      <div class="card" style="min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">🗓️</span>
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 14px; margin: 0;">Programações Semanais</h3>
+      </div>
+     </div>
+    </div>
+   </section><!-- GALERIA -->
+   <section id="galeria" class="secondary">
+    <div class="container">
+     <h2 class="section-title">NOSSA <span class="text-gradient">GALERIA</span></h2>
+     <div class="mb-16">
+      <div class="section-label">
+       <div class="dot"></div>
+       <h3>FOTOS</h3>
+      </div>
+      <div class="grid-4">
+       <div class="card" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">🎸</span>
+         <p style="font-size: 14px; color: #9ca3af; margin: 0;">Rock Sertão</p>
+        </div>
+       </div>
+       <div class="card" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">📚</span>
+         <p style="font-size: 14px; color: #9ca3af; margin: 0;">Atividades Formativas</p>
+        </div>
+       </div>
+       <div class="card" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">🎬</span>
+         <p style="font-size: 14px; color: #9ca3af; margin: 0;">Cine Sertão</p>
+        </div>
+       </div>
+       <div class="card" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">🎓</span>
+         <p style="font-size: 14px; color: #9ca3af; margin: 0;">Circuito Formativo</p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div>
+      <div class="section-label">
+       <div class="dot"></div>
+       <h3>VÍDEOS</h3>
+      </div>
+      <div class="grid-3">
+       <div class="card" style="aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">🎬</span>
+         <p style="font-size: 14px; color: #9ca3af; margin: 0;">Documentários</p>
+        </div>
+       </div>
+       <div class="card" style="aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">🎭</span>
+         <p style="font-size: 14px; color: #9ca3af; margin: 0;">Apresentações</p>
+        </div>
+       </div>
+       <div class="card" style="aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">🎙️</span>
+         <p style="font-size: 14px; color: #9ca3af; margin: 0;">Entrevistas</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- PARCERIAS -->
+   <section id="parcerias">
+    <div class="container">
+     <h2 class="section-title">NOSSAS <span class="text-gradient">PARCERIAS</span></h2>
+     <div class="grid-3">
+      <div class="card">
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 12px; color: #e94560;">🎵 PONTOS DE CULTURA</h3>
+       <p class="text-gray-400 text-sm">Articulação com a rede de Pontos de Cultura para fortalecer ações locais.</p>
+      </div>
+      <div class="card">
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 12px; color: #e94560;">🏛️ FUNDAÇÃO APERIPÊ</h3>
+       <p class="text-gray-400 text-sm">Fundação de Cultura e Arte Aperipê – parceria estratégica de fomento.</p>
+      </div>
+      <div class="card">
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 12px; color: #e94560;">🏛️ GOVERNO DO ESTADO</h3>
+       <p class="text-gray-400 text-sm">Convênios e apoio do Governo do Estado de Sergipe.</p>
+      </div>
+      <div class="card">
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 12px; color: #e94560;">🎓 UNIVERSIDADES</h3>
+       <p class="text-gray-400 text-sm">Parcerias com instituições de ensino superior.</p>
+      </div>
+      <div class="card">
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 12px; color: #e94560;">🤝 COLETIVOS</h3>
+       <p class="text-gray-400 text-sm">Rede de coletivos culturais e instituições apoiadoras.</p>
+      </div>
+      <div class="card">
+       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 12px; color: #e94560;">✨ APOIO CULTURAL</h3>
+       <p class="text-gray-400 text-sm">Diversos parceiros em apoio e colaboração contínua.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- TRANSPARÊNCIA -->
+   <section id="transparencia" class="secondary">
+    <div class="container">
+     <h2 class="section-title"><span class="text-gradient">TRANSPARÊNCIA</span></h2>
+     <p style="text-align: center; color: #9ca3af; font-size: 14px; margin-bottom: 48px; max-width: 672px; margin-left: auto; margin-right: auto;">A Associação Cultural Sertão na Arte prioriza a transparência e o controle social. Confira nossos documentos institucionais e prestação de contas.</p><!-- Documentos Institucionais -->
+     <div class="mb-16">
+      <div class="section-label">
+       <div class="dot"></div>
+       <h3>DOCUMENTOS INSTITUCIONAIS</h3>
+      </div>
+      <div class="grid-2">
+       <div class="card">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+         <svg fill="none" stroke="currentColor" viewbox="0 0 24 24" style="width: 24px; height: 24px; color: #e94560; flex-shrink: 0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+         </svg>
+         <p style="font-size: 14px; font-weight: 600; margin: 0;">Estatuto Social</p>
+        </div><button style="background: none; border: none; color: #e94560; font-size: 14px; cursor: pointer; padding: 0;">Download (PDF) →</button>
+       </div>
+       <div class="card">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+         <svg fill="none" stroke="currentColor" viewbox="0 0 24 24" style="width: 24px; height: 24px; color: #e94560; flex-shrink: 0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+         </svg>
+         <p style="font-size: 14px; font-weight: 600; margin: 0;">Atas de Fundação e Eleições</p>
+        </div><button style="background: none; border: none; color: #e94560; font-size: 14px; cursor: pointer; padding: 0;">Download (ZIP) →</button>
+       </div>
+       <div class="card">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+         <svg fill="none" stroke="currentColor" viewbox="0 0 24 24" style="width: 24px; height: 24px; color: #e94560; flex-shrink: 0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+         </svg>
+         <p style="font-size: 14px; font-weight: 600; margin: 0;">Certidões</p>
+        </div><button style="background: none; border: none; color: #e94560; font-size: 14px; cursor: pointer; padding: 0;">Download (PDF) →</button>
+       </div>
+      </div>
+     </div><!-- Prestação de Contas por Projeto -->
+     <div class="mb-16">
+      <div class="section-label">
+       <div class="dot"></div>
+       <h3>PRESTAÇÃO DE CONTAS POR PROJETO</h3>
+      </div>
+      <div class="card">
+       <p class="text-gray-400 text-sm mb-24">Para cada projeto financiado por recursos públicos, disponibilizamos:</p>
+       <ul style="display: flex; flex-direction: column; gap: 12px;">
+        <li style="display: flex; align-items: center; gap: 12px; font-size: 14px; color: #d1d5db;">
+         <svg fill="currentColor" viewbox="0 0 20 20" style="width: 16px; height: 16px; color: #e94560; flex-shrink: 0;"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg> Plano de Trabalho (PDF)</li>
+        <li style="display: flex; align-items: center; gap: 12px; font-size: 14px; color: #d1d5db;">
+         <svg fill="currentColor" viewbox="0 0 20 20" style="width: 16px; height: 16px; color: #e94560; flex-shrink: 0;"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg> Relatório de Execução Física e Financeira</li>
+        <li style="display: flex; align-items: center; gap: 12px; font-size: 14px; color: #d1d5db;">
+         <svg fill="currentColor" viewbox="0 0 20 20" style="width: 16px; height: 16px; color: #e94560; flex-shrink: 0;"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+         </svg> Notas Fiscais e Comprovantes</li>
+       </ul>
+      </div>
+     </div><!-- Recursos Públicos e Convênios -->
+     <div>
+      <div class="section-label">
+       <div class="dot"></div>
+       <h3>RECURSOS PÚBLICOS E CONVÊNIOS</h3>
+      </div>
+      <div class="card">
+       <p class="text-gray-400 text-sm mb-24">Quando a associação recebe recursos públicos, os dados são publicados com clareza:</p>
+       <div style="overflow-x: auto;">
+        <table>
+         <thead>
+          <tr>
+           <th>Origem do Recurso</th>
+           <th>Projeto/Objeto</th>
+           <th>Valor (R$)</th>
+           <th>Status</th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr>
+           <td>Emenda Parlamentar</td>
+           <td>Festival Rock Sertão</td>
+           <td>50.000,00</td>
+           <td><span style="background: rgba(74, 222, 128, 0.2); color: #4ade80; padding: 4px 12px; border-radius: 20px; font-size: 12px;">Finalizado</span></td>
+          </tr>
+          <tr>
+           <td>Edital Cultural</td>
+           <td>Circuito Formativo</td>
+           <td>30.000,00</td>
+           <td><span style="background: rgba(233, 69, 96, 0.2); color: #e94560; padding: 4px 12px; border-radius: 20px; font-size: 12px;">Em execução</span></td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- CONTATO -->
+   <section id="contato" class="secondary">
+    <div class="container">
+     <h2 class="section-title">ENTRE EM <span class="text-gradient">CONTATO</span></h2>
+     <div class="card">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px;">
+       <div>
+        <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 24px;">INFORMAÇÕES</h3>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+         <div>
+          <p style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Endereço</p>
+          <p class="text-sm text-gray-400">Rua Manoel Vieira de Souza, nº 561<br>
+           Bairro Brasília – CEP 49.680-000<br>
+           Nossa Senhora da Glória – Sergipe</p>
+         </div>
+         <div>
+          <p style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">CNPJ</p>
+          <p class="text-sm text-gray-400">13.304.024/0001-86</p>
+         </div>
+         <div>
+          <p style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">E-mail</p>
+          <p class="text-sm text-gray-400">sertaonaarte@gmail.com</p>
+         </div>
+        </div>
+       </div>
+       <div>
+        <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 24px;">REDES SOCIAIS</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px;"><a href="#" style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+          <svg fill="currentColor" viewbox="0 0 24 24" style="width: 24px; height: 24px;"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z" />
+          </svg></a> <a href="#" style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+          <svg fill="currentColor" viewbox="0 0 24 24" style="width: 24px; height: 24px;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+          </svg></a> <a href="#" style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+          <svg fill="currentColor" viewbox="0 0 24 24" style="width: 24px; height: 24px;"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg></a> <a href="#" style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+          <svg fill="currentColor" viewbox="0 0 24 24" style="width: 24px; height: 24px;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+          </svg></a>
+        </div>
+       </div>
+      </div><!-- FORMULÁRIO -->
+                    <form id="contact-form" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 40px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                            <div class="form-group"><label for="name">Nome</label> <input type="text" id="name"
+                                    name="name" placeholder="Seu nome">
+                            </div>
+                            <div class="form-group"><label for="email">E-mail</label> <input type="email" id="email"
+                                    name="email" placeholder="seu@email.com">
+                            </div>
+                        </div>
+                        <div class="form-group"><label for="subject">Assunto</label> <input type="text" id="subject"
+                                name="subject" placeholder="Assunto da mensagem">
+                        </div>
+                        <div class="form-group"><label for="message">Mensagem</label> <textarea id="message"
+                                name="message" rows="4" placeholder="Sua mensagem..."></textarea>
+                        </div><button type="submit">Enviar Mensagem</button>
+                    </form>
+                    <p id="form-message" class="form-message">Mensagem enviada com sucesso!</p>
+                </div>
+            </div>
+        </section>
+    </main><!-- RODAPÉ -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo-section">
+                    <div class="logo-placeholder">
+                        LOGO
+                    </div>
+                    <div class="logo-text">
+                        <p>ROCK SERTÃO</p>
+                        <p>Associação Cultural Sertão na Arte</p>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <p>CNPJ: 13.304.024/0001-86</p>
+                    <p>Rua Manoel Vieira de Souza, nº 561 – Brasília</p>
+                    <p>CEP 49.680-000 – Nossa Senhora da Glória/SE</p>
+                    <p>E-mail: sertaonaarte@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Associação Cultural Sertão na Arte. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js" defer></script>
     
 
-    <!-- RODAPÉ -->
-    <footer id="rodape">
-        <p>© 2025 Associação Cultural Sertão na Arte</p>
-        <p>CNPJ 13.304.024/0001-86</p>
-    </footer>
-
-    <script src="js/script.js"></script>
 </body>
+
 </html>
