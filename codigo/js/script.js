@@ -1,35 +1,47 @@
-(function () {
-	function c() {
-		var b = a.contentDocument || a.contentWindow.document;
-		if (b) {
-			var d = b.createElement('script');
-			d.innerHTML = "window.__CF$cv$params={r:'9bb0d19d866bd06c',t:'MTc2NzkyOTAzNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
-			b.getElementsByTagName('head')[0].appendChild(d);
-		}
-	} if (document.body) {
-		var a = document.createElement('iframe');
-		a.height = 1;
-		a.width = 1;
-		a.style.position = 'absolute';
-		a.style.top = 0;
-		a.style.left = 0;
-		a.style.border = 'none';
-		a.style.visibility = 'hidden';
-		document.body.appendChild(a);
+document.addEventListener('DOMContentLoaded', function() {
+   
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-menu-btn');
 
-		if ('loading' !== document.readyState) {
-			c();
-		} else if (window.addEventListener) {
-			document.addEventListener('DOMContentLoaded', c);
-		} else {
-			var e = document.onreadystatechange || function () {};
-			document.onreadystatechange = function (b) {
-				e(b);
-				if ('loading' !== document.readyState) {
-					document.onreadystatechange = e;
-					c();
-				}
-			};
-		}
-	}
-})();
+    if (menuBtn && mobileMenu && closeBtn) {
+        menuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+
+        closeBtn.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+        });
+
+        
+        const links = mobileMenu.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    }
+});
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    
+    fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+    }).then(response => {
+        if (response.ok) {
+            document.getElementById('form-message').style.display = 'block';
+            form.reset(); 
+        } else {
+            alert('Erro ao enviar. Tente novamente.');
+        }
+    }).catch(error => {
+        alert('Erro: ' + error.message);
+    });
+});
+
+
