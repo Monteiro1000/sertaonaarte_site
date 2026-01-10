@@ -56,23 +56,10 @@
       flex-shrink: 0;
     }
 
-    .logo-text {
-      display: none;
-    }
+    
 
-    .logo-text h1 {
-      font-family: 'Bebas Neue', cursive;
-      font-size: 24px;
-      color: #ffffff;
-      line-height: 1;
-      margin: 0;
-    }
 
-    .logo-text p {
-      font-size: 10px;
-      color: #9ca3af;
-      margin: 0;
-    }
+   
 
     .nav-links {
       display: none;
