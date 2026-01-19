@@ -387,7 +387,7 @@
     }
 
     .text-gradient {
-      background: linear-gradient(135deg, #ffffff, #ca7300);
+      background: white;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -401,7 +401,7 @@
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 24px;
-      padding: 32px;
+      padding: 0%;
       transition: all 0.3s ease;
     }
 
@@ -462,6 +462,16 @@
       display: flex;
       align-items: center;
       gap: 12px;
+    }
+
+    iframe {
+      border-radius: 15px;
+      
+    }
+
+    .cine-sertao {
+      width: 100px;
+      height: 100px;
     }
 
     .icon-box {
