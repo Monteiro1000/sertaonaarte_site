@@ -203,6 +203,7 @@
     }
 
     .container {
+      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 16px;
@@ -466,7 +467,15 @@
 
     iframe {
       border-radius: 15px;
-      
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+    }
+
+    .img-formativa img {
+      max-width: 270px;
+      max-height: 250px;
+      border-radius: 20px;
     }
 
     .cine-sertao {
