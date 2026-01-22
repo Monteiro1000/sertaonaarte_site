@@ -403,6 +403,7 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 24px;
       padding: 32px;
+      margin-bottom: 40px;
       transition: all 0.3s ease;
     }
 
@@ -706,7 +707,11 @@
       font-size: 12px;
       color: #4b5563;
     }
-
+    
+    #documentos {
+      padding: 0px;
+      margin: 0px;
+    }
 
     /* ===================== LAYOUT RESPONSIVO ===================== */
 
