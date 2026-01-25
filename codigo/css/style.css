@@ -183,7 +183,7 @@
     }
 
     .mobile-nav-link:hover {
-      color: #e94560;
+      color: #ec6a00;
     }
 
 
@@ -379,7 +379,6 @@
 
 
     /* ===================== TÍTULOS DE SEÇÃO ===================== */
-
     .section-title {
       font-family: 'Bebas Neue', cursive;
       font-size: 48px;
@@ -472,6 +471,41 @@
       height: auto;
       max-width: 100%;
     }
+
+    .card-rocksertao {
+      background: rgba(255, 255, 255, 0.05);;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 0px;
+      
+      transition: all 0.3s ease;
+      display: flex;
+     
+    }
+
+    .img-rocksertao{
+      display: flex;
+      padding: 0px;
+      
+      
+    }
+
+    .img-rocksertao img {
+      max-width: 430px;
+      max-height: 430px;
+      border-radius: 20px;
+    }
+
+    /* Ajuste para centralizar as imagens na seção de fotos */
+.img-rocksertao,
+.img-formativa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
 
     .img-formativa img {
       max-width: 270px;
