@@ -10,7 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../codigo/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../marcas/lOGO SERTAO NA ARTE PNG.png" type="image/png">
 </head>
 <body>
@@ -24,15 +24,15 @@
             </div>
            
         <div class="nav-links">
-            <a href="../codigo/index.html" class="nav-link">Início</a>
-            <a href="../codigo/index.html#quem-somos" class="nav-link">Quem Somos</a>
-            <a href="../paginas/documentos.html" class="nav-link">Documentos</a>
-            <a href="../paginas/projetos.html" class="nav-link">Projetos</a>
-            <a href="../codigo/index.html#atividades" class="nav-link">Atividades</a>
-            <a href="../codigo/index.html#galeria" class="nav-link">Galeria</a>
-            <a href="../paginas/parceria.html" class="nav-link">Parcerias</a>
-            <a href="../paginas/transparencia.html" class="nav-link">Transparência</a>
-            <a href="../codigo/index.html#contato" class="btn-contact">Contato</a>
+            <a href="../index.html" class="nav-link">Início</a>
+            <a href="../index.html#quem-somos" class="nav-link">Quem Somos</a>
+            <a href="./documentos.html" class="nav-link">Documentos</a>
+            <a href="./projetos.html" class="nav-link">Projetos</a>
+            <a href="../index.html#atividades" class="nav-link">Atividades</a>
+            <a href="../index.html#galeria" class="nav-link">Galeria</a>
+            <a href="./parceria.html" class="nav-link">Parcerias</a>
+            <a href="./transparencia.html" class="nav-link">Transparência</a>
+            <a href="../index.html#contato" class="btn-contact">Contato</a>
         </div>
         
     </div>
@@ -51,17 +51,17 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
-        <a href="../codigo/index.html" class="mobile-nav-link">Início</a> <a href="../codigo/index.html#quem-somos"
+        <a href="../index.html" class="mobile-nav-link">Início</a> <a href="../index.html#quem-somos"
         class="mobile-nav-link">Quem Somos</a>
         <a href="./documentos.html" class="mobile-nav-link">Documentos</a> <a
         href="./projetos.html" class="mobile-nav-link">Projetos</a>
-        <a href="../codigo/index.html#atividades"
+        <a href="../index.html#atividades"
         class="mobile-nav-link">Atividades</a>
-        <a href="../codigo/index.html#galeria"class="mobile-nav-link">Galeria</a> 
+        <a href="../index.html#galeria"class="mobile-nav-link">Galeria</a> 
         <a href="./parceria.html"class="mobile-nav-link">Parcerias</a>
         </a> 
         <a href="./transparencia.html"
-        class="mobile-nav-link">Transparência</a><a href="../codigo/index.html#contato"class="btn-contact">Contato</a>
+        class="mobile-nav-link">Transparência</a><a href="../index.html#contato"class="btn-contact">Contato</a>
     </div>
     <br>
 
@@ -89,23 +89,16 @@
 
       <div class="grid-2">
 
-       <div class="card">
+       
 
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+        
 
-         <svg fill="none" stroke="currentColor" viewbox="0 0 24 24" style="width: 24px; height: 24px; color: #ca7300; flex-shrink: 0;">
+         
 
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-
-         </svg>
-
-         <p style="font-size: 14px; font-weight: 600; margin: 0;">Estatuto Social
-         </p>
+         
         </div>
 
-        <button style="background: none; border: none; color: #ffffff; font-size: 14px; cursor: pointer; padding: 0;">Download (PDF) →
-
-        </button>
+        
        </div>
 
        <div class="card">
@@ -119,7 +112,7 @@
 
          <p style="font-size: 14px; font-weight: 600; margin: 0;">Atas de Fundação e diretoria atual
          </p>
-        </div><button style="background: none; border: none; color: #ffff; font-size: 14px; cursor: pointer; padding: 0;">Download (ZIP) →</button>
+        </div><button style="background: none; border: none; color: #ffff; font-size: 14px; cursor: pointer; padding: 0;">→ <a href="../documentos/CÓPIA AUTENTICADA DA ATA DA REUNIÃO EM QUE FORAM ELEITOS O ATUAL REPRESENTANTE LEGAL E A DIRETORIA.pdf" class="documento-ata" target="_blank">Download (ZIP)</a> </button>
        </div>
        <div class="card">
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
@@ -210,20 +203,21 @@
          <tbody>
 
           <tr>
-           <td>Emenda Parlamentar</td>
-           <td>Festival Rock Sertão</td>
-           <td>50.000,00</td>
+           <td data-label="Origem do Recurso">APOIO FINANCEIRO PARA DESPESAS DE CUSTEIO</td>
+           <td data-label="Projeto/Objeto"> Festival de Música e Arte Independente Rock Sertão</td>
+           <td data-label="Valor (R$)">85.000,00</td>
 
-           <td>
+           <td data-label="Status">
             <span style="background: rgba(74, 222, 128, 0.2); color: #4ade80; padding: 4px 12px; border-radius: 20px; font-size: 12px;">Finalizado</span></td>
           </tr>
           <tr>
-           <td>Edital Cultural</td>
-           <td>Circuito Formativo</td>
-           <td>30.000,00</td>
-           <td>
+           <td data-label="Origem do Recurso">  Realizar oficinas de capacitação <br> com circuito de formação na cidade de Nossa Senhora da Glória - SE.
+</td>
+           <td data-label="Projeto/Objeto">CIRCUTO "ROCK SERTÃO" DE FORMAÇÃO</td>
+           <td data-label="Valor (R$)">30.000,00</td>
+           <td data-label="Status">
             
-            <span style="background: rgba(26, 186, 226, 0.2); color: #1294df; padding: 4px 12px; border-radius: 20px; font-size: 12px;">Em execução</span>
+            <span style="background: rgba(26, 186, 226, 0.2); color: #1294df; padding: 4px 12px; border-radius: 20px; font-size: 12px;" class="execucao">Em execução</span>
             </td>
 
           </tr>
@@ -288,7 +282,7 @@
 
     </footer>
 
-    <script src="../codigo/js/script.js" defer></script>
+    <script src="../js/script.js" defer></script>
     
 </body>
 </html>

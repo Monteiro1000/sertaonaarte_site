@@ -179,7 +179,7 @@
 
        <div class="icon-box">
 
-        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24" class="icone-aba"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
 
         </svg>
 
@@ -208,7 +208,7 @@
 
        <div class="icon-box">
 
-        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24" ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
 
         </svg>
 
@@ -424,121 +424,63 @@
 
     </h2>
 
-     <div class="mb-16">
+     <div class="galeria-container">
+       <button class="galeria-btn galeria-btn-esq" id="galeria-esq" aria-label="Galeria anterior">
+         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+         </svg>
+       </button>
 
-      <div class="section-label">
-
-       <div class="dot">
-
+       <div class="fotos" id="galeria">
+          <img src="rock sertão 2025/ROCK SERTÃO (40).jpg" alt="">
+          <img src="marcas/IMG_3138.JPG" alt="">
+          <img src="marcas/sharedimage-1.webp" alt="">
+          <img src="rock sertão 2025/ROCK SERTÃO (13).jpg" alt="">
+          <img src="rock sertão 2025/ROCK SERTÃO (42).jpg" alt="">
        </div>
-       <h3>FOTOS</h3>
-
-      </div>
-      <div class="grid-4">
-       <div class="card-rocksertao" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
-        <div style="text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">
-
-        </span>
-
-         <div class="img-rocksertao">
-            <img src="/rock sertão 2025/ROCK SERTÃO (40).jpg" alt="">
-         </div>
-
-        </div>
-
-       </div>
-
-       <div class="card" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
-        <div style="text-align: center;">
-            <span style="font-size: 48px; display: block; margin-bottom: 12px;">
-
-            </span>
-
-         <div class="img-formativa">
-            <img src="/marcas/IMG_3138.JPG" alt="">
-         </div>
-
-        </div>
-
-       </div>
-
-       <div class="card" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
-        <div style="text-align: center;">
-            <span style="font-size: 48px; display: block; margin-bottom: 12px;">
-
-            </span>
-         <p style="font-size: 14px; color: #9ca3af; margin: 0;">Cine Sertão</p>
-
-        </div>
-
-       </div>
-
-       <div class="card" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center;">
-        <div style="text-align: center;">
-            <span style="font-size: 48px; display: block; margin-bottom: 12px;">
-
-            </span>
-         <p style="font-size: 14px; color: #9ca3af; margin: 0;">Circuito Formativo</p>
-
-        </div>
-
-       </div>
-
-      </div>
-
+       <!--  botão pra a galeria -->
+       <button class="galeria-btn galeria-btn-dir" id="galeria-dir" aria-label="Próxima galeria">
+         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+         </svg>
+       </button>
      </div>
+        
 
-     <div>
-
-      <div class="section-label">
-
-       <div class="dot">
-
-       </div>
-
-       <h3>VÍDEOS</h3>
+       
 
       </div>
 
-      <div class="grid-3">
+      
 
-       <div class="card" style="aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
+      <div class="videos-container">
+       <button class="galeria-btn galeria-btn-esq" id="videos-esq" aria-label="Vídeo anterior">
+         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+         </svg>
+       </button>
 
-        <div style="text-align: center;">
-            <span style="font-size: 48px; display: block; margin-bottom: 12px;">
-                <iframe src="https://www.youtube.com/embed/_jYNiMKQN_0?si=-nELzw34TtjQtL7F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+       <div class="videos" id="videos-galeria">
 
-            </span>
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/_jYNiMKQN_0?si=-nELzw34TtjQtL7F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
 
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/IpTUgSl9dH0?si=RxAF0VBBPksH-oIQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/dy_fm6LoYHo?si=utiz-4GPUhl8TScd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
        </div>
 
-       <div class="card" style="aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-
-        <div style="text-align: center;">
-            <span style="font-size: 48px; display: block; margin-bottom: 12px;">
-
-                <iframe src="https://www.youtube.com/embed/IpTUgSl9dH0?si=RxAF0VBBPksH-oIQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-            </span>
-
-        </div>
-
-       </div>
-
-       <div class="card" style="aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;">
-
-        <div style="text-align: center;">
-            <span style="font-size: 48px; display: block; margin-bottom: 12px;">
-                <iframe src="https://www.youtube.com/embed/dy_fm6LoYHo?si=utiz-4GPUhl8TScd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                
-            </span>
-
-        </div>
-
-       </div>
-
+       <button class="galeria-btn galeria-btn-dir" id="videos-dir" aria-label="Próximo vídeo">
+         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 24px; height: 24px;">
+           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+         </svg>
+       </button>
       </div>
 
      </div>

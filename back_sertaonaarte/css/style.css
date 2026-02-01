@@ -472,52 +472,9 @@
       max-width: 100%;
     }
 
-    .card-rocksertao {
-      background: rgba(255, 255, 255, 0.05);;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 24px;
-      padding: 0px;
-      
-      transition: all 0.3s ease;
-      display: flex;
-     
-    }
+    
 
-    .img-rocksertao{
-      display: flex;
-      padding: 0px;
-      
-      
-    }
-
-    .img-rocksertao img {
-      max-width: 430px;
-      max-height: 430px;
-      border-radius: 20px;
-    }
-
-    /* Ajuste para centralizar as imagens na seção de fotos */
-.img-rocksertao,
-.img-formativa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-}
-
-    .img-formativa img {
-      max-width: 270px;
-      max-height: 250px;
-      border-radius: 20px;
-    }
-
-    .cine-sertao {
-      width: 100px;
-      height: 100px;
-    }
-
+   /* Você que está vendo o código, ROCK É CULTURA!! VEJA ESSA GALERIA E TAMBÉM VENHA PRESENCIAR O ROCK SERTÃO E APOIAR ESSA CULTURA 👨‍🎤 */
     .icon-box {
       width: 48px;
       height: 48px;
@@ -581,6 +538,213 @@
     .mb-4 {
       margin-bottom: 16px;
     }
+
+    .galeria-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 100px auto;
+      max-width: 100%;
+      position: relative;
+      justify-content: center;
+    }
+
+    .galeria-btn {
+      display: none;
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #ff7c02 0%, #df8600 100%);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(255, 124, 2, 0.3);
+    }
+
+    .galeria-btn:hover {
+      background: linear-gradient(135deg, #ff8c12 0%, #e8960a 100%);
+      box-shadow: 0 6px 25px rgba(255, 124, 2, 0.5);
+      transform: scale(1.1);
+    }
+
+    .galeria-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Mostrar setas apenas no desktop */
+    @media (min-width: 1024px) {
+      .galeria-btn {
+        display: flex;
+      }
+    }
+
+    .fotos {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      gap: 20px;
+      padding: 20px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      cursor: grab;
+      user-select: none;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .fotos:active {
+      cursor: grabbing;
+    }
+
+    /* Estilo da scrollbar para navegadores webkit */
+    .fotos::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .fotos::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    .fotos::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #ff7c02 0%, #df8600 100%);
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .fotos::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #ff8c12 0%, #e8960a 100%);
+    }
+
+    .fotos img {
+      border-radius: 20px;
+      padding: 0;
+      width: 300px;
+      height: 250px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      object-fit: cover;
+    }
+
+    .fotos img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 25px rgba(255, 124, 2, 0.4);
+    }
+
+    
+
+    /* Aumentar tamanho das imagens em tablet e desktop */
+    @media (min-width: 768px) {
+      .fotos img {
+        width: 400px;
+        height: 320px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .fotos img {
+        width: 500px;
+        height: 400px;
+      }
+    }
+
+    /* ===================== GALERIA DE VÍDEOS ===================== */
+
+    .videos-container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 100px auto;
+      max-width: 100%;
+      position: relative;
+      justify-content: center;
+    }
+
+    .videos {
+      display: flex;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      gap: 20px;
+      padding: 20px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      cursor: grab;
+      user-select: none;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .videos:active {
+      cursor: grabbing;
+    }
+
+    /* Estilo da scrollbar para vídeos */
+    .videos::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .videos::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    .videos::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #ff7c02 0%, #df8600 100%);
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .videos::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(135deg, #ff8c12 0%, #e8960a 100%);
+    }
+
+    .video-item {
+      flex-shrink: 0;
+      width: 300px;
+      height: 169px;
+      scroll-snap-align: start;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 25px rgba(255, 124, 2, 0.4);
+    }
+
+    .video-item iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Aumentar tamanho dos vídeos em tablet e desktop */
+    @media (min-width: 768px) {
+      .video-item {
+        width: 400px;
+        height: 225px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .video-item {
+        width: 560px;
+        height: 315px;
+      }
+    }
+
 
 
     /* ===================== FORMULÁRIOS ===================== */
@@ -673,6 +837,11 @@
     th {
       font-weight: 600;
       color: #ffffffbd;
+    }
+
+    .execucao {
+      white-space: nowrap;
+      display: inline-block;
     }
 
     tr:hover {
@@ -816,4 +985,104 @@
       th, td {
         padding: 12px 8px;
       }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        display: block;
+        margin-bottom: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      td {
+        display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 12px;
+        font-weight: 600;
+        text-align: left;
+        color: #ca7300;
+      }
+
+      td:last-child {
+        border-bottom: none;
+      }
+
+      .execucao {
+        white-space: nowrap;
+        display: inline-block;
+      }
+    }
+
+    /* ===================== IMAGEM PROJETO ===================== */
+
+    .img-rock-sertao-projeto {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+    }
+
+    .cine-sertao {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+      margin-top: 16px;
+    }
+
+    .img-circuito-formativo {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 20px;
+      display: block;
+      margin-top: 16px;
+    }
+
+    /* Responsividade para projetos */
+    @media (max-width: 768px) {
+      .card.accent-gradient[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+      }
+
+      .card.accent-gradient[style*="grid-template-columns"] > div:first-child {
+        aspect-ratio: 16/9;
+        height: auto;
+      }
+    }
+
+    /* links documentos */
+
+    .pdf-estatuto {
+      text-decoration: none;
+      color: #ca7300;
+    }
+
+    .pdf-estatuto:hover {
+      color: #ff91025b;
+    }
+
+    .documento-ata {
+      text-decoration: none;
+      color: #ca7300;
+    }
+
+    .documento-ata:hover {
+      color: #ff91025b;
     }
