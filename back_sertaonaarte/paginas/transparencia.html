@@ -118,8 +118,8 @@
         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
          <svg fill="none" stroke="currentColor" viewbox="0 0 24 24" style="width: 24px; height: 24px; color: #ca7300; flex-shrink: 0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
          </svg>
-         <p style="font-size: 14px; font-weight: 600; margin: 0;">Certidões</p>
-        </div><button style="background: none; border: none; color: #ffffff; font-size: 14px; cursor: pointer; padding: 0;">Download (PDF) →</button>
+         <p style="font-size: 14px; font-weight: 600; margin: 0;">Estatuto</p>
+        </div><button style="background: none; border: none; color: #ffffff; font-size: 14px; cursor: pointer; padding: 0;"><a href="../documentos/2 ESTATUTO SERTÃO NA ARTE 2023 AUTENTICADO.pdf" class="documento-ata" >Download (PDF) →</a></button>
        </div>
       </div>
 
@@ -173,7 +173,7 @@
      
      <div>
 
-      <div class="section-label">
+      <div class="section-label-2">
 
        <div class="dot">
 
@@ -190,10 +190,10 @@
          <thead>
 
           <tr>
-
-           <th>Origem do Recurso</th>
-           <th>Projeto/Objeto</th>
-           <th>Valor (R$)</th>
+            <th>Ano</th>
+           <th>Objeto da Parceria</th>
+           <th>Projeto</th>
+           <th>Valor Total da Parceria(R$)</th>
            <th>Status</th>
 
           </tr>
@@ -202,22 +202,39 @@
 
          <tbody>
 
-          <tr>
+          <tr onclick="openModal({id: '2025', ano: '2025', objeto: 'APOIO FINANCEIRO PARA DESPESAS DE CUSTEIO', projeto: 'Festival de Música e Arte Independente Rock Sertão', valor: '85.000,00', status: 'Executado'})" style="cursor: pointer;">
+            <td data-label="Valor (R$)">2025</td>
+            
            <td data-label="Origem do Recurso">APOIO FINANCEIRO PARA DESPESAS DE CUSTEIO</td>
            <td data-label="Projeto/Objeto"> Festival de Música e Arte Independente Rock Sertão</td>
            <td data-label="Valor (R$)">85.000,00</td>
+           
+           
 
            <td data-label="Status">
-            <span style="background: rgba(74, 222, 128, 0.2); color: #4ade80; padding: 4px 12px; border-radius: 20px; font-size: 12px;">Finalizado</span></td>
+            <span style="background: rgba(74, 222, 128, 0.2); color: #4ade80; padding: 4px 12px; border-radius: 20px; font-size: 12px;">Executado</span></td>
           </tr>
-          <tr>
+          <tr onclick="openModal({id: '2023', ano: '2023', objeto: 'Realizar oficinas de capacitação com circuito de formação na cidade de Nossa Senhora da Glória - SE.', projeto: 'CIRCUTO ROCK SERTÃO DE FORMAÇÃO', valor: '330.000,00', status: 'Executado'})" style="cursor: pointer;">
+            <td data-label="Valor (R$)">2023</td>
            <td data-label="Origem do Recurso">  Realizar oficinas de capacitação <br> com circuito de formação na cidade de Nossa Senhora da Glória - SE.
 </td>
            <td data-label="Projeto/Objeto">CIRCUTO "ROCK SERTÃO" DE FORMAÇÃO</td>
-           <td data-label="Valor (R$)">30.000,00</td>
+           <td data-label="Valor (R$)">330.000,00</td>
            <td data-label="Status">
             
-            <span style="background: rgba(26, 186, 226, 0.2); color: #1294df; padding: 4px 12px; border-radius: 20px; font-size: 12px;" class="execucao">Em execução</span>
+            <span style="background: rgba(26, 186, 226, 0.2); color: #4ade80; padding: 4px 12px; border-radius: 20px; font-size: 12px;" class="execucao">Executado</span>
+</tr>
+            <!-- linha3 -->
+          
+          <tr onclick="openModal({id: '2022', ano: '2022', objeto: 'Realização do festival Rock Sertão 2023, na cidade de Nossa Senhora da Glória em Sergipe.', projeto: 'ROCK SERTÃO 2023', valor: 'R$176.000,00', status: 'Executado'})" style="cursor: pointer;">
+            <td data-label="Valor (R$)">2022</td>
+           <td data-label="Origem do Recurso">  Realização do festival “Rock Sertão 2023”, na cidade de Nossa Senhora da Glória em Sergipe.
+</td>
+           <td data-label="Projeto/Objeto"> ROCK SERTÃO 2023</td>
+           <td data-label="Valor (R$)">R$176.000,00</td>
+           <td data-label="Status">
+            
+            <span style="background: rgba(26, 186, 226, 0.2); color: #4ade80; padding: 4px 12px; border-radius: 20px; font-size: 12px;" class="execucao">Executado</span>
             </td>
 
           </tr>
@@ -281,6 +298,76 @@
         </div>
 
     </footer>
+
+    <!-- Modal de Detalhes da Parceria -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Detalhes da Parceria</h2>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>Foto da Parceria</h3>
+                    <div class="modal-image">
+                        <div id="imageContainer" class="image-placeholder">
+                            <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            <p>Nenhuma foto adicionada</p>
+                        </div>
+                    </div>
+                    <div id="adminPhotoSection" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #374151;">
+                        <p style="font-size: 12px; color: #9ca3af; margin-bottom: 12px;">📝 Edite o código para adicionar a foto da parceria</p>
+                        <p style="font-size: 11px; color: #6b7280; margin: 0; line-height: 1.6;">
+                            Abra o arquivo <strong>transparencia.html</strong> e procure pela variável <strong>parcerias</strong>.<br>
+                            Adicione a URL da foto no campo <strong>photo</strong> de cada parceria.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-section">
+                    <h3>Informações</h3>
+                    <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14px;">
+                        <div>
+                            <p style="color: #ca7300; margin: 0 0 4px 0; font-weight: 600;">Ano</p>
+                            <p id="modalAno" style="margin: 0; color: #e5e7eb;"></p>
+                        </div>
+                        <div>
+                            <p style="color: #ca7300; margin: 0 0 4px 0; font-weight: 600;">Objeto da Parceria</p>
+                            <p id="modalObjeto" style="margin: 0; color: #e5e7eb;"></p>
+                        </div>
+                        <div>
+                            <p style="color: #ca7300; margin: 0 0 4px 0; font-weight: 600;">Projeto</p>
+                            <p id="modalProjeto" style="margin: 0; color: #e5e7eb;"></p>
+                        </div>
+                        <div>
+                            <p style="color: #ca7300; margin: 0 0 4px 0; font-weight: 600;">Valor Total</p>
+                            <p id="modalValor" style="margin: 0; color: #e5e7eb;"></p>
+                        </div>
+                        <div>
+                            <p style="color: #ca7300; margin: 0 0 4px 0; font-weight: 600;">Status</p>
+                            <p id="modalStatus" style="margin: 0; color: #e5e7eb;"></p>
+                        </div>
+                    </div>
+                    <h3 style="margin-top: 24px;">Anexos em PDF</h3>
+                    <div class="modal-attachments">
+                        <div id="attachmentsList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Visualizar PDF -->
+    <div id="pdfViewerModal" class="pdf-viewer-modal">
+        <div class="pdf-viewer-content">
+            <div class="pdf-viewer-header">
+                <h3 id="pdfTitle">Visualizador de PDF</h3>
+                <button class="pdf-viewer-close" onclick="closePdfViewer()">×</button>
+            </div>
+            <iframe id="pdfFrame" class="pdf-viewer-frame"></iframe>
+        </div>
+    </div>
 
     <script src="../js/script.js" defer></script>
     
