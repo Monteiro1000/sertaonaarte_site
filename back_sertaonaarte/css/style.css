@@ -271,7 +271,7 @@
       border-radius: 24px;
       text-align: center;
       text-decoration: none;
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition: all 0.3s ease;
       border: none;
       cursor: pointer;
       font-family: 'Bebas Neue', cursive;
@@ -286,34 +286,24 @@
 
     .main-button.accent {
       background: rgba(255, 255, 255, 0.1);
-      background-image: url('../marcas/textura_sertao_na_arte.png');
-      background-size: cover;
-      background-position: center;
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.2);
       color: #ffffff;
     }
 
     .main-button.accent:hover {
-      transform: scale(1.05);
-      border-color: rgba(202, 115, 0, 0.8);
-      box-shadow: 0 8px 24px rgba(202, 115, 0, 0.3);
+      border-color: rgba(150, 58, 5, 0.5);
     }
 
     .main-button.secondary {
       background: rgba(255, 255, 255, 0.1);
-      background-image: url('../marcas/textura_sertao_na_arte.png');
-      background-size: cover;
-      background-position: center;
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.2);
       color: #ffffff;
     }
 
     .main-button.secondary:hover {
-      transform: scale(1.05);
-      border-color: rgba(202, 115, 0, 0.8);
-      box-shadow: 0 8px 24px rgba(202, 115, 0, 0.3);
+      border-color: rgba(150, 58, 5, 0.5);
     }
 
     .main-button svg {
