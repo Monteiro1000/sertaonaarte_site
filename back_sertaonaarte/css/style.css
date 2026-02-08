@@ -330,9 +330,27 @@
       flex-direction: column;
     }
 
+    .highlight-card-featured {
+      grid-column: span 2;
+      background: linear-gradient(135deg, rgba(202, 115, 0, 0.15) 0%, rgba(255, 149, 0, 0.1) 100%);
+      border: 2px solid #ca7300;
+      padding: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .highlight-card-featured {
+        grid-column: span 1;
+      }
+    }
+
     .highlight-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 40px rgba(69, 187, 233, 0.2);
+    }
+
+    .highlight-card-featured:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(202, 115, 0, 0.3);
     }
 
     .highlight-card .emoji {

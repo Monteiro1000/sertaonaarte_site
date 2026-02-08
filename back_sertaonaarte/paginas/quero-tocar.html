@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quero Tocar - Inscrição</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../marcas/lOGO SERTAO NA ARTE PNG.png" type="image/png">
+    <style>
+        .quero-tocar-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 48px 0;
+            margin-bottom: 48px;
+        }
+
+        .quero-tocar-banner {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            margin-bottom: 32px;
+            display: block;
+        }
+
+        .quero-tocar-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 16px;
+        }
+
+        .inscricao-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .periodo-inscricao {
+            background: rgba(202, 115, 0, 0.1);
+            border-left: 4px solid #ca7300;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 48px;
+        }
+
+        .periodo-inscricao h3 {
+            color: #ca7300;
+            margin: 0 0 12px 0;
+            font-size: 18px;
+        }
+
+        .periodo-inscricao p {
+            margin: 8px 0;
+            color: #d1d5db;
+        }
+
+        .apresentacao {
+            margin-bottom: 48px;
+        }
+
+        .apresentacao h2 {
+            color: #ca7300;
+            margin-bottom: 16px;
+        }
+
+        .apresentacao p {
+            color: #d1d5db;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .formulario-container {
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 48px;
+        }
+
+        .formulario-container h3 {
+            color: #ca7300;
+            margin-bottom: 24px;
+            font-size: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #e5e7eb;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background-color: #111827;
+            border: 1px solid #374151;
+            border-radius: 8px;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ca7300;
+            box-shadow: 0 0 0 3px rgba(202, 115, 0, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group small {
+            display: block;
+            color: #9ca3af;
+            margin-top: 4px;
+            font-size: 12px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #ca7300 0%, #ff9500 100%);
+            color: #ffffff;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(202, 115, 0, 0.3);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .error-message {
+            color: #f87171;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .form-group.error input,
+        .form-group.error textarea,
+        .form-group.error select {
+            border-color: #f87171;
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        .success-message {
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid #4ade80;
+            color: #4ade80;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            display: none;
+        }
+
+        .validacao-info {
+            background: #1f2937;
+            border: 1px solid #374151;
+            padding: 24px;
+            border-radius: 8px;
+            margin-bottom: 48px;
+        }
+
+        .validacao-info h3 {
+            color: #ca7300;
+            margin-bottom: 16px;
+        }
+
+        .validacao-info p {
+            color: #d1d5db;
+            line-height: 1.8;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <div class="logo-placeholder"></div>
+                <div class="nav-links">
+                    <a href="../index.html" class="nav-link">Início</a>
+                    <a href="../index.html#quem-somos" class="nav-link">Quem Somos</a>
+                    <a href="./documentos.html" class="nav-link">Documentos</a>
+                    <a href="./projetos.html" class="nav-link">Projetos</a>
+                    <a href="../index.html#atividades" class="nav-link">Atividades</a>
+                    <a href="../index.html#galeria" class="nav-link">Galeria</a>
+                    <a href="./parceria.html" class="nav-link">Parcerias</a>
+                    <a href="./transparencia.html" class="nav-link">Transparência</a>
+                    <a href="./quero-tocar.html" class="nav-link">Quero Tocar</a>
+                    <a href="../index.html#contato" class="btn-contact">Contato</a>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-menu-close" id="close-menu-btn">
+            <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <a href="../index.html" class="mobile-nav-link">Início</a>
+        <a href="../index.html#quem-somos" class="mobile-nav-link">Quem Somos</a>
+        <a href="./documentos.html" class="mobile-nav-link">Documentos</a>
+        <a href="./projetos.html" class="mobile-nav-link">Projetos</a>
+        <a href="../index.html#atividades" class="mobile-nav-link">Atividades</a>
+        <a href="../index.html#galeria" class="mobile-nav-link">Galeria</a>
+        <a href="./parceria.html" class="mobile-nav-link">Parcerias</a>
+        <a href="./transparencia.html" class="mobile-nav-link">Transparência</a>
+        <a href="./quero-tocar.html" class="mobile-nav-link">Quero Tocar</a>
+        <a href="../index.html#contato" class="btn-contact">Contato</a>
+    </div>
+    <br>
+
+    <section id="quero-tocar" class="secondary">
+        <div class="container">
+            <img src="../Quero tocar/IMG_4983.PNG" alt="Logo Quero Tocar" class="quero-tocar-logo">
+            <img src="../Quero tocar/QUERO TOCAR ROCK SERTÃO 2026 (4) (2).png" alt="Banner Quero Tocar" class="quero-tocar-banner">
+        </div>
+    </section>
+
+    <section class="secondary">
+        <div class="container inscricao-container">
+
+            <div class="apresentacao">
+                <h2>Sobre o Quero Tocar</h2>
+                <p>
+                    O <strong>"Quero Tocar Rock Sertão"</strong> é um projeto que busca fortalecer a cena musical underground e independente do sertão nordestino, oferecendo oportunidades para bandas locais apresentarem suas músicas e se conectarem com o público.
+                </p>
+                <p>
+                    Somos um espaço inclusivo e democrático onde artistas emergentes, semiprofissionais e profissionais podem compartilhar suas criações, participar de workshops e conectar-se com a comunidade musical.
+                </p>
+            </div>
+
+            <div class="periodo-inscricao">
+                <h3>📅 Período de Inscrição</h3>
+                <p><strong>Início:</strong> 08 de fevereiro de 2026</p>
+                <p><strong>Término:</strong> 31 de março de 2026</p>
+                <p style="margin-top: 16px; color: #ca7300;"><strong>Inscrição é totalmente gratuita!</strong></p>
+            </div>
+
+            <div class="validacao-info">
+                <h3>✅ Validação das Inscrições</h3>
+                <p>
+                    Para que as inscrições sejam validadas, <strong>todas as informações deverão estar corretamente preenchidas</strong>. A ausência de dados cadastrais ou restrição de acesso a esses dados acarretará automaticamente na <strong>desclassificação do candidato</strong>.
+                </p>
+                <p style="margin-top: 16px; border-top: 1px solid #374151; padding-top: 16px;">
+                    ✉️ <strong>Um e-mail será enviado com a confirmação da inscrição após a finalização do cadastro.</strong> Verifique sua caixa de entrada e a pasta de spam.
+                </p>
+            </div>
+
+            <div class="formulario-container">
+                <h3>📝 Formulário de Inscrição</h3>
+                
+                <div class="success-message" id="successMessage">
+                    ✅ Inscrição realizada com sucesso! Confira seu e-mail para a confirmação.
+                </div>
+
+                <form id="inscricaoForm" method="POST" action="https://formspree.io/f/xyzabc123">
+                    <!-- DADOS DA BANDA -->
+                    <fieldset style="border: none; padding: 0; margin: 0;">
+                        <legend style="color: #ca7300; font-weight: 600; margin-bottom: 16px;">Dados da Banda</legend>
+
+                        <div class="form-group">
+                            <label for="nomeBanda">Nome da Banda *</label>
+                            <input type="text" id="nomeBanda" name="nomeBanda" placeholder="Ex: Os Rockers do Sertão" required>
+                            <span class="error-message">Nome da banda é obrigatório</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="generoBanda">Gênero Musical *</label>
+                            <select id="generoBanda" name="generoBanda" required>
+                                <option value="">Selecione um gênero</option>
+                                <option value="Rock">Rock</option>
+                                <option value="Rock Alternativo">Rock Alternativo</option>
+                                <option value="Metal">Metal</option>
+                                <option value="Punk">Punk</option>
+                                <option value="Indie">Indie</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                            <span class="error-message">Selecione um gênero</span>
+                        </div>
+                    </fieldset>
+
+                    <hr style="border: none; border-top: 1px solid #374151; margin: 32px 0;">
+
+                    <!-- DADOS DO PROPONENTE -->
+                    <fieldset style="border: none; padding: 0; margin: 0;">
+                        <legend style="color: #ca7300; font-weight: 600; margin-bottom: 16px;">Dados do Proponente</legend>
+
+                        <div class="form-group">
+                            <label for="nomeProponente">Nome Completo *</label>
+                            <input type="text" id="nomeProponente" name="nomeProponente" placeholder="Seu nome completo" required>
+                            <span class="error-message">Nome completo é obrigatório</span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cpfCnpj">CPF/CNPJ *</label>
+                                <input type="text" id="cpfCnpj" name="cpfCnpj" placeholder="000.000.000-00 ou 00.000.000/0001-00" required>
+                                <span class="error-message">CPF/CNPJ inválido</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefoneProp">Telefone/WhatsApp *</label>
+                                <input type="tel" id="telefoneProp" name="telefoneProp" placeholder="(87) 9 9999-9999" required>
+                                <span class="error-message">Telefone é obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emailProp">E-mail *</label>
+                            <input type="email" id="emailProp" name="emailProp" placeholder="seu.email@exemplo.com" required>
+                            <span class="error-message">E-mail inválido</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="enderecoProp">Endereço (Rua, Número, Bairro, Cidade/UF) *</label>
+                            <textarea id="enderecoProp" name="enderecoProp" placeholder="Rua Example, 123, Centro, Glória/SE" required></textarea>
+                            <span class="error-message">Endereço é obrigatório</span>
+                        </div>
+                    </fieldset>
+
+                    <hr style="border: none; border-top: 1px solid #374151; margin: 32px 0;">
+
+                    <!-- MÚSICAS -->
+                    <fieldset style="border: none; padding: 0; margin: 0;">
+                        <legend style="color: #ca7300; font-weight: 600; margin-bottom: 16px;">Suas Músicas</legend>
+
+                        <p style="color: #9ca3af; font-size: 13px; margin-bottom: 16px;">
+                            Compartilhe links para duas músicas. Podem ser do YouTube, Spotify, SoundCloud ou outro plataforma.
+                        </p>
+
+                        <div class="form-group">
+                            <label for="musica1">Link da 1ª Música *</label>
+                            <input type="url" id="musica1" name="musica1" placeholder="https://www.youtube.com/watch?v=..." required>
+                            <small>Ex: YouTube, Spotify, SoundCloud, etc</small>
+                            <span class="error-message">Link da 1ª música é obrigatório e deve ser uma URL válida</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="musica2">Link da 2ª Música *</label>
+                            <input type="url" id="musica2" name="musica2" placeholder="https://www.youtube.com/watch?v=..." required>
+                            <small>Ex: YouTube, Spotify, SoundCloud, etc</small>
+                            <span class="error-message">Link da 2ª música é obrigatório e deve ser uma URL válida</span>
+                        </div>
+                    </fieldset>
+
+                    <hr style="border: none; border-top: 1px solid #374151; margin: 32px 0;">
+
+                    <!-- LINKS ADICIONAIS -->
+                    <fieldset style="border: none; padding: 0; margin: 0;">
+                        <legend style="color: #ca7300; font-weight: 600; margin-bottom: 16px;">Links Adicionais (Opcional)</legend>
+
+                        <div class="form-group">
+                            <label for="redesSociais">Redes Sociais / Website</label>
+                            <textarea id="redesSociais" name="redesSociais" placeholder="Instagram: @suabanda&#10;Facebook: facebook.com/suabanda&#10;Website: www.suabanda.com"></textarea>
+                            <small>Cole aqui seus links de redes sociais e website</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="videoPortfolio">Link do Portfólio / Video (Opcional)</label>
+                            <input type="url" id="videoPortfolio" name="videoPortfolio" placeholder="Link para seu portfólio ou vídeo de apresentação">
+                            <small>Um link para seu portfólio ou vídeo demonstrativo (opcional)</small>
+                        </div>
+                    </fieldset>
+
+                    <hr style="border: none; border-top: 1px solid #374151; margin: 32px 0;">
+
+                    <!-- TERMOS -->
+                    <div class="form-group" style="display: flex; gap: 12px; align-items: flex-start;">
+                        <input type="checkbox" id="termos" name="termos" required style="width: auto; margin-top: 4px;">
+                        <label for="termos" style="margin: 0;">
+                            Concordo com os termos e condições e autorizo o processamento dos meus dados para fins de inscrição. *
+                        </label>
+                    </div>
+                    <span class="error-message" id="termosError" style="display: block;">Você deve concordar com os termos</span>
+
+                    <button type="submit" class="btn-submit">Enviar Inscrição</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo-section">
+                    <div class="logo-placeholder"></div>
+                    <div class="logo-text">
+                        <p>ROCK SERTÃO</p>
+                        <p>Associação Cultural Sertão na Arte</p>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <p>CNPJ: 13.304.024/0001-86</p>
+                    <p>Rua Manoel Vieira de Souza, nº 561 – Brasília</p>
+                    <p>CEP 49.680-000 – Nossa Senhora da Glória/SE</p>
+                    <p>E-mail: sertaonaarte@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Associação Cultural Sertão na Arte. Todos os direitos reservados.</p>
+                <p style="font-size: 13px; color: #9ca3af; margin: 6px 0 0 0;">Site desenvolvido por Júlio Monteiro</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js" defer></script>
+    <script>
+        // Validação do Formulário de Inscrição
+        const form = document.getElementById('inscricaoForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                const formGroups = form.querySelectorAll('.form-group');
+                
+                // Limpar erros anteriores
+                formGroups.forEach(group => group.classList.remove('error'));
+                
+                // Validar campos
+                const nomeBanda = document.getElementById('nomeBanda');
+                if (!nomeBanda.value.trim()) {
+                    document.getElementById('nomeBanda').closest('.form-group').classList.add('error');
+                    isValid = false;
+                }
+                
+                const nomeProponente = document.getElementById('nomeProponente');
+                if (!nomeProponente.value.trim()) {
+                    document.getElementById('nomeProponente').closest('.form-group').classList.add('error');
+                    isValid = false;
+                }
+                
+                const emailProp = document.getElementById('emailProp');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(emailProp.value)) {
+                    document.getElementById('emailProp').closest('.form-group').classList.add('error');
+                    isValid = false;
+                }
+                
+                const cpfCnpj = document.getElementById('cpfCnpj');
+                const cpfCnpjRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$|^\d{2}\.\d{3}\.\d{3}\/0001-\d{2}$/;
+                if (!cpfCnpjRegex.test(cpfCnpj.value)) {
+                    document.getElementById('cpfCnpj').closest('.form-group').classList.add('error');
+                    isValid = false;
+                }
+                
+                const telefone = document.getElementById('telefoneProp');
+                if (!telefone.value.trim()) {
+                    document.getElementById('telefoneProp').closest('.form-group').classList.add('error');
+                    isValid = false;
+                }
+                
+                const endereco = document.getElementById('enderecoProp');
+                if (!endereco.value.trim()) {
+                    document.getElementById('enderecoProp').closest('.form-group').classList.add('error');
+                    isValid = false;
+                }
+                
+                const musica1 = document.getElementById('musica1');
+                const musica2 = document.getElementById('musica2');
+                const urlRegex = /^https?:\/\/.+/;
+                
+                if (!urlRegex.test(musica1.value)) {
+                    document.getElementById('musica1').closest('.form-group').classList.add('error');
+                    isValid = false;
+                }
+                
+                if (!urlRegex.test(musica2.value)) {
+                    document.getElementById('musica2').closest('.form-group').classList.add('error');
+                    isValid = false;
+                }
+                
+                const genero = document.getElementById('generoBanda');
+                if (!genero.value) {
+                    document.getElementById('generoBanda').closest('.form-group').classList.add('error');
+                    isValid = false;
+                }
+                
+                const termos = document.getElementById('termos');
+                if (!termos.checked) {
+                    document.getElementById('termosError').style.display = 'block';
+                    isValid = false;
+                } else {
+                    document.getElementById('termosError').style.display = 'none';
+                }
+                
+                if (isValid) {
+                    // Enviar formulário
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            document.getElementById('successMessage').style.display = 'block';
+                            form.reset();
+                            window.scrollTo({top: 0, behavior: 'smooth'});
+                            
+                            // Ocultar mensagem após 5 segundos
+                            setTimeout(() => {
+                                document.getElementById('successMessage').style.display = 'none';
+                            }, 5000);
+                        } else {
+                            alert('Erro ao enviar inscrição. Tente novamente.');
+                        }
+                    }).catch(error => {
+                        console.error('Erro:', error);
+                        alert('Erro ao enviar inscrição. Tente novamente.');
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
