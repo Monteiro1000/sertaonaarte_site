@@ -340,7 +340,7 @@ function renderPhoto() {
     const container = document.getElementById('imageContainer');
     
     if (currentParty && currentParty.photo) {
-        container.innerHTML = `<img src="${currentParty.photo}" alt="Foto da Parceria">`;
+        container.innerHTML = `<img src="${currentParty.photo}" alt="Foto da Parceria" onclick="window.open(this.src, '_blank')" title="Abrir imagem em nova aba">`;
     } else {
         container.innerHTML = `
             <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
