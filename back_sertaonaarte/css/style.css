@@ -215,33 +215,12 @@
 
     /* ===================== BANNER ===================== */
 
-    .banner-placeholder {
+    .banner-image {
       width: 100%;
-      height: 500px;
+      height: auto;
       border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+      display: block;
       margin-bottom: 48px;
-      
-    }
-
-    .banner-placeholder > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 16px;
-    }
-
-    .banner-placeholder::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent, transparent 50%, #1a1a2e);
-      border-radius: 16px;
-      pointer-events: none;
-      z-index: 5;
     }
 
     .banner-content {
@@ -962,10 +941,6 @@
 
       .banner-content h1 {
         font-size: 48px;
-      }
-
-      .banner-placeholder {
-        height: 300px;
       }
 
       .section-title {
