@@ -7,137 +7,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../marcas/lOGO SERTAO NA ARTE PNG.png" type="image/png">
     <style>
-        .quero-tocar-page {
-            background: #0a0a0a;
-        }
-
-        .rock-hero-section {
-            position: relative;
-            padding: 120px 0 80px;
-            background: radial-gradient(circle at 15% 20%, rgba(202, 115, 0, 0.25), transparent 40%),
-                        radial-gradient(circle at 80% 10%, rgba(12, 12, 12, 0.9), transparent 50%),
-                        linear-gradient(135deg, #0b0b12 0%, #1b0f06 40%, #070707 100%);
-            overflow: hidden;
-            isolation: isolate;
-        }
-
-        .rock-hero-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url('../marcas/textura_sertao_na_arte.png');
-            background-size: 520px;
-            opacity: 0.18;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .rock-hero-section::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(7, 7, 7, 0.95) 90%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .rock-hero {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            align-items: center;
-        }
-
-        .rock-hero-content {
-            font-family: 'Sora', 'Inter', sans-serif;
-        }
-
-        .rock-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #f1b15c;
-            border: 1px solid rgba(241, 177, 92, 0.4);
-            padding: 6px 12px;
-            border-radius: 999px;
-            margin-bottom: 16px;
-        }
-
-        .rock-hero-content h1 {
-            font-family: 'Bebas Neue', cursive;
-            font-size: clamp(48px, 8vw, 92px);
-            margin-bottom: 16px;
-            letter-spacing: 1px;
-            text-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
-        }
-
-        .rock-hero-content p {
-            color: #d6d6d6;
-            line-height: 1.8;
-            margin-bottom: 24px;
-        }
-
-        .rock-hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-
-        .btn-hero {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 28px;
-            border-radius: 999px;
-            font-family: 'Sora', 'Inter', sans-serif;
-            font-weight: 600;
-            text-decoration: none;
-            color: #0b0b0b;
-            background: linear-gradient(135deg, #ff9a1a 0%, #ffd08a 100%);
-            box-shadow: 0 10px 26px rgba(202, 115, 0, 0.35);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .btn-hero:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 16px 32px rgba(202, 115, 0, 0.4);
-        }
-
-        .btn-hero.outline {
-            background: transparent;
-            color: #f1b15c;
-            border: 1px solid rgba(241, 177, 92, 0.6);
-            box-shadow: none;
-        }
-
-        .btn-hero.outline:hover {
-            background: rgba(241, 177, 92, 0.1);
-            box-shadow: 0 8px 20px rgba(241, 177, 92, 0.2);
-        }
-
-        .rock-hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            font-size: 14px;
-            color: #f1b15c;
-        }
-
-        .rock-hero-media {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
+        .quero-tocar-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 48px 0;
+            margin-bottom: 48px;
         }
 
         .quero-tocar-banner {
@@ -146,16 +23,12 @@
             border-radius: 16px;
             margin-bottom: 32px;
             display: block;
-            border: 2px solid rgba(202, 115, 0, 0.35);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-            animation: bannerFloat 8s ease-in-out infinite;
         }
 
         .quero-tocar-logo {
             width: 120px;
             height: auto;
             margin-bottom: 16px;
-            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6));
         }
 
         .inscricao-container {
@@ -164,18 +37,11 @@
         }
 
         .periodo-inscricao {
-            background: rgba(202, 115, 0, 0.08);
-            border: 1px solid rgba(202, 115, 0, 0.4);
-            padding: 24px;
-            border-radius: 12px;
+            background: rgba(202, 115, 0, 0.1);
+            border-left: 4px solid #ca7300;
+            padding: 20px;
+            border-radius: 8px;
             margin-bottom: 48px;
-            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .periodo-inscricao:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
         }
 
         .periodo-inscricao h3 {
@@ -191,7 +57,6 @@
 
         .apresentacao {
             margin-bottom: 48px;
-            font-family: 'Sora', 'Inter', sans-serif;
         }
 
         .apresentacao h2 {
@@ -206,24 +71,11 @@
         }
 
         .formulario-container {
-            background: rgba(17, 24, 39, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            padding: 36px;
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 12px;
+            padding: 32px;
             margin-bottom: 48px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
-            position: relative;
-            overflow: hidden;
-            scroll-margin-top: 110px;
-            font-family: 'Sora', 'Inter', sans-serif;
-        }
-
-        .formulario-container::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 10% 10%, rgba(255, 154, 26, 0.12), transparent 45%);
-            pointer-events: none;
         }
 
         .formulario-container h3 {
@@ -253,7 +105,7 @@
             border: 1px solid #374151;
             border-radius: 8px;
             color: #e5e7eb;
-            font-family: 'Sora', 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 14px;
             transition: all 0.3s;
         }
@@ -352,21 +204,6 @@
             margin-bottom: 48px;
         }
 
-        .validacao-info {
-            background: rgba(17, 24, 39, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 28px;
-            border-radius: 12px;
-            margin-bottom: 48px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .validacao-info:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 26px 48px rgba(0, 0, 0, 0.4);
-        }
-
         .validacao-info h3 {
             color: #ca7300;
             margin-bottom: 16px;
@@ -377,65 +214,9 @@
             line-height: 1.8;
             margin-bottom: 8px;
         }
-
-        .rock-form-section {
-            position: relative;
-            background: linear-gradient(180deg, rgba(7, 7, 7, 0.95) 0%, rgba(9, 9, 9, 1) 100%);
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .reveal.delay-1 {
-            transition-delay: 0.1s;
-        }
-
-        .reveal.delay-2 {
-            transition-delay: 0.2s;
-        }
-
-        @keyframes bannerFloat {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .rock-hero-section {
-                padding-top: 100px;
-            }
-
-            .rock-hero-actions {
-                justify-content: center;
-            }
-
-            .rock-hero-meta {
-                justify-content: center;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .reveal,
-            .quero-tocar-banner,
-            .btn-hero {
-                animation: none;
-                transition: none;
-            }
-        }
     </style>
 </head>
-<body class="quero-tocar-page">
+<body>
 
     <nav>
         <div class="nav-container">
@@ -482,34 +263,17 @@
     </div>
     <br>
 
-    <section id="quero-tocar" class="secondary rock-hero-section">
-        <div class="container rock-hero">
-            <div class="rock-hero-content reveal">
-                <span class="rock-eyebrow">Inscricoes abertas 2026</span>
-                <h1>Quero Tocar Rock Sertao</h1>
-                <p>
-                    Um palco autoral para a cena independente do sertao nordestino. Mostre seu som, conecte sua banda ao publico e fortaleça a cultura rock local.
-                </p>
-                <div class="rock-hero-actions">
-                    <a href="#inscricao-form" class="btn-hero">Fazer inscricao</a>
-                    <a href="../documentos/EDITAL CAMPANHA QUERO TOCAR ROCK SERTAO 2026.pdf" class="btn-hero outline" target="_blank">Ver edital</a>
-                </div>
-                <div class="rock-hero-meta">
-                    <span>12 a 13 de fevereiro de 2026</span>
-                    <span>Inscricao gratuita</span>
-                </div>
-            </div>
-            <div class="rock-hero-media reveal delay-1">
-                <img src="../Quero tocar/IMG_4983.PNG" alt="Logo Quero Tocar" class="quero-tocar-logo">
-                <img src="../Quero tocar/QUERO TOCAR ROCK SERTÃO 2026 (4) (2).png" alt="Banner Quero Tocar" class="quero-tocar-banner">
-            </div>
+    <section id="quero-tocar" class="secondary">
+        <div class="container">
+            <img src="../Quero tocar/IMG_4983.PNG" alt="Logo Quero Tocar" class="quero-tocar-logo">
+            <img src="../Quero tocar/QUERO TOCAR ROCK SERTÃO 2026 (4) (2).png" alt="Banner Quero Tocar" class="quero-tocar-banner">
         </div>
     </section>
 
-    <section class="secondary rock-form-section">
+    <section class="secondary">
         <div class="container inscricao-container">
 
-            <div class="apresentacao reveal">
+            <div class="apresentacao">
                 <h2>Sobre o Quero Tocar</h2>
                 <p>
                     O <strong>"Quero Tocar Rock Sertão"</strong> é um projeto que busca fortalecer a cena musical underground e independente do sertão nordestino, oferecendo oportunidades para bandas locais apresentarem suas músicas e se conectarem com o público.
@@ -519,15 +283,15 @@
                 </p>
             </div>
 
-            <div class="periodo-inscricao reveal delay-1">
-                <h3> Período de Inscrição</h3>
+            <div class="periodo-inscricao">
+                <h3>📅 Período de Inscrição</h3>
                 <p><strong>Início:</strong> 12 de fevereiro de 2026</p>
                 <p><strong>Término:</strong> 13 de fevereiro de 2026</p>
                 <p style="margin-top: 16px; color: #ca7300;"><strong>Inscrição é totalmente gratuita!</strong></p>
             </div>
 
-            <div class="validacao-info reveal delay-1">
-                <h3> Validação das Inscrições</h3>
+            <div class="validacao-info">
+                <h3>✅ Validação das Inscrições</h3>
                 <p>
                     Para que as inscrições sejam validadas, <strong>todas as informações deverão estar corretamente preenchidas</strong>. A ausência de dados cadastrais ou restrição de acesso a esses dados acarretará automaticamente na <strong>desclassificação do candidato</strong>.
                 </p>
@@ -536,11 +300,11 @@
                 </p>
             </div>
 
-            <div class="formulario-container reveal" id="inscricao-form">
+            <div class="formulario-container">
                 <h3>📝 Formulário de Inscrição</h3>
                 
                 <div class="success-message" id="successMessage">
-                     Inscrição realizada com sucesso! Confira seu e-mail para a confirmação.
+                    ✅ Inscrição realizada com sucesso! Confira seu e-mail para a confirmação.
                 </div>
 
                 <form id="inscricaoForm" method="POST" action="https://formspree.io/f/mqedaaon">
