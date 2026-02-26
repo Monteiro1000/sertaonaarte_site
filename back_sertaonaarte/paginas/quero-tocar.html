@@ -689,8 +689,7 @@
                             alert('Erro ao enviar inscrição. Tente novamente.');
                         }
                     }).catch(error => {
-                        console.error('Erro:', error);
-                        alert('Erro ao enviar inscrição. Tente novamente.');
+                        alert('Erro: ' + error.message);
                     });
                 } else {
                     // Rolar até o primeiro erro
