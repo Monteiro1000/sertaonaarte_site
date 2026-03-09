@@ -14,7 +14,7 @@ $smtpHost = 'smtp.hostinger.com';
 $smtpPort = 465;
 $smtpSecure = 'ssl';
 $smtpUser = 'sertaonaarte@sertaonaarte.com.br';
-$smtpPass = 'Rock ecultura123#';
+$smtpPass = 'Rockecultura123#';
 
 $toEmail = 'sertaonaarte@sertaonaarte.com.br';
 $fromEmail = $smtpUser;
