@@ -2451,18 +2451,23 @@
       .fotos {
         gap: 12px;
         padding: 12px;
+        align-items: center;
       }
 
       .fotos img {
-        width: min(84vw, 280px);
-        height: 200px;
-        object-fit: contain;
+        width: min(86vw, 300px);
+        height: auto;
+        max-height: 52vh;
+        aspect-ratio: auto;
+        object-fit: contain !important;
         background: rgba(0, 0, 0, 0.35);
       }
 
       .fotos-hero img {
-        width: min(88vw, 310px) !important;
-        height: 220px !important;
+        width: min(90vw, 320px) !important;
+        height: auto !important;
+        max-height: 56vh;
+        aspect-ratio: auto;
         object-fit: contain !important;
         background: rgba(0, 0, 0, 0.35);
       }
@@ -2475,12 +2480,12 @@
 
     @media (max-width: 480px) {
       .fotos img {
-        width: min(88vw, 250px);
-        height: 180px;
+        width: min(90vw, 260px);
+        max-height: 46vh;
       }
 
       .fotos-hero img {
-        width: min(90vw, 280px) !important;
-        height: 190px !important;
+        width: min(92vw, 280px) !important;
+        max-height: 48vh;
       }
     }
