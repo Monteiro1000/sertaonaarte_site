@@ -2441,3 +2441,46 @@
         padding: 24px;
       }
     }
+
+    @media (max-width: 768px) {
+      .galeria-hero-container {
+        gap: 10px;
+        padding: 0 10px 28px;
+      }
+
+      .fotos {
+        gap: 12px;
+        padding: 12px;
+      }
+
+      .fotos img {
+        width: min(84vw, 280px);
+        height: 200px;
+        object-fit: contain;
+        background: rgba(0, 0, 0, 0.35);
+      }
+
+      .fotos-hero img {
+        width: min(88vw, 310px) !important;
+        height: 220px !important;
+        object-fit: contain !important;
+        background: rgba(0, 0, 0, 0.35);
+      }
+
+      .fotos img:hover,
+      .fotos-hero img:hover {
+        transform: scale(1.02) !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .fotos img {
+        width: min(88vw, 250px);
+        height: 180px;
+      }
+
+      .fotos-hero img {
+        width: min(90vw, 280px) !important;
+        height: 190px !important;
+      }
+    }
