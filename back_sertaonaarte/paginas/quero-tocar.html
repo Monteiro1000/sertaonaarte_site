@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quero Tocar - Inscrição</title>
+    <title>Quero Tocar - Inscrições Encerradas</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,208 +11,93 @@
     <link rel="stylesheet" href="../css/style.css?v=8">
     <link rel="icon" href="../marcas/lOGO SERTAO NA ARTE PNG.png" type="image/png">
     <style>
-        .quero-tocar-header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            padding: 48px 0;
-            margin-bottom: 48px;
+        .encerramento-wrap {
+            padding: 56px 0;
         }
 
-        .quero-tocar-banner {
-            width: 100%;
-            height: auto;
-            border-radius: 16px;
-            margin-bottom: 32px;
-            display: block;
+        .encerramento-card {
+            max-width: 920px;
+            margin: 0 auto;
+            background: linear-gradient(160deg, #1f2937 0%, #111827 100%);
+            border: 1px solid #374151;
+            border-left: 6px solid #ca7300;
+            border-radius: 14px;
+            padding: 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
         }
 
-        .quero-tocar-logo {
+        .encerramento-topo {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .encerramento-logo {
             width: 120px;
             height: auto;
-            margin-bottom: 16px;
         }
 
-        .inscricao-container {
-            max-width: 900px;
-            margin: 0 auto;
+        .encerramento-card h1 {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 1px;
+            font-size: 42px;
+            margin: 0;
+            color: #ffffff;
         }
 
-        .periodo-inscricao {
-            background: rgba(202, 115, 0, 0.1);
-            border-left: 4px solid #ca7300;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 48px;
+        .encerramento-badge {
+            display: inline-block;
+            margin: 12px 0 20px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ca7300 0%, #ff9500 100%);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .periodo-inscricao h3 {
-            color: #ca7300;
-            margin: 0 0 12px 0;
-            font-size: 18px;
-        }
-
-        .periodo-inscricao p {
-            margin: 8px 0;
-            color: #d1d5db;
-        }
-
-        .apresentacao {
-            margin-bottom: 48px;
-        }
-
-        .apresentacao h2 {
-            color: #ca7300;
-            margin-bottom: 16px;
-        }
-
-        .apresentacao p {
+        .encerramento-card p {
             color: #d1d5db;
             line-height: 1.8;
-            margin-bottom: 16px;
+            margin: 0 0 14px;
         }
 
-        .formulario-container {
-            background: #1f2937;
-            border: 1px solid #374151;
-            border-radius: 12px;
-            padding: 32px;
-            margin-bottom: 48px;
+        .encerramento-links {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .formulario-container h3 {
-            color: #ca7300;
-            margin-bottom: 24px;
-            font-size: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #e5e7eb;
-            font-weight: 500;
-            font-size: 14px;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px 16px;
-            background-color: #111827;
-            border: 1px solid #374151;
+        .encerramento-links a {
+            text-decoration: none;
+            padding: 10px 14px;
             border-radius: 8px;
-            color: #e5e7eb;
-            font-family: 'Inter', sans-serif;
             font-size: 14px;
-            transition: all 0.3s;
+            font-weight: 600;
+            color: #f3f4f6;
+            background: #2a2f37;
+            border: 1px solid #3f4652;
+            transition: all 0.25s ease;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
+        .encerramento-links a:hover {
+            transform: translateY(-2px);
             border-color: #ca7300;
-            box-shadow: 0 0 0 3px rgba(202, 115, 0, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 80px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
         }
 
         @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
+            .encerramento-card {
+                padding: 24px;
             }
-        }
 
-        .form-group.full {
-            grid-column: 1 / -1;
-        }
-
-        .form-group small {
-            display: block;
-            color: #9ca3af;
-            margin-top: 4px;
-            font-size: 12px;
-        }
-
-        .btn-submit {
-            background: linear-gradient(135deg, #ca7300 0%, #ff9500 100%);
-            color: #ffffff;
-            padding: 12px 32px;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(202, 115, 0, 0.3);
-        }
-
-        .btn-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        .error-message {
-            color: #f87171;
-            font-size: 12px;
-            margin-top: 4px;
-            display: none;
-        }
-
-        .form-group.error input,
-        .form-group.error textarea,
-        .form-group.error select {
-            border-color: #f87171;
-        }
-
-        .form-group.error .error-message {
-            display: block;
-        }
-
-        .success-message {
-            background: rgba(74, 222, 128, 0.1);
-            border: 1px solid #4ade80;
-            color: #4ade80;
-            padding: 16px;
-            border-radius: 8px;
-            margin-bottom: 24px;
-            display: none;
-        }
-
-        .validacao-info {
-            background: #1f2937;
-            border: 1px solid #374151;
-            padding: 24px;
-            border-radius: 8px;
-            margin-bottom: 48px;
-        }
-
-        .validacao-info h3 {
-            color: #ca7300;
-            margin-bottom: 16px;
-        }
-
-        .validacao-info p {
-            color: #d1d5db;
-            line-height: 1.8;
-            margin-bottom: 8px;
+            .encerramento-card h1 {
+                font-size: 32px;
+            }
         }
     </style>
 </head>
@@ -231,7 +116,6 @@
                     <a href="../index.html#galeria" class="nav-link">Galeria</a>
                     <a href="./parceria.html" class="nav-link">Parcerias</a>
                     <a href="./transparencia.html" class="nav-link">Transparência</a>
-                    <a href="./quero-tocar.html" class="nav-link">Quero Tocar</a>
                     <a href="../index.html#contato" class="btn-contact">Contato</a>
                 </div>
             </div>
@@ -243,7 +127,6 @@
         </div>
     </nav>
 
-    <!-- MENU MOBILE -->
     <div class="mobile-menu" id="mobile-menu">
         <button class="mobile-menu-close" id="close-menu-btn">
             <svg fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -258,289 +141,31 @@
         <a href="../index.html#galeria" class="mobile-nav-link">Galeria</a>
         <a href="./parceria.html" class="mobile-nav-link">Parcerias</a>
         <a href="./transparencia.html" class="mobile-nav-link">Transparência</a>
-        <a href="./quero-tocar.html" class="mobile-nav-link">Quero Tocar</a>
         <a href="../index.html#contato" class="btn-contact">Contato</a>
     </div>
-    <br>
 
-    <section id="quero-tocar" class="secondary">
+    <section class="secondary encerramento-wrap">
         <div class="container">
-            <img src="../Quero tocar/IMG_4983.PNG" alt="Logo Quero Tocar" class="quero-tocar-logo">
-            <img src="../Quero tocar/QUERO TOCAR ROCK SERTÃO 2026 (4) (2).png" alt="Banner Quero Tocar" class="quero-tocar-banner">
-        </div>
-    </section>
-
-    <section class="secondary">
-        <div class="container inscricao-container">
-
-            <div class="apresentacao">
-                <h2>Sobre o Quero Tocar</h2>
-                <p>
-                    O <strong>"Quero Tocar Rock Sertão"</strong> é um projeto que busca fortalecer a cena musical underground e independente do sertão nordestino, oferecendo oportunidades para bandas locais apresentarem suas músicas e se conectarem com o público.
-                </p>
-                <p>
-                    Somos um espaço inclusivo e democrático onde artistas emergentes, semiprofissionais e profissionais podem compartilhar suas criações, participar de workshops e conectar-se com a comunidade musical.
-                </p>
-            </div>
-
-            <div class="periodo-inscricao">
-                <h3>📅 Período de Inscrição</h3>
-                <p><strong>Início:</strong> 12 de fevereiro de 2026</p>
-                <p><strong>Término:</strong> 13 de março de 2026</p>
-                <p style="margin-top: 16px; color: #ca7300;"><strong>Inscrição é totalmente gratuita!</strong></p>
-            </div>
-
-            <div class="validacao-info">
-                <h3>✅ Validação das Inscrições</h3>
-                <p>
-                    Para que as inscrições sejam validadas, <strong>todas as informações deverão estar corretamente preenchidas</strong>. A ausência de dados cadastrais ou restrição de acesso a esses dados acarretará automaticamente na <strong>desclassificação do candidato</strong>.
-                </p>
-                <p style="margin-top: 16px; border-top: 1px solid #374151; padding-top: 16px;">
-                    ✉️ <strong>Um e-mail será enviado com a confirmação da inscrição após a finalização do cadastro.</strong> Verifique sua caixa de entrada e a pasta de spam.
-                </p>
-            </div>
-
-            <div class="formulario-container">
-                <h3>📝 Formulário de Inscrição</h3>
-                
-                <div class="success-message" id="successMessage">
-                    ✅ Inscrição realizada com sucesso! Confira seu e-mail para a confirmação.
+            <article class="encerramento-card">
+                <div class="encerramento-topo">
+                    <img src="../Quero tocar/IMG_4983.PNG" alt="Quero Tocar" class="encerramento-logo">
+                    <div>
+                        <h1>Quero Tocar 2026</h1>
+                        <span class="encerramento-badge">Inscrições encerradas</span>
+                    </div>
                 </div>
 
-                <form id="inscricaoForm" method="POST" action="../codigo/submit-quero-tocar.php">
-                    <!-- DADOS DA BANDA -->
-                    <fieldset style="border: none; padding: 0; margin: 0;">
-                        <legend style="color: #ca7300; font-weight: 600; margin-bottom: 16px; font-size: 18px;">1. Identificação do Proponente</legend>
+                <p><strong>As inscrições foram encerradas em 13 de março de 2026.</strong></p>
+                <p>Agradecemos a todas as bandas e artistas que enviaram suas propostas para esta edição.</p>
+                <p>Para acompanhar as próximas oportunidades, siga os canais oficiais da Associação Cultural Sertão na Arte e fique atento(a) aos nossos comunicados.</p>
 
-                        <div class="form-group">
-                            <label for="nomeResponsavel">Nome do Responsável pelo Projeto *</label>
-                            <input type="text" id="nomeResponsavel" name="nomeResponsavel" placeholder="Nome completo do responsável" required>
-                            <span class="error-message">Nome do responsável é obrigatório</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="nomeArtistico">Nome Artístico da Banda/Projeto/Solo *</label>
-                            <input type="text" id="nomeArtistico" name="nomeArtistico" placeholder="Nome artístico" required>
-                            <span class="error-message">Nome artístico é obrigatório</span>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="cpfCnpj">CPF/CNPJ *</label>
-                                <input type="text" id="cpfCnpj" name="cpfCnpj" placeholder="000.000.000-00 ou 00.000.000/0001-00" required>
-                                <span class="error-message">CPF/CNPJ é obrigatório</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="cidadeUF">Cidade/UF *</label>
-                                <input type="text" id="cidadeUF" name="cidadeUF" placeholder="Ex: Glória/SE" required>
-                                <span class="error-message">Cidade/UF é obrigatório</span>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="enderecoCompleto">Endereço Completo *</label>
-                            <textarea id="enderecoCompleto" name="enderecoCompleto" placeholder="Rua, Número, Bairro, Complemento, CEP" required></textarea>
-                            <span class="error-message">Endereço completo é obrigatório</span>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="telefoneContato">Telefone para Contato *</label>
-                                <input type="tel" id="telefoneContato" name="telefoneContato" placeholder="(87) 9 9999-9999" required>
-                                <span class="error-message">Telefone é obrigatório</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="emailContato">E-mail para Contato *</label>
-                                <input type="email" id="emailContato" name="emailContato" placeholder="seu.email@exemplo.com" required>
-                                <span class="error-message">E-mail é obrigatório</span>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <hr style="border: none; border-top: 1px solid #374151; margin: 32px 0;">
-
-                    <!-- 2. DADOS DA PROPOSTA MUSICAL -->
-                    <fieldset style="border: none; padding: 0; margin: 0;">
-                        <legend style="color: #ca7300; font-weight: 600; margin-bottom: 16px; font-size: 18px;">2. Dados da Proposta Musical</legend>
-
-                        <div class="form-group">
-                            <label for="nomeApresentacao">Nome da Apresentação/Projeto *</label>
-                            <input type="text" id="nomeApresentacao" name="nomeApresentacao" placeholder="Nome da apresentação ou projeto" required>
-                            <span class="error-message">Nome da apresentação é obrigatório</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="cidadeOrigem">Cidade de Origem da Banda/Artista *</label>
-                            <input type="text" id="cidadeOrigem" name="cidadeOrigem" placeholder="Cidade de origem" required>
-                            <span class="error-message">Cidade de origem é obrigatória</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="formatoApresentacao">Formato *</label>
-                            <select id="formatoApresentacao" name="formatoApresentacao" required>
-                                <option value="">Selecione o formato</option>
-                                <option value="Banda">Banda</option>
-                                <option value="Artista Solo">Artista Solo</option>
-                                <option value="Projeto Musical">Projeto Musical</option>
-                                <option value="Tributo">Tributo</option>
-                                <option value="Instrumental">Instrumental</option>
-                                <option value="Outro">Outro</option>
-                            </select>
-                            <span class="error-message">Formato é obrigatório</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="generosPredom">Gênero(s) Musical(is) Predominante(s) *</label>
-                            <input type="text" id="generosPredom" name="generosPredom" placeholder="Ex: Rock, Metal, Punk, Indie, etc." required>
-                            <small>Informe um ou mais gêneros musicais</small>
-                            <span class="error-message">Gênero musical é obrigatório</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="releaseArtistico">Breve Release Artístico *</label>
-                            <textarea id="releaseArtistico" name="releaseArtistico" placeholder="Apresentação do grupo/projeto, história, influências musicais..." required style="min-height: 120px;"></textarea>
-                            <small>Conte sobre o histórico e características do seu projeto</small>
-                            <span class="error-message">Release artístico é obrigatório</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="conceitoApresentacao">Conceito da Apresentação Proposta *</label>
-                            <textarea id="conceitoApresentacao" name="conceitoApresentacao" placeholder="Descreva o conceito, temática e características da apresentação..." required style="min-height: 100px;"></textarea>
-                            <span class="error-message">Conceito da apresentação é obrigatório</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="repertorioPrevisto">Repertório Previsto *</label>
-                            <select id="repertorioPrevisto" name="repertorioPrevisto" required>
-                                <option value="">Selecione o tipo de repertório</option>
-                                <option value="Autorais">Autorais</option>
-                                <option value="Covers">Covers</option>
-                                <option value="Misto">Misto (Autorais + Covers)</option>
-                                <option value="Tributo">Tributo</option>
-                                <option value="Outro">Outro</option>
-                            </select>
-                            <span class="error-message">Repertório previsto é obrigatório</span>
-                        </div>
-                    </fieldset>
-
-                    <hr style="border: none; border-top: 1px solid #374151; margin: 32px 0;">
-
-                    <!-- 3. TRAJETÓRIA E EXPERIÊNCIA -->
-                    <fieldset style="border: none; padding: 0; margin: 0;">
-                        <legend style="color: #ca7300; font-weight: 600; margin-bottom: 16px; font-size: 18px;">3. Trajetória e Experiência</legend>
-
-                        <div class="form-group">
-                            <label for="apresentacoesRealizadas">Principais Apresentações Realizadas *</label>
-                            <textarea id="apresentacoesRealizadas" name="apresentacoesRealizadas" placeholder="Liste as principais apresentações, locais e datas (se possível)..." required style="min-height: 120px;"></textarea>
-                            <small>Descreva suas principais apresentações e experiências no palco</small>
-                            <span class="error-message">Principais apresentações é obrigatório</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="participacaoEventos">Participação em Festivais, Editais ou Eventos Culturais *</label>
-                            <textarea id="participacaoEventos" name="participacaoEventos" placeholder="Liste festivais, editais aprovados, eventos culturais..." required style="min-height: 100px;"></textarea>
-                            <small>Informe suas participações em eventos e festivais</small>
-                            <span class="error-message">Participação em eventos é obrigatório</span>
-                        </div>
-                    </fieldset>
-
-                    <hr style="border: none; border-top: 1px solid #374151; margin: 32px 0;">
-
-                    <!-- 4. MATERIAL ARTÍSTICO OBRIGATÓRIO -->
-                    <fieldset style="border: none; padding: 0; margin: 0;">
-                        <legend style="color: #ca7300; font-weight: 600; margin-bottom: 16px; font-size: 18px;">4. Material Artístico Obrigatório</legend>
-
-                        <p style="color: #9ca3af; font-size: 13px; margin-bottom: 16px;">
-                            Todos os links devem ser públicos e acessíveis. Certifique-se de que os materiais estejam disponíveis online.
-                        </p>
-
-                        <div class="form-group">
-                            <label for="videoAoVivo">Links de Vídeos de Apresentações ao Vivo *</label>
-                            <textarea id="videoAoVivo" name="videoAoVivo" placeholder="YouTube: https://youtube.com/watch?v=...&#10;Vimeo: https://vimeo.com/..." required></textarea>
-                            <small>YouTube, Vimeo ou similar - insira um ou mais links</small>
-                            <span class="error-message">Link de vídeo ao vivo é obrigatório</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="linksAudio">Links de Áudio *</label>
-                            <textarea id="linksAudio" name="linksAudio" placeholder="Spotify: https://open.spotify.com/...&#10;SoundCloud: https://soundcloud.com/..." required></textarea>
-                            <small>Spotify, SoundCloud ou outros - insira um ou mais links</small>
-                            <span class="error-message">Link de áudio é obrigatório</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="redesSociais">Redes Sociais Oficiais *</label>
-                            <textarea id="redesSociais" name="redesSociais" placeholder="Instagram: @suabanda&#10;Facebook: facebook.com/suabanda&#10;TikTok: @suabanda" required></textarea>
-                            <small>Instagram, Facebook, TikTok, etc.</small>
-                            <span class="error-message">Links de redes sociais são obrigatórios</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="linkPortfolio">Link de Portfólio ou Clipping</label>
-                            <input type="url" id="linkPortfolio" name="linkPortfolio" placeholder="https://...">
-                            <small>Se houver, compartilhe link do portfólio ou clipping (opcional)</small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="linkFotos">Link de Fotos em Alta Resolução para Divulgação *</label>
-                            <input type="url" id="linkFotos" name="linkFotos" placeholder="Google Drive, Dropbox, WeTransfer..." required>
-                            <small>Link para pasta com fotos de alta resolução (Google Drive, Dropbox, etc.)</small>
-                            <span class="error-message">Link de fotos é obrigatório</span>
-                        </div>
-                    </fieldset>
-
-                    <hr style="border: none; border-top: 1px solid #374151; margin: 32px 0;">
-
-                    <!-- 5. FICHA TÉCNICA -->
-                    <fieldset style="border: none; padding: 0; margin: 0;">
-                        <legend style="color: #ca7300; font-weight: 600; margin-bottom: 16px; font-size: 18px;">5. Ficha Técnica</legend>
-
-                        <div class="form-group">
-                            <label for="integrantesFuncoes">Nome e Função de Cada Integrante *</label>
-                            <textarea id="integrantesFuncoes" name="integrantesFuncoes" placeholder="João Silva - Vocal e Guitarra&#10;Maria Santos - Baixo&#10;Pedro Oliveira - Bateria" required style="min-height: 120px;"></textarea>
-                            <small>Liste todos os integrantes e suas respectivas funções</small>
-                            <span class="error-message">Lista de integrantes é obrigatória</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mapaPalco">Necessidades Técnicas de Palco (Mapa de Palco) *</label>
-                            <textarea id="mapaPalco" name="mapaPalco" placeholder="Descreva a disposição dos músicos e equipamentos no palco..." required style="min-height: 100px;"></textarea>
-                            <small>Pode ser uma descrição textual ou link para imagem/documento</small>
-                            <span class="error-message">Mapa de palco é obrigatório</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="riderTecnico">Rider Técnico *</label>
-                            <textarea id="riderTecnico" name="riderTecnico" placeholder="Som: PA com X canais&#10;Iluminação: ...&#10;Backline: ...&#10;Microfonação: ..." required style="min-height: 140px;"></textarea>
-                            <small>Especifique necessidades de som, iluminação, backline e microfonação</small>
-                            <span class="error-message">Rider técnico é obrigatório</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="equipeTecnica">Equipe Técnica Própria</label>
-                            <textarea id="equipeTecnica" name="equipeTecnica" placeholder="Se houver, liste a equipe técnica própria (técnico de som, iluminador, roadie...)" style="min-height: 80px;"></textarea>
-                            <small>Opcional - informe se possui equipe técnica própria</small>
-                        </div>
-                    </fieldset>
-
-                    <hr style="border: none; border-top: 1px solid #374151; margin: 32px 0;">
-
-                    <!-- ACEITE DO EDITAL -->
-                    <div style="background: rgba(202, 115, 0, 0.1); border: 2px solid #ca7300; border-radius: 8px; padding: 24px; margin-bottom: 24px;">
-                        <h4 style="color: #ca7300; margin: 0 0 16px 0; font-size: 16px;">📋 Declaração e Concordância com o Edital</h4>
-                        <div class="form-group" style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 0;">
-                            <input type="checkbox" id="termos" name="termos" required style="width: auto; margin-top: 4px; cursor: pointer;">
-                            <label for="termos" style="margin: 0; cursor: pointer; line-height: 1.6;">
-                                Declaro que li, compreendi e concordo <strong>com todas as informações, regras e condições descritas no edital do Quero Tocar Rock Sertão 2026</strong>. Estou ciente de que a inscrição só será validada mediante o preenchimento correto e completo de todos os dados solicitados. Autorizo o uso das informações fornecidas para fins de seleção e divulgação do evento, conforme a Lei Geral de Proteção de Dados Pessoais (LGPD) – Lei nº 13.709/2018. *
-                            </label>
-                        </div>
-                        <span class="error-message" id="termosError" style="display: none; margin-top: 8px;">Você deve concordar com os termos do edital para prosseguir</span>
-                    </div>
-
-                    <button type="submit" class="btn-submit">Enviar Inscrição</button>
-                </form>
-            </div>
-
+                <div class="encerramento-links">
+                    <a href="../documentos/EDITAL CAMPANHA QUERO TOCAR ROCK SERTAO 2026.pdf" target="_blank">Ver edital</a>
+                    <a href="../documentos/EDITAL RETIFICADO CAMPANHA QUERO TOCAR ROCK SERTAO 2026.pdf" target="_blank">Edital retificado</a>
+                    <a href="../documentos/ANEXO I - EDITAL QUERO TOCAR ROCK SERTAO 2026.pdf" target="_blank">Anexo I</a>
+                    <a href="../documentos/EDITAL RETIFICADO II CAMPANHA QUERO TOCAR ROCK SERTAO 2026.pdf" target="_blank">Edital retificado II</a>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -556,8 +181,8 @@
                 </div>
                 <div class="footer-info">
                     <p>CNPJ: 13.304.024/0001-86</p>
-                    <p>Rua Manoel Vieira de Souza, nº 561 – Brasília</p>
-                    <p>CEP 49.680-000 – Nossa Senhora da Glória/SE</p>
+                    <p>Rua Manoel Vieira de Souza, nº 561 - Brasília</p>
+                    <p>CEP 49.680-000 - Nossa Senhora da Glória/SE</p>
                     <p>E-mail: sertaonaarte@gmail.com</p>
                 </div>
             </div>
@@ -570,136 +195,5 @@
     </footer>
 
     <script src="../js/script.js" defer></script>
-    <script>
-        // Validação do Formulário de Inscrição
-        const form = document.getElementById('inscricaoForm');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                let isValid = true;
-                const formGroups = form.querySelectorAll('.form-group');
-                
-                // Limpar erros anteriores
-                formGroups.forEach(group => group.classList.remove('error'));
-                document.getElementById('termosError').style.display = 'none';
-                
-                // Função auxiliar para validar campo obrigatório
-                function validarCampo(id) {
-                    const campo = document.getElementById(id);
-                    if (campo && !campo.value.trim()) {
-                        campo.closest('.form-group').classList.add('error');
-                        isValid = false;
-                        return false;
-                    }
-                    return true;
-                }
-                
-                // Função auxiliar para validar select obrigatório
-                function validarSelect(id) {
-                    const campo = document.getElementById(id);
-                    if (campo && !campo.value) {
-                        campo.closest('.form-group').classList.add('error');
-                        isValid = false;
-                        return false;
-                    }
-                    return true;
-                }
-                
-                // Função auxiliar para validar URL
-                function validarURL(id) {
-                    const campo = document.getElementById(id);
-                    const urlRegex = /^https?:\/\/.+/;
-                    if (campo && campo.value && !urlRegex.test(campo.value)) {
-                        campo.closest('.form-group').classList.add('error');
-                        isValid = false;
-                        return false;
-                    }
-                    return true;
-                }
-                
-                // 1. Validar Identificação do Proponente
-                validarCampo('nomeResponsavel');
-                validarCampo('nomeArtistico');
-                validarCampo('cpfCnpj');
-                validarCampo('cidadeUF');
-                validarCampo('enderecoCompleto');
-                validarCampo('telefoneContato');
-                
-                // Validar e-mail
-                const emailContato = document.getElementById('emailContato');
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(emailContato.value)) {
-                    document.getElementById('emailContato').closest('.form-group').classList.add('error');
-                    isValid = false;
-                }
-                
-                // 2. Validar Dados da Proposta Musical
-                validarCampo('nomeApresentacao');
-                validarCampo('cidadeOrigem');
-                validarSelect('formatoApresentacao');
-                validarCampo('generosPredom');
-                validarCampo('releaseArtistico');
-                validarCampo('conceitoApresentacao');
-                validarSelect('repertorioPrevisto');
-                
-                // 3. Validar Trajetória e Experiência
-                validarCampo('apresentacoesRealizadas');
-                validarCampo('participacaoEventos');
-                
-                // 4. Validar Material Artístico Obrigatório
-                validarCampo('videoAoVivo');
-                validarCampo('linksAudio');
-                validarCampo('redesSociais');
-                validarURL('linkPortfolio'); // Opcional, mas valida formato se preenchido
-                validarURL('linkFotos');
-                validarCampo('linkFotos');
-                
-                // 5. Validar Ficha Técnica
-                validarCampo('integrantesFuncoes');
-                validarCampo('mapaPalco');
-                validarCampo('riderTecnico');
-                
-                // Validar checkbox de termos
-                const termos = document.getElementById('termos');
-                if (!termos.checked) {
-                    document.getElementById('termosError').style.display = 'block';
-                    isValid = false;
-                }
-                
-                if (isValid) {
-                    // Enviar formulário
-                    fetch(form.action, {
-                        method: 'POST',
-                        body: new FormData(form),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    }).then(response => {
-                        if (response.ok) {
-                            document.getElementById('successMessage').style.display = 'block';
-                            form.reset();
-                            window.scrollTo({top: 0, behavior: 'smooth'});
-                            
-                            // Ocultar mensagem após 5 segundos
-                            setTimeout(() => {
-                                document.getElementById('successMessage').style.display = 'none';
-                            }, 5000);
-                        } else {
-                            alert('Erro ao enviar inscrição. Tente novamente.');
-                        }
-                    }).catch(error => {
-                        alert('Erro: ' + error.message);
-                    });
-                } else {
-                    // Rolar até o primeiro erro
-                    const primeiroErro = document.querySelector('.form-group.error');
-                    if (primeiroErro) {
-                        primeiroErro.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                }
-            });
-        }
-    </script>
 </body>
 </html>
