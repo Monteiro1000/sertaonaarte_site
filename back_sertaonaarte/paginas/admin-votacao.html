@@ -490,7 +490,8 @@
 
     async function inicializarDashboard() {
         try {
-            const res = await fetch('../codigo/bandas-config.json');
+            let res = await fetch('../codigo/bandas-config.json');
+            if (!res.ok) res = await fetch('../codigo/bandas-config.php');
             const config = await res.json();
             bandasData = config.bandas;
         } catch (e) {

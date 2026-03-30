@@ -8,9 +8,9 @@
 // =====================================================
 
 define('DB_HOST', 'localhost');              // Host do banco (geralmente localhost na Hostinger)
-define('DB_NAME', 'SEU_BANCO_AQUI');        // Nome do banco de dados
-define('DB_USER', 'SEU_USUARIO_AQUI');      // Usuário do banco
-define('DB_PASS', 'SUA_SENHA_AQUI');        // Senha do banco
+define('DB_NAME', 'u955736801_VotacaoPopular');        // Nome do banco de dados
+define('DB_USER', 'u955736801_MonteiroDev');      // Usuário do banco
+define('DB_PASS', 'Juliobom123#');        // Senha do banco
 
 // Senha do painel admin (texto puro — será comparada via password_verify com hash)
 define('ADMIN_SENHA', 'sertaonaarte2026');

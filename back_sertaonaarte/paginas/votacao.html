@@ -435,6 +435,24 @@
         </div>
     </nav>
 
+    <!-- MENU MOBILE -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-menu-close" id="close-menu-btn">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <a href="../index.html" class="mobile-nav-link">Início</a>
+        <a href="../index.html#quem-somos" class="mobile-nav-link">Quem Somos</a>
+        <a href="../paginas/documentos.html" class="mobile-nav-link">Documentos</a>
+        <a href="../paginas/projetos.html" class="mobile-nav-link">Projetos</a>
+        <a href="../index.html#atividades" class="mobile-nav-link">Atividades</a>
+        <a href="../index.html#galeria" class="mobile-nav-link">Galeria</a>
+        <a href="../paginas/parceria.html" class="mobile-nav-link">Parcerias</a>
+        <a href="../paginas/transparencia.html" class="mobile-nav-link">Transparência</a>
+        <a href="../index.html#contato" class="mobile-nav-link">Contato</a>
+    </div>
+
     <!-- PÁGINA DE VOTAÇÃO -->
     <div class="votacao-page">
         <!-- Hero Section -->
@@ -471,6 +489,18 @@
                 <div class="votacao-form-container">
                     <h2>Confirme sua Votação</h2>
 
+                    <!-- AVISO INSTAGRAM -->
+                    <div style="background:linear-gradient(135deg,rgba(240,148,51,0.15),rgba(220,39,67,0.15));border:1px solid rgba(255,149,0,0.4);border-radius:10px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="#ff9500" style="flex-shrink:0;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <div style="flex:1;">
+                            <p style="color:#ff9500;font-weight:700;font-size:14px;margin-bottom:4px;">⚠️ ATENÇÃO: Para seu voto ser válido, siga o Instagram do Rock Sertão!</p>
+                            <p style="color:#b0b0b0;font-size:13px;">Votos de contas que não seguem serão desconsiderados.</p>
+                        </div>
+                        <a href="https://www.instagram.com/rocksertao/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;white-space:nowrap;">
+                            Seguir @rocksertao
+                        </a>
+                    </div>
+
                     <div id="mensagem-status" class="mensagem-status"></div>
 
                     <!-- Banda Selecionada Info -->
@@ -506,6 +536,20 @@
                     </div>
                 </div>
             </form>
+
+            <!-- Tela de confirmação após voto -->
+            <div id="confirmacao-voto" style="display:none;text-align:center;padding:60px 20px;">
+                <div style="font-size:72px;margin-bottom:20px;">✅</div>
+                <h2 style="font-family:'Bebas Neue',cursive;font-size:40px;color:#ff9500;margin-bottom:12px;">Voto Enviado!</h2>
+                <p style="font-size:18px;color:#e0e0e0;margin-bottom:8px;">Seu voto foi registrado com sucesso.</p>
+                <p style="font-size:16px;color:#b0b0b0;margin-bottom:32px;">Para que seu voto seja <strong style="color:#ff9500;">válido</strong>, é necessário seguir o Instagram do Rock Sertão:</p>
+                <a href="https://www.instagram.com/rocksertao/" target="_blank" style="display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white;border-radius:12px;text-decoration:none;font-weight:700;font-size:18px;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    Seguir @rocksertao
+                </a>
+                <p style="margin-top:24px;font-size:14px;color:#666;">Obrigado por participar! 🎸</p>
+            </div>
+
         </div>
     </div>
 
@@ -516,7 +560,8 @@
     // Carregar dados das bandas
     async function carregarBandas() {
         try {
-            const response = await fetch('../codigo/bandas-config.json');
+            let response = await fetch('../codigo/bandas-config.json');
+            if (!response.ok) response = await fetch('../codigo/bandas-config.php');
             const config = await response.json();
             bandasData = config.bandas;
             renderizarBandas();
@@ -536,7 +581,7 @@
             card.innerHTML = `
                 <input type="radio" name="banda" value="${banda.id}" onchange="atualizarSelecao('${banda.id}', '${banda.nome}')">
                 <div class="banda-card-header">
-                    <img src="../Quero tocar/FOTOS - BANDAS/${banda.foto}" alt="${banda.nome}" loading="lazy">
+                    <img src="../Quero%20tocar/FOTOS%20-%20BANDAS/${encodeURIComponent(banda.foto)}" alt="${banda.nome}" loading="lazy">
                     <div class="banda-card-badge">${banda.estilo}</div>
                     <div class="banda-card-checkbox"></div>
                 </div>
@@ -545,8 +590,8 @@
                     <div class="banda-card-descricao">${banda.descricao}</div>
                     <div class="banda-card-cidade">📍 ${banda.cidade}</div>
                     <div class="banda-card-redes">
-                        ${banda.instagram ? `<a href="${banda.instagram}" target="_blank" class="rede-link" title="Instagram">f</a>` : ''}
-                        ${banda.facebook ? `<a href="${banda.facebook}" target="_blank" class="rede-link" title="Facebook">f</a>` : ''}
+                        ${banda.instagram ? `<a href="${banda.instagram}" target="_blank" class="rede-link" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>` : ''}
+                        ${banda.youtube ? `<a href="${banda.youtube}" target="_blank" class="rede-link" title="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>` : ''}
                     </div>
                 </div>
             `;
@@ -609,8 +654,11 @@
             const resultado = await response.json();
 
             if (resultado.sucesso) {
-                mostrarMensagem('✓ Votação registrada com sucesso! Obrigado por participar.', 'sucesso');
-                resetarForm();
+                // Esconder formulário e mostrar confirmação
+                document.getElementById('votacao-form').style.display = 'none';
+                const confirmacao = document.getElementById('confirmacao-voto');
+                confirmacao.style.display = 'block';
+                confirmacao.scrollIntoView({ behavior: 'smooth', block: 'start' });
             } else {
                 mostrarMensagem(resultado.mensagem || 'Erro ao registrar voto.', 'erro');
             }
@@ -632,6 +680,25 @@
 
     // Inicializar
     carregarBandas();
+
+    // Menu mobile
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-menu-btn');
+
+    if (menuBtn && mobileMenu && closeBtn) {
+        menuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+        });
+        closeBtn.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+        });
+    }
     </script>
 </body>
 </html>
