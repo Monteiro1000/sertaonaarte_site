@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação Popular - Quero Tocar 2026 | Sertão na Arte</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css?v=8">
+    <link rel="icon" href="../marcas/lOGO SERTAO NA ARTE PNG.png" type="image/png">
+    <style>
+        .votacao-page {
+            padding-top: 80px;
+            background-color: black;
+            color: white;
+        }
+
+        .votacao-hero {
+            background: linear-gradient(135deg, rgba(202, 115, 0, 0.1) 0%, rgba(255, 149, 0, 0.05) 100%);
+            border-bottom: 1px solid rgba(255, 149, 0, 0.2);
+            padding: 64px 16px;
+            text-align: center;
+        }
+
+        .votacao-hero h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 48px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ca7300 0%, #ff9500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .votacao-hero p {
+            font-size: 18px;
+            color: #b0b0b0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .votacao-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 16px;
+        }
+
+        .votacao-info {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 149, 0, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 48px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .info-item strong {
+            color: #ff9500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-item p {
+            color: #b0b0b0;
+            font-size: 16px;
+        }
+
+        .bandas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+
+        .banda-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .banda-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 149, 0, 0.4);
+            box-shadow: 0 8px 32px rgba(255, 149, 0, 0.1);
+        }
+
+        .banda-card.selected {
+            border-color: rgba(255, 149, 0, 0.8);
+            box-shadow: 0 0 24px rgba(255, 149, 0, 0.3);
+        }
+
+        .banda-card input[type="radio"] {
+            display: none;
+        }
+
+        .banda-card-header {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%);
+        }
+
+        .banda-card-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .banda-card:hover .banda-card-header img {
+            transform: scale(1.05);
+        }
+
+        .banda-card-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 149, 0, 0.9);
+            color: black;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .banda-card-checkbox {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 24px;
+            height: 24px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .banda-card.selected .banda-card-checkbox {
+            background: rgba(255, 149, 0, 0.9);
+            border-color: rgba(255, 149, 0, 0.9);
+        }
+
+        .banda-card.selected .banda-card-checkbox::after {
+            content: "✓";
+            color: black;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .banda-card-body {
+            padding: 24px;
+        }
+
+        .banda-card-nome {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .banda-card-estilo {
+            display: inline-block;
+            background: rgba(255, 149, 0, 0.1);
+            border: 1px solid rgba(255, 149, 0, 0.3);
+            color: #ff9500;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .banda-card-descricao {
+            color: #b0b0b0;
+            font-size: 14px;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .banda-card-cidade {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+
+        .banda-card-redes {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .rede-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 149, 0, 0.1);
+            border: 1px solid rgba(255, 149, 0, 0.3);
+            color: #ff9500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 18px;
+        }
+
+        .rede-link:hover {
+            background: rgba(255, 149, 0, 0.2);
+            border-color: rgba(255, 149, 0, 0.6);
+        }
+
+        .votacao-form-container {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 149, 0, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 48px;
+        }
+
+        .votacao-form-container h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 32px;
+            margin-bottom: 24px;
+            color: #ff9500;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #e0e0e0;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: rgba(255, 149, 0, 0.5);
+            background: rgba(255, 149, 0, 0.05);
+            box-shadow: 0 0 12px rgba(255, 149, 0, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: #666;
+        }
+
+        .banda-selecionada-info {
+            background: rgba(255, 149, 0, 0.1);
+            border: 1px solid rgba(255, 149, 0, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .banda-selecionada-info.ativo {
+            display: block;
+        }
+
+        .banda-selecionada-info strong {
+            color: #ff9500;
+        }
+
+        .recaptcha-container {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-submit-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .btn-votar {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #ca7300 0%, #ff9500 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            grid-column: 1 / -1;
+        }
+
+        .btn-votar:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 149, 0, 0.3);
+        }
+
+        .btn-votar:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-limpar {
+            padding: 14px 28px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #b0b0b0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-limpar:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .mensagem-status {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            font-weight: 500;
+        }
+
+        .mensagem-status.sucesso {
+            display: block;
+            background: rgba(34, 139, 34, 0.2);
+            border: 1px solid rgba(34, 139, 34, 0.5);
+            color: #7cfc00;
+        }
+
+        .mensagem-status.erro {
+            display: block;
+            background: rgba(220, 20, 60, 0.2);
+            border: 1px solid rgba(220, 20, 60, 0.5);
+            color: #ff6b6b;
+        }
+
+        .campo-obrigatorio {
+            color: #ff6b6b;
+            margin-left: 2px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-submit-area {
+                grid-template-columns: 1fr;
+            }
+
+            .votacao-hero h1 {
+                font-size: 32px;
+            }
+
+            .bandas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVEGAÇÃO (reutiliza do index.html) -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <div class="logo-placeholder"></div>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Início</a>
+                <a href="../index.html#quem-somos" class="nav-link">Quem Somos</a>
+                <a href="../paginas/documentos.html" class="nav-link">Documentos</a>
+                <a href="../paginas/projetos.html" class="nav-link">Projetos</a>
+                <a href="../index.html#atividades" class="nav-link">Atividades</a>
+                <a href="../index.html#galeria" class="nav-link">Galeria</a>
+                <a href="../paginas/parceria.html" class="nav-link">Parcerias</a>
+                <a href="../paginas/transparencia.html" class="nav-link">Transparência</a>
+                <a href="../index.html#contato" class="btn-contact">Contato</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <svg fill="none" stroke="currentColor" viewbox="0 0 24 24" class="hamb">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- PÁGINA DE VOTAÇÃO -->
+    <div class="votacao-page">
+        <!-- Hero Section -->
+        <section class="votacao-hero">
+            <h1>Votação Popular</h1>
+            <p>Vote na sua banda favorita entre as selecionadas pela curadoria do Quero Tocar 2026!</p>
+        </section>
+
+        <!-- Container Principal -->
+        <div class="votacao-container">
+            <!-- Informações Importantes -->
+            <div class="votacao-info">
+                <div class="info-item">
+                    <strong>📅 Período de Votação</strong>
+                    <p>30 de Março - 15 de Abril de 2026</p>
+                </div>
+                <div class="info-item">
+                    <strong>🔒 Uma Votação por Pessoa</strong>
+                    <p>Cadastro com nome e e-mail validado</p>
+                </div>
+                <div class="info-item">
+                    <strong>🎸 6 Bandas Selecionadas</strong>
+                    <p>Resultado final da curadoria</p>
+                </div>
+            </div>
+
+            <!-- Grid de Bandas -->
+            <form id="votacao-form">
+                <div class="bandas-grid">
+                    <!-- As bandas serão inseridas aqui via JavaScript -->
+                </div>
+
+                <!-- Formulário de Votação -->
+                <div class="votacao-form-container">
+                    <h2>Confirme sua Votação</h2>
+
+                    <div id="mensagem-status" class="mensagem-status"></div>
+
+                    <!-- Banda Selecionada Info -->
+                    <div id="banda-selecionada-info" class="banda-selecionada-info">
+                        <p><strong>Banda Selecionada:</strong> <span id="banda-nome"></span></p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nome Completo <span class="campo-obrigatorio">*</span></label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail <span class="campo-obrigatorio">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                    </div>
+
+                    <!-- reCAPTCHA -->
+                    <div class="recaptcha-container">
+                        <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-action="votacao_banda"></div>
+                    </div>
+
+                    <!-- Botões -->
+                    <div class="form-submit-area">
+                        <button type="button" class="btn-limpar" onclick="resetarForm()">Limpar</button>
+                        <button type="submit" class="btn-votar" id="btn-submit">Enviar Votação</button>
+                    </div>
+
+                    <div style="margin-top: 16px; font-size: 12px; color: #666; text-align: center;">
+                        <p>Seus dados serão protegidos conforme nossa política de privacidade.</p>
+                        <p>Proteção contra bots e validação de segurança ativadas.</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    // Configuração das bandas
+    let bandasData = [];
+
+    // Carregar dados das bandas
+    async function carregarBandas() {
+        try {
+            const response = await fetch('../codigo/bandas-config.json');
+            const config = await response.json();
+            bandasData = config.bandas;
+            renderizarBandas();
+        } catch (error) {
+            console.error('Erro ao carregar bandas:', error);
+        }
+    }
+
+    // Renderizar as bandas
+    function renderizarBandas() {
+        const grid = document.querySelector('.bandas-grid');
+        grid.innerHTML = '';
+
+        bandasData.forEach(banda => {
+            const card = document.createElement('label');
+            card.className = 'banda-card';
+            card.innerHTML = `
+                <input type="radio" name="banda" value="${banda.id}" onchange="atualizarSelecao('${banda.id}', '${banda.nome}')">
+                <div class="banda-card-header">
+                    <img src="../Quero tocar/FOTOS - BANDAS/${banda.foto}" alt="${banda.nome}" loading="lazy">
+                    <div class="banda-card-badge">${banda.estilo}</div>
+                    <div class="banda-card-checkbox"></div>
+                </div>
+                <div class="banda-card-body">
+                    <div class="banda-card-nome">${banda.nome}</div>
+                    <div class="banda-card-descricao">${banda.descricao}</div>
+                    <div class="banda-card-cidade">📍 ${banda.cidade}</div>
+                    <div class="banda-card-redes">
+                        ${banda.instagram ? `<a href="${banda.instagram}" target="_blank" class="rede-link" title="Instagram">f</a>` : ''}
+                        ${banda.facebook ? `<a href="${banda.facebook}" target="_blank" class="rede-link" title="Facebook">f</a>` : ''}
+                    </div>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    }
+
+
+
+    // Atualizar seleção
+    function atualizarSelecao(bandaId, bandaNome) {
+        document.querySelectorAll('.banda-card').forEach(card => card.classList.remove('selected'));
+        document.querySelector(`input[value="${bandaId}"]`).parentElement.classList.add('selected');
+        const info = document.getElementById('banda-selecionada-info');
+        document.getElementById('banda-nome').textContent = bandaNome;
+        info.classList.add('ativo');
+    }
+
+    // Reset do formulário
+    function resetarForm() {
+        document.getElementById('votacao-form').reset();
+        document.querySelectorAll('.banda-card').forEach(card => card.classList.remove('selected'));
+        document.getElementById('banda-selecionada-info').classList.remove('ativo');
+        document.getElementById('mensagem-status').classList.remove('sucesso', 'erro');
+    }
+
+    // Enviar votação (salvar no banco de dados via PHP)
+    document.getElementById('votacao-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim().toLowerCase();
+        const bandaSelecionada = document.querySelector('input[name="banda"]:checked');
+        const btnSubmit = document.getElementById('btn-submit');
+
+        // Validações
+        if (!nome) {
+            mostrarMensagem('Por favor, digite seu nome.', 'erro');
+            return;
+        }
+        if (!email || !email.includes('@')) {
+            mostrarMensagem('Por favor, digite um e-mail válido.', 'erro');
+            return;
+        }
+        if (!bandaSelecionada) {
+            mostrarMensagem('Por favor, selecione uma banda.', 'erro');
+            return;
+        }
+
+        // Desabilitar botão enquanto envia
+        btnSubmit.disabled = true;
+        btnSubmit.textContent = 'Enviando...';
+
+        try {
+            const response = await fetch('../codigo/votacao-process.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nome, email, banda_id: bandaSelecionada.value })
+            });
+
+            const resultado = await response.json();
+
+            if (resultado.sucesso) {
+                mostrarMensagem('✓ Votação registrada com sucesso! Obrigado por participar.', 'sucesso');
+                resetarForm();
+            } else {
+                mostrarMensagem(resultado.mensagem || 'Erro ao registrar voto.', 'erro');
+            }
+        } catch (error) {
+            mostrarMensagem('Erro de conexão. Tente novamente em instantes.', 'erro');
+        } finally {
+            btnSubmit.disabled = false;
+            btnSubmit.textContent = 'Enviar Votação';
+        }
+    });
+
+    // Mostrar mensagem
+    function mostrarMensagem(mensagem, tipo) {
+        const div = document.getElementById('mensagem-status');
+        div.textContent = mensagem;
+        div.className = `mensagem-status ${tipo}`;
+        div.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    // Inicializar
+    carregarBandas();
+    </script>
+</body>
+</html>

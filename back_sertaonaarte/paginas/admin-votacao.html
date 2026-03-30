@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Votação | Sertão na Arte</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../marcas/lOGO SERTAO NA ARTE PNG.png" type="image/png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* ===== LOGIN ===== */
+        .login-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-overlay.hidden { display: none; }
+
+        .login-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 149, 0, 0.3);
+            border-radius: 16px;
+            padding: 48px 40px;
+            max-width: 420px;
+            width: 90%;
+            text-align: center;
+        }
+        .login-box h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 36px;
+            background: linear-gradient(135deg, #ca7300, #ff9500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        .login-box p {
+            color: #888;
+            margin-bottom: 32px;
+            font-size: 14px;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 14px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 16px;
+            transition: border-color 0.2s;
+        }
+        .login-box input:focus {
+            outline: none;
+            border-color: rgba(255, 149, 0, 0.6);
+        }
+        .login-box button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #ca7300, #ff9500);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .login-box button:hover { opacity: 0.9; transform: translateY(-1px); }
+        .login-error {
+            color: #ff6b6b;
+            font-size: 14px;
+            margin-top: 12px;
+            display: none;
+        }
+        .login-error.show { display: block; }
+
+        /* ===== LAYOUT ADMIN ===== */
+        .admin-wrapper { display: none; }
+        .admin-wrapper.active { display: block; }
+
+        .admin-header {
+            background: rgba(0,0,0,0.95);
+            border-bottom: 1px solid rgba(255, 149, 0, 0.2);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+        }
+        .admin-header h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 28px;
+            color: #ff9500;
+        }
+        .btn-logout {
+            padding: 8px 20px;
+            background: rgba(220, 20, 60, 0.2);
+            border: 1px solid rgba(220, 20, 60, 0.4);
+            color: #ff6b6b;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-logout:hover { background: rgba(220, 20, 60, 0.3); }
+
+        .admin-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 32px 24px;
+        }
+
+        /* ===== CARDS RESUMO ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 24px;
+            transition: border-color 0.2s;
+        }
+        .stat-card:hover { border-color: rgba(255, 149, 0, 0.3); }
+        .stat-card .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .stat-card .value {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 42px;
+            color: #ff9500;
+            line-height: 1;
+        }
+        .stat-card .subtitle {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        /* ===== GRÁFICO DE BARRAS ===== */
+        .section-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 28px;
+            color: #ff9500;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 149, 0, 0.2);
+        }
+
+        .chart-container {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+        .bar-chart { display: flex; flex-direction: column; gap: 16px; }
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .bar-label {
+            min-width: 150px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: right;
+            color: #e0e0e0;
+        }
+        .bar-track {
+            flex: 1;
+            height: 36px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ca7300, #ff9500);
+            border-radius: 8px;
+            transition: width 0.8s ease;
+            min-width: 2px;
+        }
+        .bar-value {
+            min-width: 80px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #ff9500;
+        }
+        .bar-percent {
+            font-size: 12px;
+            color: #888;
+            font-weight: 400;
+        }
+
+        /* ===== TABELA DE VOTOS ===== */
+        .table-container {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        .table-header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .table-header-bar h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 22px;
+            color: #ff9500;
+        }
+        .table-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+        .btn-action {
+            padding: 8px 16px;
+            background: rgba(255, 149, 0, 0.1);
+            border: 1px solid rgba(255, 149, 0, 0.3);
+            color: #ff9500;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-action:hover { background: rgba(255, 149, 0, 0.2); }
+        .btn-action.danger {
+            background: rgba(220, 20, 60, 0.1);
+            border-color: rgba(220, 20, 60, 0.3);
+            color: #ff6b6b;
+        }
+        .btn-action.danger:hover { background: rgba(220, 20, 60, 0.2); }
+
+        .search-input {
+            padding: 8px 14px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            width: 220px;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: rgba(255, 149, 0, 0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        thead th {
+            text-align: left;
+            padding: 14px 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            cursor: pointer;
+            user-select: none;
+        }
+        thead th:hover { color: #ff9500; }
+        thead th .sort-icon { margin-left: 4px; font-size: 10px; }
+        tbody tr {
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            transition: background 0.15s;
+        }
+        tbody tr:hover { background: rgba(255, 149, 0, 0.03); }
+        tbody td {
+            padding: 14px 20px;
+            font-size: 14px;
+            color: #ccc;
+        }
+        .badge-banda {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(255, 149, 0, 0.15);
+            color: #ff9500;
+            border: 1px solid rgba(255, 149, 0, 0.3);
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+        }
+        .empty-state p { font-size: 16px; }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 768px) {
+            .bar-label { min-width: 80px; font-size: 12px; }
+            .bar-value { min-width: 60px; font-size: 12px; }
+            .admin-header h2 { font-size: 22px; }
+            .stat-card .value { font-size: 32px; }
+            .table-container { overflow-x: auto; }
+            table { min-width: 600px; }
+            .search-input { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TELA DE LOGIN -->
+    <div class="login-overlay" id="login-overlay">
+        <div class="login-box">
+            <h1>Painel Admin</h1>
+            <p>Acesso restrito — Sertão na Arte</p>
+            <form id="login-form" autocomplete="off">
+                <input type="password" id="senha-input" placeholder="Digite a senha de acesso" autocomplete="off" required>
+                <button type="submit">Entrar</button>
+            </form>
+            <p class="login-error" id="login-error">Senha incorreta. Tente novamente.</p>
+        </div>
+    </div>
+
+    <!-- PAINEL ADMIN -->
+    <div class="admin-wrapper" id="admin-wrapper">
+        <header class="admin-header">
+            <h2>Dashboard — Votação Quero Tocar 2026</h2>
+            <div style="display:flex;gap:12px;align-items:center;">
+                <a href="votacao.html" class="btn-action" style="text-decoration:none;">Ver página pública</a>
+                <button class="btn-logout" onclick="fazerLogout()">Sair</button>
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <!-- CARDS RESUMO -->
+            <div class="stats-grid" id="stats-grid"></div>
+
+            <!-- GRÁFICO DE BARRAS -->
+            <h2 class="section-title">Votos por Banda</h2>
+            <div class="chart-container">
+                <div class="bar-chart" id="bar-chart"></div>
+            </div>
+
+            <!-- TABELA DE VOTOS -->
+            <div class="table-container">
+                <div class="table-header-bar">
+                    <h3>Registros de Votação</h3>
+                    <div class="table-actions">
+                        <input type="text" class="search-input" id="search-votos" placeholder="Buscar por nome ou e-mail...">
+                        <button class="btn-action" onclick="exportarCSV()">Exportar CSV</button>
+                        <button class="btn-action danger" onclick="confirmarLimpar()">Limpar Votos</button>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th onclick="ordenarTabela('index')"># <span class="sort-icon">▼</span></th>
+                            <th onclick="ordenarTabela('nome')">Nome <span class="sort-icon">▼</span></th>
+                            <th onclick="ordenarTabela('email')">E-mail <span class="sort-icon">▼</span></th>
+                            <th onclick="ordenarTabela('banda')">Banda <span class="sort-icon">▼</span></th>
+                            <th onclick="ordenarTabela('data')">Data/Hora <span class="sort-icon">▼</span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="votos-tbody"></tbody>
+                </table>
+                <div class="empty-state" id="empty-state" style="display:none;">
+                    <p>Nenhum voto registrado ainda.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ===== AUTENTICAÇÃO =====
+    const API_URL = '../codigo/admin-api.php';
+    const SESSION_KEY = 'adminVotacaoAuth';
+    const SESSION_DURATION = 2 * 60 * 60 * 1000; // 2 horas
+    let senhaAtual = '';
+
+    function verificarSessao() {
+        const sessao = localStorage.getItem(SESSION_KEY);
+        if (!sessao) return false;
+        try {
+            const dados = JSON.parse(sessao);
+            if (dados.senha && Date.now() - dados.timestamp < SESSION_DURATION) {
+                senhaAtual = dados.senha;
+                return true;
+            }
+        } catch (e) { /* sessão inválida */ }
+        localStorage.removeItem(SESSION_KEY);
+        return false;
+    }
+
+    function salvarSessao(senha) {
+        senhaAtual = senha;
+        localStorage.setItem(SESSION_KEY, JSON.stringify({ senha, timestamp: Date.now() }));
+    }
+
+    function entrar(senha) {
+        salvarSessao(senha);
+        document.getElementById('login-overlay').classList.add('hidden');
+        document.getElementById('admin-wrapper').classList.add('active');
+        inicializarDashboard();
+    }
+
+    function fazerLogout() {
+        senhaAtual = '';
+        localStorage.removeItem(SESSION_KEY);
+        document.getElementById('admin-wrapper').classList.remove('active');
+        document.getElementById('login-overlay').classList.remove('hidden');
+        document.getElementById('senha-input').value = '';
+    }
+
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const senha = document.getElementById('senha-input').value;
+
+        try {
+            const res = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ acao: 'login', senha })
+            });
+            const data = await res.json();
+
+            if (data.sucesso) {
+                entrar(senha);
+            } else {
+                document.getElementById('login-error').classList.add('show');
+                document.getElementById('senha-input').value = '';
+                setTimeout(() => document.getElementById('login-error').classList.remove('show'), 3000);
+            }
+        } catch (err) {
+            document.getElementById('login-error').textContent = 'Erro de conexão com o servidor.';
+            document.getElementById('login-error').classList.add('show');
+            setTimeout(() => {
+                document.getElementById('login-error').textContent = 'Senha incorreta. Tente novamente.';
+                document.getElementById('login-error').classList.remove('show');
+            }, 3000);
+        }
+    });
+
+    // Verificar sessão ao carregar
+    if (verificarSessao()) {
+        entrar(senhaAtual);
+    }
+
+    // ===== DADOS =====
+    let bandasData = [];
+    let votosData = [];
+    let contagemData = {};
+    let ordenacaoAtual = { campo: 'data', direcao: 'desc' };
+
+    async function apiRequest(acao) {
+        const res = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ acao, senha: senhaAtual })
+        });
+        return await res.json();
+    }
+
+    async function inicializarDashboard() {
+        try {
+            const res = await fetch('../codigo/bandas-config.json');
+            const config = await res.json();
+            bandasData = config.bandas;
+        } catch (e) {
+            console.error('Erro ao carregar bandas:', e);
+        }
+        await carregarVotos();
+        renderizarResumo();
+        renderizarGrafico();
+        renderizarTabela();
+
+        // Busca
+        document.getElementById('search-votos').addEventListener('input', renderizarTabela);
+
+        // Auto-refresh a cada 30 segundos
+        setInterval(async () => {
+            await carregarVotos();
+            renderizarResumo();
+            renderizarGrafico();
+            renderizarTabela();
+        }, 30000);
+    }
+
+    async function carregarVotos() {
+        try {
+            const data = await apiRequest('listar');
+            if (data.sucesso) {
+                votosData = data.votos || [];
+                contagemData = data.contagem || {};
+            } else {
+                if (data.mensagem === 'Senha inválida.') fazerLogout();
+            }
+        } catch (e) {
+            console.error('Erro ao carregar votos:', e);
+        }
+    }
+
+    // ===== RESUMO =====
+    function renderizarResumo() {
+        const total = votosData.length;
+        const contagem = {};
+        bandasData.forEach(b => contagem[b.id] = contagemData[b.id] || 0);
+
+        // Banda líder
+        let liderNome = '—';
+        let liderVotos = 0;
+        bandasData.forEach(b => {
+            if (contagem[b.id] > liderVotos) {
+                liderVotos = contagem[b.id];
+                liderNome = b.nome;
+            }
+        });
+
+        // Último voto
+        let ultimoVoto = '—';
+        if (votosData.length > 0) {
+            const ultimo = votosData[0]; // API retorna DESC, então o primeiro é o mais recente
+            const d = new Date(ultimo.data_voto);
+            ultimoVoto = d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+        }
+
+        // E-mails únicos
+        const emailsUnicos = new Set(votosData.map(v => v.email)).size;
+
+        const grid = document.getElementById('stats-grid');
+        grid.innerHTML = `
+            <div class="stat-card">
+                <div class="label">Total de Votos</div>
+                <div class="value">${total}</div>
+                <div class="subtitle">${emailsUnicos} e-mail(s) único(s)</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Banda Líder</div>
+                <div class="value" style="font-size:28px;">${liderNome}</div>
+                <div class="subtitle">${liderVotos} voto(s)</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Bandas na Disputa</div>
+                <div class="value">${bandasData.length}</div>
+                <div class="subtitle">Selecionadas pela curadoria</div>
+            </div>
+            <div class="stat-card">
+                <div class="label">Último Voto</div>
+                <div class="value" style="font-size:20px;">${ultimoVoto}</div>
+                <div class="subtitle">Registro mais recente</div>
+            </div>
+        `;
+    }
+
+    // ===== GRÁFICO =====
+    function renderizarGrafico() {
+        const contagem = {};
+        bandasData.forEach(b => contagem[b.id] = contagemData[b.id] || 0);
+
+        const total = votosData.length || 1;
+        const max = Math.max(...Object.values(contagem), 1);
+        const chart = document.getElementById('bar-chart');
+
+        // Ordenar por votos desc
+        const sorted = [...bandasData].sort((a, b) => contagem[b.id] - contagem[a.id]);
+
+        chart.innerHTML = sorted.map(b => {
+            const votos = contagem[b.id];
+            const pct = ((votos / total) * 100).toFixed(1);
+            const width = ((votos / max) * 100).toFixed(1);
+            return `
+                <div class="bar-row">
+                    <div class="bar-label">${b.nome}</div>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width: ${width}%"></div>
+                    </div>
+                    <div class="bar-value">${votos} <span class="bar-percent">(${pct}%)</span></div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    // ===== TABELA =====
+    function renderizarTabela() {
+        const busca = (document.getElementById('search-votos').value || '').toLowerCase();
+        const tbody = document.getElementById('votos-tbody');
+        const empty = document.getElementById('empty-state');
+
+        let dados = votosData.map((v, i) => ({ ...v, index: i + 1 }));
+
+        // Filtrar
+        if (busca) {
+            dados = dados.filter(v =>
+                v.nome.toLowerCase().includes(busca) ||
+                v.email.toLowerCase().includes(busca) ||
+                (getNomeBanda(v.banda_id) || '').toLowerCase().includes(busca)
+            );
+        }
+
+        // Ordenar
+        dados.sort((a, b) => {
+            let valA, valB;
+            switch (ordenacaoAtual.campo) {
+                case 'index': valA = a.index; valB = b.index; break;
+                case 'nome': valA = a.nome.toLowerCase(); valB = b.nome.toLowerCase(); break;
+                case 'email': valA = a.email; valB = b.email; break;
+                case 'banda': valA = getNomeBanda(a.banda_id); valB = getNomeBanda(b.banda_id); break;
+                case 'data': valA = a.data_voto; valB = b.data_voto; break;
+                default: valA = a.index; valB = b.index;
+            }
+            if (valA < valB) return ordenacaoAtual.direcao === 'asc' ? -1 : 1;
+            if (valA > valB) return ordenacaoAtual.direcao === 'asc' ? 1 : -1;
+            return 0;
+        });
+
+        if (dados.length === 0) {
+            tbody.innerHTML = '';
+            empty.style.display = 'block';
+            return;
+        }
+        empty.style.display = 'none';
+
+        tbody.innerHTML = dados.map(v => {
+            const d = new Date(v.data_voto);
+            const dataFormatada = d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+            return `
+                <tr>
+                    <td>${v.index}</td>
+                    <td>${escapeHtml(v.nome)}</td>
+                    <td>${escapeHtml(v.email)}</td>
+                    <td><span class="badge-banda">${escapeHtml(getNomeBanda(v.banda_id))}</span></td>
+                    <td>${dataFormatada}</td>
+                </tr>
+            `;
+        }).join('');
+    }
+
+    function getNomeBanda(id) {
+        const banda = bandasData.find(b => b.id === id);
+        return banda ? banda.nome : id;
+    }
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text || '';
+        return div.innerHTML;
+    }
+
+    function ordenarTabela(campo) {
+        if (ordenacaoAtual.campo === campo) {
+            ordenacaoAtual.direcao = ordenacaoAtual.direcao === 'asc' ? 'desc' : 'asc';
+        } else {
+            ordenacaoAtual.campo = campo;
+            ordenacaoAtual.direcao = 'asc';
+        }
+        renderizarTabela();
+    }
+
+    // ===== EXPORTAR CSV =====
+    function exportarCSV() {
+        if (votosData.length === 0) return alert('Nenhum voto para exportar.');
+        const linhas = [['#', 'Nome', 'E-mail', 'Banda', 'Data/Hora']];
+        votosData.forEach((v, i) => {
+            const d = new Date(v.data_voto);
+            linhas.push([
+                i + 1,
+                v.nome,
+                v.email,
+                getNomeBanda(v.banda_id),
+                d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR')
+            ]);
+        });
+        const csv = linhas.map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
+        const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `votos-quero-tocar-2026-${new Date().toISOString().slice(0,10)}.csv`;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+
+    // ===== LIMPAR VOTOS =====
+    async function confirmarLimpar() {
+        if (confirm('Tem certeza que deseja APAGAR TODOS os votos? Essa ação não pode ser desfeita.')) {
+            if (confirm('Confirme novamente: TODOS os votos serão removidos permanentemente.')) {
+                try {
+                    const data = await apiRequest('limpar');
+                    if (data.sucesso) {
+                        votosData = [];
+                        contagemData = {};
+                        renderizarResumo();
+                        renderizarGrafico();
+                        renderizarTabela();
+                        alert('Votos removidos com sucesso.');
+                    } else {
+                        alert('Erro: ' + data.mensagem);
+                    }
+                } catch (e) {
+                    alert('Erro de conexão ao limpar votos.');
+                }
+            }
+        }
+    }
+    </script>
+</body>
+</html>

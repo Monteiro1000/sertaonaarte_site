@@ -1,0 +1,11 @@
+# Proteger diretório .votos de acesso público
+<Directory ".votos">
+    Order deny,allow
+    Deny from all
+</Directory>
+
+# Bloquear acesso direto a arquivos JSON
+<FilesMatch "\.json$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>

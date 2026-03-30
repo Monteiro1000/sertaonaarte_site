@@ -1,0 +1,78 @@
+{
+  "bandas": [
+    {
+      "id": "aetheria",
+      "nome": "AETHERIA",
+      "estilo": "Rock/Metal",
+      "descricao": "Banda de rock/metal com som envolvente e energia contagiante.",
+      "cidade": "Sergipe",
+      "instagram": "https://instagram.com/aetheria",
+      "facebook": "https://facebook.com/aetheria",
+      "foto": "AETHERIA.jpg",
+      "cor_destaque": "rgb(138, 43, 226)"
+    },
+    {
+      "id": "ana-bertozzo",
+      "nome": "ANA BERTOZZO",
+      "estilo": "Música Popular",
+      "descricao": "Artista que mescla elementos da música popular brasileira com influências contemporâneas.",
+      "cidade": "Sergipe",
+      "instagram": "https://instagram.com/anabertozzo",
+      "facebook": "https://facebook.com/anabertozzo",
+      "foto": "ANA BERTOZZO.webp",
+      "cor_destaque": "rgb(255, 105, 180)"
+    },
+    {
+      "id": "drenna",
+      "nome": "DRENNA",
+      "estilo": "Rock Alternativo",
+      "descricao": "Banda do Rio de Janeiro com som rock alternativo intenso e poético.",
+      "cidade": "Rio de Janeiro",
+      "instagram": "https://instagram.com/drenna",
+      "facebook": "https://facebook.com/drenna",
+      "foto": "DRENNA - Rio de Janeiro.jpg",
+      "cor_destaque": "rgb(70, 130, 180)"
+    },
+    {
+      "id": "karne-krua",
+      "nome": "KARNE KRUA",
+      "estilo": "Rock Progressivo",
+      "descricao": "Banda que explora composições complexas e arangos inovadores do rock progressivo.",
+      "cidade": "Sergipe",
+      "instagram": "https://instagram.com/karnebrua",
+      "facebook": "https://facebook.com/karnebrua",
+      "foto": "KARNE KRUA.jpg",
+      "cor_destaque": "rgb(220, 20, 60)"
+    },
+    {
+      "id": "sandyale",
+      "nome": "SANDYALE",
+      "estilo": "MPB/Rock",
+      "descricao": "Artista que combina a brasilidade da MPB com elementos modernos do rock.",
+      "cidade": "Sergipe",
+      "instagram": "https://instagram.com/sandyale",
+      "facebook": "https://facebook.com/sandyale",
+      "foto": "SANDYALE.jpeg",
+      "cor_destaque": "rgb(34, 139, 34)"
+    },
+    {
+      "id": "the-nicks",
+      "nome": "THE NICKS",
+      "estilo": "Rock Clássico",
+      "descricao": "Banda que revive o espírito do rock clássico com arranjos modernos e energia pura.",
+      "cidade": "Sergipe",
+      "instagram": "https://instagram.com/thenicks",
+      "facebook": "https://facebook.com/thenicks",
+      "foto": "THE NICKS.jpg",
+      "cor_destaque": "rgb(255, 165, 0)"
+    }
+  ],
+  "configuracoes": {
+    "recaptcha_site_key": "6Lf3s50sAAAAAOAMk2XPfHLWw0kUJ7QKV2GZOBnP",
+    "titulo": "Votação Popular - Quero Tocar 2026",
+    "descricao": "Vote na sua banda favorita entre as selecionadas pela curadoria!",
+    "data_inicio": "2026-03-30",
+    "data_fim": "2026-04-15",
+    "email_admin": "sertaonaarte@sertaonaarte.com.br"
+  }
+}

@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Votos e dados de votação (DADOS SENSÍVEIS)
+.votos/
+votos_2026.json
+emails_bloqueados.json
+ips_bloqueados.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -22,3 +28,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Arquivos de backup e temporários
+*.bak
+*.backup
+*~
