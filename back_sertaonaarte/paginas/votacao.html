@@ -581,7 +581,7 @@
             card.innerHTML = `
                 <input type="radio" name="banda" value="${banda.id}" onchange="atualizarSelecao('${banda.id}', '${banda.nome}')">
                 <div class="banda-card-header">
-                    <img src="../Quero%20tocar/FOTOS%20-%20BANDAS/${encodeURIComponent(banda.foto)}" alt="${banda.nome}" loading="lazy">
+                    <img src="../Quero%20tocar/FOTOS%20-%20BANDAS/${banda.foto.replace(/ /g, '%20')}" alt="${banda.nome}" loading="lazy" onerror="this.style.display='none'">
                     <div class="banda-card-badge">${banda.estilo}</div>
                     <div class="banda-card-checkbox"></div>
                 </div>
