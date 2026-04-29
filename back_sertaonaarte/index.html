@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body class="page-index">
     <!-- NAVEGAÇÃO -->
     <nav>
     <div class="nav-container">
@@ -32,7 +32,6 @@
             <a href="#quem-somos"class="nav-link">Quem Somos</a>
             <a href="./paginas/documentos.html" class="nav-link">Documentos</a>
             <a href="./paginas/projetos.html" class="nav-link">Projetos</a>
-            <a href="./paginas/votacao.html" class="nav-link">Votação</a>
             <a href="#atividades" class="nav-link">Atividades</a>
             <a href="#galeria" class="nav-link">Galeria</a>
             <a href="./paginas/parceria.html" class="nav-link">Parcerias</a>
@@ -71,7 +70,6 @@
             <a href="#quem-somos" class="mobile-nav-link">Quem Somos</a>
             <a href="./paginas/documentos.html" class="mobile-nav-link">Documentos</a>
             <a href="./paginas/projetos.html" class="mobile-nav-link">Projetos</a>
-            <a href="./paginas/votacao.html" class="mobile-nav-link">Votação</a>
             <a href="#atividades"class="mobile-nav-link">Atividades</a>
             <a href="#galeria" class="mobile-nav-link">Galeria</a>
             <a href="./paginas/parceria.html" class="mobile-nav-link">Parcerias</a>
@@ -89,6 +87,12 @@
         <h1 class="galeria-hero-title">Sertão na <span class="text-gradient">ARTE</span></h1>
         <p class="galeria-hero-subtitle">Momentos do Rock Sertão</p>
       </div>
+      <div class="hero-marquee" aria-hidden="true">
+        <div class="hero-marquee-track">
+          <div>Rock Sertão <span>25 anos</span> • Cultura no interior • Formação • Arte independente •</div>
+          <div>Rock Sertão <span>25 anos</span> • Cultura no interior • Formação • Arte independente •</div>
+        </div>
+      </div>
       <div class="galeria-hero-container">
         <button class="galeria-btn galeria-btn-esq galeria-hero-btn" id="galeria-esq" aria-label="Galeria anterior">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 24px; height: 24px;">
@@ -96,11 +100,11 @@
           </svg>
         </button>
         <div class="fotos fotos-hero" id="galeria-fotos">
-          <img src="rock sertão 2025/ROCK SERTÃO (40).jpg" alt="Rock Sertão 2025">
-          <img src="marcas/IMG_3138.JPG" alt="Sertão na Arte">
-          <img src="marcas/sharedimage-1.webp" alt="Sertão na Arte">
-          <img src="rock sertão 2025/ROCK SERTÃO (13).jpg" alt="Rock Sertão 2025">
-          <img src="rock sertão 2025/ROCK SERTÃO (42).jpg" alt="Rock Sertão 2025">
+          <img src="rock sertão 2025/ROCK SERTÃO (40).jpg" alt="Rock Sertão 2025" loading="eager" fetchpriority="high" decoding="async">
+          <img src="marcas/IMG_3138.JPG" alt="Sertão na Arte" loading="lazy" decoding="async">
+          <img src="marcas/sharedimage-1.webp" alt="Sertão na Arte" loading="lazy" decoding="async">
+          <img src="rock sertão 2025/ROCK SERTÃO (13).jpg" alt="Rock Sertão 2025" loading="lazy" decoding="async">
+          <img src="rock sertão 2025/ROCK SERTÃO (42).jpg" alt="Rock Sertão 2025" loading="lazy" decoding="async">
         </div>
         <button class="galeria-btn galeria-btn-dir galeria-hero-btn" id="galeria-dir" aria-label="Próxima galeria">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 24px; height: 24px;">
@@ -140,7 +144,7 @@
       <div class="highlights-grid">
        
       <div class="highlight-card highlight-card-featured" style="text-decoration: none; color: inherit;">
-        <img src="./Quero tocar/IMG_4983.PNG" alt="Rock Sertão" style="width: 100%; height: 200px; object-fit: contain; margin-bottom: 16px;">
+        <img src="./Quero tocar/IMG_4983.PNG" alt="Rock Sertão" loading="lazy" decoding="async" style="width: 100%; height: 200px; object-fit: contain; margin-bottom: 16px;">
         <h3 style="font-size: 26px; color: #ca7300;">Aviso Importante</h3>
         <p style="font-size: 15px; margin-bottom: 16px;"><strong>As inscrições da campanha Quero Tocar 2026 foram encerradas em 13 de março de 2026.</strong></p>
        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
@@ -153,7 +157,7 @@
       </div>
 
        <div class="highlight-card highlight-card-featured" style="text-decoration: none; color: inherit; background: linear-gradient(135deg, rgba(220,20,60,0.15) 0%, rgba(255,149,0,0.05) 100%); border: 2px solid rgba(220,20,60,0.4);">
-        <img src="./Quero tocar/IMG_6284.JPEG" alt="Votação Popular Encerrada - Rock Sertão 2026" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 16px; border-radius: 8px;">
+        <img src="./Quero tocar/IMG_6284.JPEG" alt="Votação Popular Encerrada - Rock Sertão 2026" loading="lazy" decoding="async" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 16px; border-radius: 8px;">
         <h3 style="font-size: 26px; color: #ff4d4d; margin-bottom: 12px;">🚫 Votação Popular Encerrada</h3>
         <p style="font-size: 15px; margin-bottom: 16px; color: #d0d0d0;"><strong>A votação popular do Quero Tocar 2026 foi encerrada em 15 de Abril de 2026.</strong></p>
         <p style="font-size: 13px; margin-bottom: 16px; color: #999;">Agradecemos a todos que participaram! O resultado será divulgado em breve.</p>
@@ -212,244 +216,154 @@
     </section>
    <section id="quem-somos" class="secondary">
 
-    <div class="container">
+    <div class="container who-advanced">
 
-     <h2 class="section-title">QUEM <span class="text-gradient">SOMOS</span>
-    </h2>
-     <div class="mb-16">
-
-      <div class="section-label">
-
-       <div class="icon-box">
-
-        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24" class="icone-aba"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-
-        </svg>
-
-       </div>
-       
-       <h3>HISTÓRIA</h3>
-      </div>
-      <div class="card accent-gradient">
-       <p class="text-gray-300 mb-4">A <strong>Associação Cultural Sertão na Arte
-       </strong>
-
-        , fundada em 01 de fevereiro de 2011 e atuante desde 2010 no município de Nossa Senhora da Glória/SE, consolidou-se como um dos principais agentes de fomento e difusão cultural no sertão sergipano.</p>
-
-        <p class="text-gray-300">Sua atuação contínua abrange 
-        <strong>
-        música, teatro, audiovisual, literatura, formação cultural e articulação em rede
-        </strong>
-        , contribuindo para a democratização do acesso à cultura e para o fortalecimento da economia criativa no interior de Sergipe.</p>
-      </div>
-
+     <div class="who-header">
+      <p class="who-kicker">Institucional</p>
+      <h2 class="section-title">QUEM <span class="text-gradient">SOMOS</span></h2>
+      <p class="who-intro">Uma organização cultural com base territorial, linguagem contemporânea e compromisso com a continuidade da produção artística no sertão sergipano.</p>
      </div>
 
-     <div class="mb-16">
+     <div class="who-grid">
+      <article class="who-story">
+       <p class="who-eyebrow">Trajetória</p>
+       <h3>Desde 2010, conectando arte, território e formação.</h3>
+       <p>A Associação Cultural Sertão na Arte, fundada em 01 de fevereiro de 2011 e atuante desde 2010 em Nossa Senhora da Glória/SE, consolidou uma atuação contínua em música, teatro, audiovisual, literatura e formação cultural.</p>
+       <p>Nosso trabalho combina produção de festivais, ações formativas e articulação em rede para ampliar acesso, circulação e permanência de iniciativas culturais no interior de Sergipe.</p>
 
-      <div class="section-label">
-
-       <div class="icon-box">
-
-        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24" ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-
-        </svg>
-
-       </div>
-
-       <h3>MISSÃO, VISÃO E VALORES</h3>
-
-      </div>
-
-      <div class="grid-3">
-
-       <div class="card">
-
-        <div style=" padding: 24px;  margin: -32px -32px 0 -32px; padding-bottom: 32px;">
-
-        <h4 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 12px; color: #ffffff;">MISSÃO</h4>
-        
+       <div class="who-metrics" aria-label="Indicadores institucionais">
+        <div class="who-metric">
+         <strong>15+</strong>
+         <span>Anos de atuação cultural</span>
         </div>
-
-        <p class="text-gray-300 text-sm">Promover, fortalecer e difundir a cultura no sertão sergipano.</p>
-
-       </div>
-
-       <div class="card">
-        <h4 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 12px;">VISÃO</h4>
-
-        <p class="text-gray-300 text-sm">Ser referência em produção cultural no Nordeste.</p>
-
-       </div>
-       <div class="card">
-
-        <h4 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin-bottom: 12px;">VALORES</h4>
-
-        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-            <span class="text-xs" style="background: rgba(255, 255, 255, 0.1); padding: 6px 12px; border-radius: 20px;">Democracia</span>
-
-        <span class="text-xs" style="background: rgba(255, 255, 255, 0.1); padding: 6px 12px; border-radius: 20px;">Inclusão</span>
-
-        <span class="text-xs" style="background: rgba(255, 255, 255, 0.1); padding: 6px 12px; border-radius: 20px;">Diversidade</span>
-
+        <div class="who-metric">
+         <strong>6</strong>
+         <span>Linguagens artísticas integradas</span>
         </div>
-
+        <div class="who-metric">
+         <strong>1</strong>
+         <span>Ecossistema cultural em movimento</span>
+        </div>
        </div>
+      </article>
 
-      </div>
-
+      <aside class="who-principles" aria-label="Missão, visão e valores">
+       <article class="principle-card">
+        <p class="principle-tag">Missão</p>
+        <p>Promover, fortalecer e difundir a cultura no sertão sergipano com impacto social e continuidade.</p>
+       </article>
+       <article class="principle-card">
+        <p class="principle-tag">Visão</p>
+        <p>Ser referência em produção cultural no Nordeste, articulando inovação e identidade local.</p>
+       </article>
+       <article class="principle-card principle-values">
+        <p class="principle-tag">Valores</p>
+        <div class="value-pills">
+         <span>Democracia</span>
+         <span>Inclusão</span>
+         <span>Diversidade</span>
+         <span>Colaboração</span>
+         <span>Território</span>
+        </div>
+       </article>
+      </aside>
      </div>
 
-     <div>
+     <div class="who-timeline" aria-label="Marcos institucionais">
+      <article>
+       <span>2010</span>
+       <p>Início das atividades culturais e mobilização artística local.</p>
+      </article>
+      <article>
+       <span>2011</span>
+       <p>Formalização da associação e ampliação das frentes de atuação.</p>
+      </article>
+      <article>
+       <span>Atualidade</span>
+       <p>Programas permanentes de circulação, formação e articulação em rede.</p>
+      </article>
+     </div>
 
-      <div class="section-label">
-
-       <div class="icon-box">
-        
-        <svg fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-
-        </svg>
-
-       </div>
-
-        <h3>DIRETORIA</h3>
-
+     <div class="board-section">
+      <div class="board-header">
+       <p class="who-eyebrow">Governança</p>
+       <h3>Diretoria Executiva</h3>
       </div>
-
-      <div class="grid-3">
-
-       <div class="card">
-
-        <div class="flex-center-gap mb-24">
-
-         <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #e29b4a 0%, #ffbb00 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', cursive; font-size: 18px; flex-shrink: 0;">
-
-          AG
-         </div>
-         <div>
-          <p style="font-weight: 600; font-size: 14px; margin: 0;">Arthur Gabriel Lima Santos</p>
-          <p style="font-size: 12px; color: #fc8600; margin: 0;">Presidente</p>
-
-         </div>
-
+      <div class="board-grid">
+       <article class="board-card board-card-featured">
+        <div class="board-avatar">AG</div>
+        <div>
+         <p class="board-name">Arthur Gabriel Lima Santos</p>
+         <p class="board-role">Presidente</p>
         </div>
-
-       </div>
-
-       <div class="card">
-
-        <div class="flex-center-gap mb-24">
-         <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', cursive; font-size: 18px; flex-shrink: 0;">
-          PL
-         </div>
-
-         <div>
-          <p style="font-weight: 600; font-size: 14px; margin: 0;">Pedro Lucas Santos de Souza</p>
-          <p style="font-size: 12px; color: #9ca3af; margin: 0;">Vice-Presidente</p>
-
-         </div>
-
+       </article>
+       <article class="board-card">
+        <div class="board-avatar">PL</div>
+        <div>
+         <p class="board-name">Pedro Lucas Santos de Souza</p>
+         <p class="board-role">Vice-Presidente</p>
         </div>
-
-       </div>
-
-       <div class="card">
-
-        <div class="flex-center-gap mb-24">
-
-         <div style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', cursive; font-size: 18px; flex-shrink: 0;">
-          RS
-         </div>
-
-         <div>
-          <p style="font-weight: 600; font-size: 14px; margin: 0;">Romário da Silva Andrade</p>
-
-          <p style="font-size: 12px; color: #9ca3af; margin: 0;">Primeiro-Secretário</p>
-         </div>
-
+       </article>
+       <article class="board-card">
+        <div class="board-avatar">RS</div>
+        <div>
+         <p class="board-name">Romário da Silva Andrade</p>
+         <p class="board-role">Primeiro-Secretário</p>
         </div>
-
-       </div>
-
+       </article>
       </div>
-
      </div>
 
     </div>
 
    </section>
-   
-   </section>
-   
 
    <section id="atividades">
 
-    <div class="container">
+    <div class="container activities-advanced">
 
-     <h2 class="section-title">
-        NOSSAS 
-        <span class="text-gradient">
-        ATIVIDADES
-    </span>
-    
-    </h2>
-      <div class="grid-6">
-      <div class="card" style="min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: orange;">
-        
-        <span style="font-size: 48px; display: block; margin-bottom: 12px;">
+     <div class="activities-header">
+      <p class="who-kicker">Programação</p>
+      <h2 class="section-title">NOSSAS <span class="text-gradient">ATIVIDADES</span></h2>
+      <p>Trabalhamos com uma agenda anual que combina eventos de grande escala, formação contínua e ações de base comunitária.</p>
+     </div>
 
-        </span>
-       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin: 0;">
-        Festival Rock Sertão
-    </h3>
+     <div class="activities-grid">
+      <article class="activity-card activity-card-featured">
+       <p class="activity-type">Festival</p>
+       <h3>Festival Rock Sertão</h3>
+       <p>Plataforma de circulação para música independente, encontros criativos e fortalecimento da cena regional.</p>
+      </article>
 
-      </div>
+      <article class="activity-card">
+       <p class="activity-type">Audiovisual</p>
+       <h3>Mostras de Cinema</h3>
+       <p>Exibições temáticas e debates para ampliar repertório e acesso ao cinema no interior.</p>
+      </article>
 
-      <div class="card" style="min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+      <article class="activity-card">
+       <p class="activity-type">Formação</p>
+       <h3>Oficinas e Cursos</h3>
+       <p>Capacitações práticas voltadas para criação artística, gestão cultural e profissionalização.</p>
+      </article>
 
-        <span style="font-size: 48px; display: block; margin-bottom: 12px;">
-            
-        </span>
+      <article class="activity-card">
+       <p class="activity-type">Literatura</p>
+       <h3>Rodas de Leitura</h3>
+       <p>Mediação e fruição literária como ferramenta de cidadania cultural e pensamento crítico.</p>
+      </article>
 
-       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin: 0;">
-        Mostras de Cinema
-       </h3>
+      <article class="activity-card">
+       <p class="activity-type">Rede</p>
+       <h3>Encontros Formativos</h3>
+       <p>Trocas entre artistas, educadores e agentes para construir soluções coletivas de território.</p>
+      </article>
 
-      </div>
-      <div class="card" style="min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">
-
-      </span>
-
-       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin: 0;">
-        Oficinas e Cursos</h3>
-
-      </div>
-      <div class="card" style="min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">
-
-      </span>
-
-        <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin: 0;">
-        Rodas de Leitura
-        </h3>
-
-      </div>
-      <div class="card" style="min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">
-        
-    </span>
-       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin: 0;">
-        Encontros Formativos
-        </h3>
-
-      </div>
-
-      <div class="card" style="min-height: 180px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;"><span style="font-size: 48px; display: block; margin-bottom: 12px;">
-
-      </span>
-       <h3 style="font-family: 'Bebas Neue', cursive; font-size: 20px; margin: 0;">
-        Programações Semanais
-    </h3>
-      </div>
-
+      <article class="activity-card">
+       <p class="activity-type">Comunidade</p>
+       <h3>Programações Semanais</h3>
+       <p>Ações recorrentes que mantêm presença cultural ativa ao longo de todo o ano.</p>
+      </article>
      </div>
 
     </div>
@@ -481,15 +395,15 @@
        <div class="videos" id="videos-galeria">
 
         <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/_jYNiMKQN_0?si=-nELzw34TtjQtL7F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/_jYNiMKQN_0?si=-nELzw34TtjQtL7F" title="YouTube video player" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
         <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/IpTUgSl9dH0?si=RxAF0VBBPksH-oIQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/IpTUgSl9dH0?si=RxAF0VBBPksH-oIQ" title="YouTube video player" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
         <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/dy_fm6LoYHo?si=utiz-4GPUhl8TScd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/dy_fm6LoYHo?si=utiz-4GPUhl8TScd" title="YouTube video player" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
 
        </div>

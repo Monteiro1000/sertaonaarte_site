@@ -23,215 +23,120 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ==================== GALERIA COM ARRASTO ====================
-    const galeria = document.querySelector('.fotos');
-    
-    if (galeria) {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        let momentumID;
+    // ==================== GALERIAS COM ARRASTO ====================
+    function setupDraggableCarousel(carousel, previousButton, nextButton, stepResolver) {
+        if (!carousel) {
+            return;
+        }
 
-        // Mouse Events
-        galeria.addEventListener('mousedown', (e) => {
-            isDown = true;
-            galeria.style.cursor = 'grabbing';
-            startX = e.pageX - galeria.offsetLeft;
-            scrollLeft = galeria.scrollLeft;
-            cancelAnimationFrame(momentumID);
+        let isDragging = false;
+        let startX = 0;
+        let startScroll = 0;
+        let pendingDelta = null;
+        let rafId = null;
+
+        const applyDrag = () => {
+            if (pendingDelta === null) {
+                rafId = null;
+                return;
+            }
+
+            carousel.scrollLeft = startScroll - pendingDelta;
+            pendingDelta = null;
+            rafId = null;
+        };
+
+        carousel.addEventListener('mousedown', (event) => {
+            isDragging = true;
+            carousel.style.cursor = 'grabbing';
+            startX = event.pageX - carousel.offsetLeft;
+            startScroll = carousel.scrollLeft;
         });
 
-        galeria.addEventListener('mouseleave', () => {
-            isDown = false;
-            galeria.style.cursor = 'grab';
+        carousel.addEventListener('mouseleave', () => {
+            isDragging = false;
+            carousel.style.cursor = 'grab';
         });
 
-        galeria.addEventListener('mouseup', () => {
-            isDown = false;
-            galeria.style.cursor = 'grab';
+        carousel.addEventListener('mouseup', () => {
+            isDragging = false;
+            carousel.style.cursor = 'grab';
         });
 
-        galeria.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - galeria.offsetLeft;
-            const walk = (x - startX) * 1.5;
-            galeria.scrollLeft = scrollLeft - walk;
+        carousel.addEventListener('mousemove', (event) => {
+            if (!isDragging) {
+                return;
+            }
+
+            event.preventDefault();
+            const currentX = event.pageX - carousel.offsetLeft;
+            pendingDelta = (currentX - startX) * 1.5;
+
+            if (!rafId) {
+                rafId = requestAnimationFrame(applyDrag);
+            }
         });
 
-        // Touch Events (para mobile)
         let touchStartX = 0;
         let touchStartScroll = 0;
 
-        galeria.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-            touchStartScroll = galeria.scrollLeft;
-            cancelAnimationFrame(momentumID);
-        }, false);
+        carousel.addEventListener('touchstart', (event) => {
+            touchStartX = event.touches[0].clientX;
+            touchStartScroll = carousel.scrollLeft;
+        }, { passive: true });
 
-        galeria.addEventListener('touchmove', (e) => {
-            const touchX = e.touches[0].clientX;
+        carousel.addEventListener('touchmove', (event) => {
+            const touchX = event.touches[0].clientX;
             const walk = (touchStartX - touchX) * 2;
-            galeria.scrollLeft = touchStartScroll + walk;
-        }, false);
+            carousel.scrollLeft = touchStartScroll + walk;
+        }, { passive: true });
 
-        galeria.addEventListener('touchend', () => {
-            // Momentum scrolling
-            let velocity = 0;
-            let lastX = 0;
-            let lastTime = Date.now();
+        if (previousButton) {
+            previousButton.addEventListener('click', () => {
+                carousel.scrollLeft -= stepResolver();
+            });
+        }
 
-            const momentum = () => {
-                const now = Date.now();
-                const deltaTime = now - lastTime;
-                
-                if (deltaTime > 100) {
-                    velocity = 0;
-                } else {
-                    velocity *= 0.95;
-                    if (Math.abs(velocity) > 0.5) {
-                        galeria.scrollLeft -= velocity;
-                        momentumID = requestAnimationFrame(momentum);
-                    }
-                }
-            };
-        }, false);
+        if (nextButton) {
+            nextButton.addEventListener('click', () => {
+                carousel.scrollLeft += stepResolver();
+            });
+        }
+    }
 
-        // Botões de navegação para galeria
-        const btnEsq = document.getElementById('galeria-esq');
-        const btnDir = document.getElementById('galeria-dir');
-
-        const calcularScroll = () => {
-            // Responsivo: ajusta o scroll baseado no tamanho da tela
+    const galeria = document.querySelector('.fotos');
+    setupDraggableCarousel(
+        galeria,
+        document.getElementById('galeria-esq'),
+        document.getElementById('galeria-dir'),
+        function() {
             const width = window.innerWidth;
             if (width >= 1024) {
                 return 520;
-            } else if (width >= 768) {
-                return 420;
-            } else {
-                return 320;
             }
-        };
-
-        if (btnEsq) {
-            btnEsq.addEventListener('click', () => {
-                galeria.scrollLeft -= calcularScroll();
-            });
+            if (width >= 768) {
+                return 420;
+            }
+            return 320;
         }
+    );
 
-        if (btnDir) {
-            btnDir.addEventListener('click', () => {
-                galeria.scrollLeft += calcularScroll();
-            });
-        }
-
-        window.addEventListener('resize', () => {
-
-        });
-    }
-
-    // ==================== GALERIA DE VÍDEOS ====================
     const videosGaleria = document.querySelector('.videos');
-    
-    if (videosGaleria) {
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        let momentumID;
-
-        // Mouse Events para vídeos
-        videosGaleria.addEventListener('mousedown', (e) => {
-            isDown = true;
-            videosGaleria.style.cursor = 'grabbing';
-            startX = e.pageX - videosGaleria.offsetLeft;
-            scrollLeft = videosGaleria.scrollLeft;
-            cancelAnimationFrame(momentumID);
-        });
-
-        videosGaleria.addEventListener('mouseleave', () => {
-            isDown = false;
-            videosGaleria.style.cursor = 'grab';
-        });
-
-        videosGaleria.addEventListener('mouseup', () => {
-            isDown = false;
-            videosGaleria.style.cursor = 'grab';
-        });
-
-        videosGaleria.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - videosGaleria.offsetLeft;
-            const walk = (x - startX) * 1.5;
-            videosGaleria.scrollLeft = scrollLeft - walk;
-        });
-
-        // Touch Events para vídeos
-        let touchStartX = 0;
-        let touchStartScroll = 0;
-
-        videosGaleria.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-            touchStartScroll = videosGaleria.scrollLeft;
-            cancelAnimationFrame(momentumID);
-        }, false);
-
-        videosGaleria.addEventListener('touchmove', (e) => {
-            const touchX = e.touches[0].clientX;
-            const walk = (touchStartX - touchX) * 2;
-            videosGaleria.scrollLeft = touchStartScroll + walk;
-        }, false);
-
-        videosGaleria.addEventListener('touchend', () => {
-            // Momentum scrolling
-            let velocity = 0;
-            let lastX = 0;
-            let lastTime = Date.now();
-
-            const momentum = () => {
-                const now = Date.now();
-                const deltaTime = now - lastTime;
-                
-                if (deltaTime > 100) {
-                    velocity = 0;
-                } else {
-                    velocity *= 0.95;
-                    if (Math.abs(velocity) > 0.5) {
-                        videosGaleria.scrollLeft -= velocity;
-                        momentumID = requestAnimationFrame(momentum);
-                    }
-                }
-            };
-        }, false);
-
-        // Botões de navegação para vídeos
-        const btnVideosEsq = document.getElementById('videos-esq');
-        const btnVideosDir = document.getElementById('videos-dir');
-
-        const calcularScrollVideos = () => {
-            // Responsivo: ajusta o scroll baseado no tamanho da tela
+    setupDraggableCarousel(
+        videosGaleria,
+        document.getElementById('videos-esq'),
+        document.getElementById('videos-dir'),
+        function() {
             const width = window.innerWidth;
             if (width >= 1024) {
-                return 580; 
-            } else if (width >= 768) {
-                return 420; 
-            } else {
-                return 320; 
+                return 580;
             }
-        };
-
-        if (btnVideosEsq) {
-            btnVideosEsq.addEventListener('click', () => {
-                videosGaleria.scrollLeft -= calcularScrollVideos();
-            });
+            if (width >= 768) {
+                return 420;
+            }
+            return 320;
         }
-
-        if (btnVideosDir) {
-            btnVideosDir.addEventListener('click', () => {
-                videosGaleria.scrollLeft += calcularScrollVideos();
-            });
-        }
-    }
+    );
 
     // ==================== FORMULÁRIO DE CONTATO ====================
     const contactForm = document.getElementById('contact-form');
@@ -259,6 +164,72 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Erro: ' + error.message);
             });
         });
+    }
+
+    // ==================== ANIMACOES EXCLUSIVAS DA INDEX ====================
+    if (document.body.classList.contains('page-index')) {
+        const revealTargets = document.querySelectorAll('section, .main-button, .highlight-card, .card, .video-item');
+        revealTargets.forEach((el) => el.setAttribute('data-reveal', ''));
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.16,
+                rootMargin: '0px 0px -10% 0px'
+            });
+
+            revealTargets.forEach((target) => observer.observe(target));
+        } else {
+            revealTargets.forEach((el) => el.classList.add('is-visible'));
+        }
+
+        const heroImages = document.querySelectorAll('.fotos-hero img');
+        const heroArea = document.querySelector('.galeria-hero-container');
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+
+        if (heroArea && heroImages.length > 0 && !reduceMotion && !coarsePointer) {
+            let pendingFrame = null;
+            let pointerEvent = null;
+
+            const animateParallax = function() {
+                if (!pointerEvent) {
+                    pendingFrame = null;
+                    return;
+                }
+
+                const bounds = heroArea.getBoundingClientRect();
+                const xPct = (pointerEvent.clientX - bounds.left) / bounds.width - 0.5;
+                const yPct = (pointerEvent.clientY - bounds.top) / bounds.height - 0.5;
+
+                heroImages.forEach((img, index) => {
+                    const depth = (index % 3 + 1) * 5;
+                    img.style.transform = 'translate3d(' + (xPct * depth) + 'px, ' + (yPct * depth) + 'px, 0) scale(1.02)';
+                });
+
+                pendingFrame = null;
+            };
+
+            heroArea.addEventListener('mousemove', function(event) {
+                pointerEvent = event;
+                if (!pendingFrame) {
+                    pendingFrame = requestAnimationFrame(animateParallax);
+                }
+            }, { passive: true });
+
+            heroArea.addEventListener('mouseleave', function() {
+                heroImages.forEach((img) => {
+                    img.style.transform = 'translate3d(0, 0, 0) scale(1)';
+                });
+            });
+        }
     }
 });
 
