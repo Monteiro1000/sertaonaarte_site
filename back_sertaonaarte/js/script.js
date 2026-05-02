@@ -1,5 +1,71 @@
 document.addEventListener('DOMContentLoaded', function() {
-   
+
+    // ==================== ACESSIBILIDADE ====================
+    (function() {
+        var fab   = document.getElementById('accessibility-fab');
+        var panel = document.getElementById('accessibility-panel');
+        var FONT_KEY      = 'acc_fontScale';
+        var CONTRAST_KEY  = 'acc_contrast';
+        var BASE_SIZE     = 16; // px
+        var STEP          = 2;
+        var MIN_SCALE     = 12;
+        var MAX_SCALE     = 24;
+
+        var currentSize = parseInt(localStorage.getItem(FONT_KEY), 10) || BASE_SIZE;
+        var highContrast = localStorage.getItem(CONTRAST_KEY) === '1';
+
+        function applyFont(size) {
+            document.documentElement.style.fontSize = size + 'px';
+            localStorage.setItem(FONT_KEY, size);
+            currentSize = size;
+        }
+
+        function applyContrast(enabled) {
+            document.body.classList.toggle('high-contrast', enabled);
+            localStorage.setItem(CONTRAST_KEY, enabled ? '1' : '0');
+            highContrast = enabled;
+            var btn = document.getElementById('acc-contrast');
+            if (btn) { btn.setAttribute('aria-pressed', String(enabled)); }
+        }
+
+        // Restaurar preferências salvas
+        applyFont(currentSize);
+        applyContrast(highContrast);
+
+        if (!fab || !panel) { return; }
+
+        fab.addEventListener('click', function() {
+            var isOpen = !panel.hidden;
+            panel.hidden = isOpen;
+            fab.classList.toggle('active', !isOpen);
+            if (!isOpen) { panel.querySelector('button').focus(); }
+        });
+
+        // Fechar painel ao clicar fora
+        document.addEventListener('click', function(e) {
+            if (!panel.hidden && !fab.contains(e.target) && !panel.contains(e.target)) {
+                panel.hidden = true;
+                fab.classList.remove('active');
+            }
+        });
+
+        document.getElementById('acc-font-increase').addEventListener('click', function() {
+            if (currentSize < MAX_SCALE) { applyFont(currentSize + STEP); }
+        });
+
+        document.getElementById('acc-font-decrease').addEventListener('click', function() {
+            if (currentSize > MIN_SCALE) { applyFont(currentSize - STEP); }
+        });
+
+        document.getElementById('acc-font-reset').addEventListener('click', function() {
+            applyFont(BASE_SIZE);
+        });
+
+        document.getElementById('acc-contrast').addEventListener('click', function() {
+            applyContrast(!highContrast);
+        });
+    })();
+
     // ==================== MENU MOBILE ====================
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
