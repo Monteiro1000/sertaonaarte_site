@@ -2,63 +2,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ==================== ACESSIBILIDADE ====================
     (function() {
-        function ensureAccessibilityElements() {
-            var existingFab = document.getElementById('accessibility-fab');
-            if (!existingFab) {
-                existingFab = document.createElement('div');
-                existingFab.className = 'accessibility-fab';
-                existingFab.id = 'accessibility-fab';
-                existingFab.setAttribute('aria-label', 'Opcoes de acessibilidade');
-                existingFab.setAttribute('title', 'Acessibilidade');
-                existingFab.innerHTML = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:26px;height:26px;" aria-hidden="true"><circle cx="12" cy="4" r="1.5" fill="currentColor"></circle><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7v5m0 0l-3 5m3-5l3 5M9 10h6"></path><circle cx="12" cy="12" r="10" stroke-width="2"></circle></svg>';
-                document.body.appendChild(existingFab);
-            }
-
-            var existingPanel = document.getElementById('accessibility-panel');
-            if (!existingPanel) {
-                existingPanel = document.createElement('div');
-                existingPanel.className = 'accessibility-panel';
-                existingPanel.id = 'accessibility-panel';
-                existingPanel.setAttribute('role', 'dialog');
-                existingPanel.setAttribute('aria-label', 'Painel de acessibilidade');
-                existingPanel.setAttribute('aria-modal', 'false');
-                existingPanel.innerHTML = [
-                    '<p class="accessibility-panel-title">Acessibilidade</p>',
-                    '<div class="accessibility-options">',
-                    '<button class="accessibility-option-btn" id="acc-font-increase" aria-label="Aumentar fonte">',
-                    '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:18px;height:18px;" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>',
-                    'Aumentar fonte',
-                    '</button>',
-                    '<button class="accessibility-option-btn" id="acc-font-decrease" aria-label="Diminuir fonte">',
-                    '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:18px;height:18px;" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg>',
-                    'Diminuir fonte',
-                    '</button>',
-                    '<button class="accessibility-option-btn" id="acc-font-reset" aria-label="Resetar fonte">',
-                    '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:18px;height:18px;" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>',
-                    'Resetar fonte',
-                    '</button>',
-                    '<button class="accessibility-option-btn" id="acc-contrast" aria-label="Alto contraste" aria-pressed="false">',
-                    '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:18px;height:18px;" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke-width="2"></circle><path stroke-width="2" d="M12 3v18" stroke-linecap="round"></path><path fill="currentColor" d="M12 3a9 9 0 010 18V3z"></path></svg>',
-                    'Alto contraste',
-                    '</button>',
-                    '</div>'
-                ].join('');
-                document.body.appendChild(existingPanel);
-            }
-        }
-
-        ensureAccessibilityElements();
-
         var fab   = document.getElementById('accessibility-fab');
         var panel = document.getElementById('accessibility-panel');
-        var FONT_KEY      = 'acc_fontScale';
-        var CONTRAST_KEY  = 'acc_contrast';
-        var BASE_SIZE     = 16; // px
-        var STEP          = 2;
-        var MIN_SCALE     = 12;
-        var MAX_SCALE     = 24;
+        var FONT_KEY     = 'acc_fontScale';
+        var CONTRAST_KEY = 'acc_contrast';
+        var BASE_SIZE    = 16;
+        var STEP         = 2;
+        var MIN_SCALE    = 12;
+        var MAX_SCALE    = 24;
 
-        var currentSize = parseInt(localStorage.getItem(FONT_KEY), 10) || BASE_SIZE;
+        var currentSize  = parseInt(localStorage.getItem(FONT_KEY), 10) || BASE_SIZE;
         var highContrast = localStorage.getItem(CONTRAST_KEY) === '1';
 
         function applyFont(size) {
@@ -75,30 +28,49 @@ document.addEventListener('DOMContentLoaded', function() {
             if (btn) { btn.setAttribute('aria-pressed', String(enabled)); }
         }
 
+        function openPanel() {
+            panel.classList.add('is-open');
+            fab.classList.add('active');
+        }
+
+        function closePanel() {
+            panel.classList.remove('is-open');
+            fab.classList.remove('active');
+        }
+
         // Restaurar preferências salvas
         applyFont(currentSize);
         applyContrast(highContrast);
 
         if (!fab || !panel) { return; }
 
+        // Garantir painel fechado no carregamento
+        closePanel();
+
         fab.addEventListener('click', function(e) {
             e.stopPropagation();
-            var isOpen = panel.classList.toggle('is-open');
-            fab.classList.toggle('active', isOpen);
-            if (isOpen) { panel.querySelector('button').focus(); }
+            if (panel.classList.contains('is-open')) {
+                closePanel();
+            } else {
+                openPanel();
+            }
         });
 
-        // Fechar painel ao clicar fora
-        document.addEventListener('click', function(e) {
-            if (panel.classList.contains('is-open') && !panel.contains(e.target)) {
-                panel.classList.remove('is-open');
-                fab.classList.remove('active');
+        // Clicar dentro do painel não fecha
+        panel.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+
+        // Fechar ao clicar fora
+        document.addEventListener('click', function() {
+            if (panel.classList.contains('is-open')) {
+                closePanel();
             }
         });
 
         var increaseBtn = document.getElementById('acc-font-increase');
         var decreaseBtn = document.getElementById('acc-font-decrease');
-        var resetBtn = document.getElementById('acc-font-reset');
+        var resetBtn    = document.getElementById('acc-font-reset');
         var contrastBtn = document.getElementById('acc-contrast');
 
         if (increaseBtn) {
@@ -106,19 +78,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (currentSize < MAX_SCALE) { applyFont(currentSize + STEP); }
             });
         }
-
         if (decreaseBtn) {
             decreaseBtn.addEventListener('click', function() {
                 if (currentSize > MIN_SCALE) { applyFont(currentSize - STEP); }
             });
         }
-
         if (resetBtn) {
             resetBtn.addEventListener('click', function() {
                 applyFont(BASE_SIZE);
             });
         }
-
         if (contrastBtn) {
             contrastBtn.addEventListener('click', function() {
                 applyContrast(!highContrast);
