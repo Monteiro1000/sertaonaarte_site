@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+﻿document.addEventListener('DOMContentLoaded', function() {
 
     // ==================== ACESSIBILIDADE ====================
     (function() {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             fab.classList.remove('active');
         }
 
-        // Restaurar preferências salvas
+        // Restaurar preferÃªncias salvas
         applyFont(currentSize);
         applyContrast(highContrast);
 
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Clicar dentro do painel não fecha
+        // Clicar dentro do painel nÃ£o fecha
         panel.addEventListener('click', function(e) {
             e.stopPropagation();
         });
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     );
 
-    // ==================== FORMULÁRIO DE CONTATO ====================
+    // ==================== FORMULÃRIO DE CONTATO ====================
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
@@ -266,23 +266,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const revealTargets = document.querySelectorAll('section, .main-button, .highlight-card, .card, .video-item');
         revealTargets.forEach((el) => el.setAttribute('data-reveal', ''));
 
-        if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.16,
-                rootMargin: '0px 0px -10% 0px'
-            });
-
-            revealTargets.forEach((target) => observer.observe(target));
-        } else {
-            revealTargets.forEach((el) => el.classList.add('is-visible'));
-        }
+        // Todos os elementos comeÃ§am visÃ­veis para melhor performance
+        revealTargets.forEach((el) => el.classList.add('is-visible'));
 
         const heroImages = document.querySelectorAll('.fotos-hero img');
         const heroArea = document.querySelector('.galeria-hero-container');
@@ -328,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ==================== MODAL DE TRANSPARÊNCIA ====================
+// ==================== MODAL DE TRANSPARÃŠNCIA ====================
 
 // Dados das parcerias com anexos de exemplo
 const parcerias = {
@@ -336,7 +321,7 @@ const parcerias = {
         id: '2025',
         ano: '2025',
         objeto: 'APOIO FINANCEIRO PARA DESPESAS DE CUSTEIO',
-        projeto: 'Festival de Música e Arte Independente Rock Sertão',
+        projeto: 'Festival de MÃºsica e Arte Independente Rock SertÃ£o',
         valor: '85.000,00',
         status: 'Executado',
         photo: '../documentos/2024emendaparlamentarestadual/fotogeral24.png',
@@ -348,28 +333,28 @@ const parcerias = {
     '2023': {
         id: '2023',
         ano: '2023',
-        objeto: 'Realizar oficinas de capacitação com circuito de formação na cidade de Nossa Senhora da Glória - SE.',
-        projeto: 'CIRCUTO "ROCK SERTÃO" DE FORMAÇÃO',
+        objeto: 'Realizar oficinas de capacitaÃ§Ã£o com circuito de formaÃ§Ã£o na cidade de Nossa Senhora da GlÃ³ria - SE.',
+        projeto: 'CIRCUTO "ROCK SERTÃƒO" DE FORMAÃ‡ÃƒO',
         valor: '330.000,00',
         status: 'Executado',
         photo: '../documentos/circuitoDeFormacao/fotogeral.png', // ADICIONE A URL DA FOTO AQUI
         attachments: [
     { name: 'Extrato da proposta', url: '../documentos/circuitoDeformacao/ExtratoProposta.pdf' },
-    { name: 'Parecer Técnico', url: '../documentos/circuitoDeformacao/parecertecnico.pdf' },
+    { name: 'Parecer TÃ©cnico', url: '../documentos/circuitoDeformacao/parecertecnico.pdf' },
     { name: 'Termo de fomento', url: '../documentos/circuitoDeformacao/termodefomento.pdf' },
 ]
     },
     '2022': {
         id: '2022',
         ano: '2022',
-        objeto: 'Realização do festival "Rock Sertão 2023", na cidade de Nossa Senhora da Glória em Sergipe.',
-        projeto: 'ROCK SERTÃO 2023',
+        objeto: 'RealizaÃ§Ã£o do festival "Rock SertÃ£o 2023", na cidade de Nossa Senhora da GlÃ³ria em Sergipe.',
+        projeto: 'ROCK SERTÃƒO 2023',
         valor: 'R$176.000,00',
         status: 'Executado',
         photo: '../documentos/rocksertao2023/rocksertao2023.png', // ADICIONE A URL DA FOTO AQUI
         attachments: [
     { name: 'Extrato da proposta', url: '../documentos/circuitoDeformacao/ExtratoProposta.pdf' },
-    { name: 'Parecer de mérito', url: '../documentos/circuitoDeformacao/parecerdemerito.pdf' },
+    { name: 'Parecer de mÃ©rito', url: '../documentos/circuitoDeformacao/parecerdemerito.pdf' },
     { name: 'Termo de fomento', url: '../documentos/circuitoDeformacao/termodefomento.pdf' },
 ]
     }
@@ -461,6 +446,101 @@ function renderAttachments() {
     });
 }
 
+// ===================== MODALS ATIVIDADES FORMATIVAS =====================
+
+const atividadesData = {
+    1: {
+            title: "Vozes Negras de Sergipe",
+            description: "ReflexÃ£o e debate sobre narrativas Ã©tnico-raciais na histÃ³ria cultural do sertÃ£o. Uma palestra que explora as vozes negras na produÃ§Ã£o musical e cultural sergipana, com foco na histÃ³ria do Rock SertÃ£o e suas raÃ­zes.",
+            images: [
+                "./Atividades formativas/1 palestra/PALESTRA VOZES NEGRAS DE SERGIPE ROCK SERTÃƒO 25 ANOS ETAPA II ATIVIDADES FORMATIVAS.jpg"
+            ]
+        },
+        2: {
+            title: "ProduÃ§Ã£o com Riquelme",
+            description: "CapacitaÃ§Ã£o prÃ¡tica em produÃ§Ã£o de Ã¡udio e tÃ©cnicas modernas de gravaÃ§Ã£o. Workshop intensivo focando em estÃºdio, mixagem e masterizaÃ§Ã£o com especialista reconhecido.",
+            images: [
+                "./Atividades formativas/2 workshop riquelme/1 Design sem nome.jpg"
+            ]
+        },
+        3: {
+            title: "Som Azul",
+            description: "ExploraÃ§Ã£o criativa de sonoridades, experimentaÃ§Ã£o musical e sound design. Uma oficina que estimula a criatividade sonora e a compreensÃ£o de novas possibilidades acÃºsticas.",
+            images: [
+                "./Atividades formativas/3 OFICINA SOM AZUL/OFICINA COR AZUL.jpg"
+            ]
+        },
+        4: {
+            title: "Trilha Sonora do Audiovisual",
+            description: "TÃ©cnicas de composiÃ§Ã£o musical e sincronizaÃ§Ã£o com vÃ­deo para cinema e web. Aprenda a criar trilhas sonoras profissionais para seus projetos audiovisuais.",
+            images: [
+                "./Atividades formativas/4 OFICINA A TRILHA SONORA DO AUDIOVISUAL/1 Design sem nome.jpg"
+            ]
+        },
+        5: {
+            title: "PercepÃ§Ã£o Musical",
+            description: "Desenvolvimento de escuta ativa, anÃ¡lise e compreensÃ£o aprofundada da mÃºsica. Oficina fundamental para mÃºsicos e interessados em aprofundar conhecimento musical.",
+            images: [
+                "./Atividades formativas/5 OFICINA PERCEPÃ‡ÃƒO MUSICAL/IMG_5673.jpeg"
+            ]
+        },
+        6: {
+            title: "Cordel, Rima e Ritmo",
+            description: "IntegraÃ§Ã£o da tradiÃ§Ã£o oral sertaneja com expressÃµes musicais contemporÃ¢neas. Workshop que une literatura de cordel com ritmos e produÃ§Ãµes musicais modernas.",
+            images: [
+                "./Atividades formativas/6 WORKSHOP CORDEL, RIMA E RITMO/IMG_5723.jpeg"
+            ]
+        },
+        7: {
+            title: "MÃºsica e Movimento",
+            description: "ExpressÃ£o corporal, coreografia e performance integradas com criaÃ§Ã£o musical. Workshop que explora a conexÃ£o entre corpo e musicalidade.",
+            images: [
+                "./marcas/IMG_3105.JPG"
+            ]
+        },
+        8: {
+            title: "No Ritmo das Libras",
+            description: "InclusÃ£o e acessibilidade em eventos culturais atravÃ©s da LÃ­ngua Brasileira de Sinais. Oficina importante para garantir acesso a eventos culturais por pessoas surdas.",
+            images: [
+                "./marcas/IMG_3138.JPG"
+            ]
+        }
+};
+
+window.openAtividadeModal = function(id) {
+    const modal = document.getElementById('atividade-modal-' + id);
+    if (modal) {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+};
+
+window.closeAtividadeModal = function(id) {
+    const modal = document.getElementById('atividade-modal-' + id);
+    if (modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+};
+
+// Fechar modal ao clicar fora dele
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('atividade-modal')) {
+        const id = event.target.id.replace('atividade-modal-', '');
+        window.closeAtividadeModal(id);
+    }
+});
+
+// Fechar modal com ESC
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        document.querySelectorAll('.atividade-modal.show').forEach(modal => {
+            const id = modal.id.replace('atividade-modal-', '');
+            window.closeAtividadeModal(id);
+        });
+    }
+});
+
 function viewPdf(url, name) {
     document.getElementById('pdfTitle').textContent = name;
     document.getElementById('pdfFrame').src = url;
@@ -485,7 +565,7 @@ window.onclick = function(event) {
     }
 }
 
-// Função para adicionar anexo
+// FunÃ§Ã£o para adicionar anexo
 function addAttachment(partyId, fileName, fileUrl) {
     if (parcerias[partyId]) {
         parcerias[partyId].attachments.push({
@@ -499,24 +579,25 @@ function addAttachment(partyId, fileName, fileUrl) {
 // Ativar modo administrativo
 function enableAdminMode() {
     isAdmin = true;
-    console.log('✓ Modo Administrativo Ativado!');
+    console.log('âœ“ Modo Administrativo Ativado!');
     console.log('Edite o arquivo script.js para adicionar as fotos das parcerias no objeto "parcerias".');
     
-    // Se um modal está aberto, atualizar para mostrar opções admin
+    // Se um modal estÃ¡ aberto, atualizar para mostrar opÃ§Ãµes admin
     if (currentParty) {
         renderPhoto();
     }
 }
 
-// Função para adicionar foto via URL
+// FunÃ§Ã£o para adicionar foto via URL
 function setPhotoUrl(partyId, photoUrl) {
     if (parcerias[partyId]) {
         parcerias[partyId].photo = photoUrl;
         if (currentParty && currentParty.id === partyId) {
             renderPhoto();
         }
-        console.log(`Foto adicionada à parceria ${partyId}`);
+        console.log(`Foto adicionada Ã  parceria ${partyId}`);
     }
 }
+
 
 

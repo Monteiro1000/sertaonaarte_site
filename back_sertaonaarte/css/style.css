@@ -1481,10 +1481,9 @@
 }
 
 .page-index [data-reveal] {
-  opacity: 0;
-  transform: translateY(26px) scale(0.985);
-  transition: opacity 650ms ease, transform 650ms cubic-bezier(.21, 1, .31, 1);
-  will-change: opacity, transform;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 .page-index [data-reveal].is-visible {
@@ -3297,6 +3296,169 @@
     body.high-contrast {
         background-color: #000 !important;
         color: #fff !important;
+    }
+
+    /* ===================== MODAL ATIVIDADES FORMATIVAS ===================== */
+
+    .atividade-modal {
+        display: none;
+        position: fixed;
+        z-index: 1200;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        animation: fadeIn 0.3s ease-in;
+        overflow-y: auto;
+    }
+
+    .atividade-modal.show {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .atividade-modal-content {
+        background: linear-gradient(135deg, rgba(31, 41, 55, 0.98) 0%, rgba(17, 24, 39, 0.98) 100%);
+        border: 2px solid rgba(255, 182, 86, 0.3);
+        border-radius: 16px;
+        width: 95%;
+        max-width: 1000px;
+        max-height: 90vh;
+        overflow-y: auto;
+        animation: slideUp 0.4s ease-out;
+        color: #e5e7eb;
+    }
+
+    .atividade-modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 28px 32px;
+        border-bottom: 2px solid rgba(255, 182, 86, 0.2);
+        background: linear-gradient(90deg, rgba(255, 182, 86, 0.08) 0%, rgba(255, 149, 0, 0.04) 100%);
+        position: sticky;
+        top: 0;
+    }
+
+    .atividade-modal-header h2 {
+        margin: 0;
+        font-size: 28px;
+        color: #FFB652;
+        font-weight: 700;
+    }
+
+    .atividade-modal-close {
+        background: none;
+        border: none;
+        font-size: 32px;
+        cursor: pointer;
+        color: #9ca3af;
+        transition: color 0.3s ease, transform 0.3s ease;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .atividade-modal-close:hover {
+        color: #FFB652;
+        transform: scale(1.1);
+    }
+
+    .atividade-modal-body {
+        padding: 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    .atividade-modal-text h3 {
+        font-size: 20px;
+        color: #FFB652;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 16px;
+        font-weight: 700;
+    }
+
+    .atividade-modal-text p {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #d0d0d0;
+        margin-bottom: 16px;
+    }
+
+    .atividade-modal-images {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    .atividade-modal-image {
+        width: 100%;
+        height: 200px;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 2px solid rgba(255, 182, 86, 0.2);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .atividade-modal-image:hover {
+        border-color: rgba(255, 182, 86, 0.6);
+        transform: scale(1.02);
+        box-shadow: 0 8px 24px rgba(255, 182, 86, 0.2);
+    }
+
+    .atividade-saiba-mais-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: linear-gradient(135deg, #FFB652 0%, #FF9F1C 100%);
+        color: #1a1a1a;
+        font-size: 12px;
+        font-weight: 700;
+        border-radius: 8px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 16px rgba(255, 182, 86, 0.3);
+        margin-top: 12px;
+    }
+
+    .atividade-saiba-mais-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(255, 182, 86, 0.4);
+    }
+
+    @media (max-width: 768px) {
+        .atividade-modal-body {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .atividade-modal-header {
+            padding: 20px;
+        }
+
+        .atividade-modal-header h2 {
+            font-size: 22px;
+        }
+
+        .atividade-modal-images {
+            max-height: 300px;
+        }
+
+        .atividade-modal-image {
+            height: 180px;
+        }
     }
 
     body.high-contrast * {
