@@ -510,8 +510,18 @@ const atividadesData = {
 window.openAtividadeModal = function(id) {
     const modal = document.getElementById('atividade-modal-' + id);
     if (modal) {
+        // Remover 'show' de todos os modais primeiro
+        document.querySelectorAll('.atividade-modal.show').forEach(m => {
+            m.classList.remove('show');
+        });
+        
         modal.classList.add('show');
         document.body.style.overflow = 'hidden';
+        
+        // Scroll para o topo do modal no mobile
+        setTimeout(() => {
+            modal.scrollTop = 0;
+        }, 10);
     }
 };
 
@@ -525,7 +535,7 @@ window.closeAtividadeModal = function(id) {
 
 // Fechar modal ao clicar fora dele
 document.addEventListener('click', function(event) {
-    if (event.target.classList.contains('atividade-modal')) {
+    if (event.target.classList && event.target.classList.contains('atividade-modal')) {
         const id = event.target.id.replace('atividade-modal-', '');
         window.closeAtividadeModal(id);
     }

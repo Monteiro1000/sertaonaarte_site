@@ -3310,13 +3310,15 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.8);
         animation: fadeIn 0.3s ease-in;
-        overflow-y: auto;
+        overflow: hidden;
+        padding: 20px;
     }
 
     .atividade-modal.show {
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow-y: auto;
     }
 
     .atividade-modal-content {
@@ -3325,10 +3327,12 @@
         border-radius: 16px;
         width: 95%;
         max-width: 1000px;
-        max-height: 90vh;
+        max-height: 85vh;
         overflow-y: auto;
         animation: slideUp 0.4s ease-out;
         color: #e5e7eb;
+        display: flex;
+        flex-direction: column;
     }
 
     .atividade-modal-header {
@@ -3438,6 +3442,22 @@
     }
 
     @media (max-width: 768px) {
+        .atividade-modal {
+            padding: 10px;
+        }
+
+        .atividade-modal.show {
+            align-items: flex-start;
+            padding-top: 60px;
+        }
+
+        .atividade-modal-content {
+            width: 100%;
+            max-width: 100%;
+            max-height: calc(100vh - 80px);
+            margin: 0;
+        }
+
         .atividade-modal-body {
             grid-template-columns: 1fr;
             gap: 20px;
@@ -3446,6 +3466,9 @@
 
         .atividade-modal-header {
             padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .atividade-modal-header h2 {
